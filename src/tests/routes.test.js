@@ -44,10 +44,84 @@ it('tests errors return html file with status code of 404', (done) => {
 });
 
 // test symptom route
-it('tests symptom return html file with status code of 404', (done) => {
+describe('testing the symptom routes', () => {
+  it('tests symptoms/home return html file with status code of 200', (done) => {
+    request(app)
+      .get('/symptoms/home')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+
+  it('tests symptoms/new return html file with status code of 200', (done) => {
+    request(app)
+      .get('/symptoms/add')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests symptoms/scaleInfo return html file with status code of 200', (done) => {
+    request(app)
+      .get('/symptoms/scaleInfo')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests symptoms/scaleSetup return html file with status code of 200', (done) => {
+    request(app)
+      .get('/symptoms/scaleSetup')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+});
+
+// testing factor routes
+describe('testing the factor routes', () => {
+  it('tests factor/home return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/home')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+
+  it('tests factor/new return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/add')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests factor/scaleInfo return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/scaleInfo')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests factor/scaleSetup return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/scaleSetup')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+});
+// testing add data route
+it('tests adddata return html file with status code of 200', (done) => {
   request(app)
-    .get('/asdf')
-    .expect(404)
+    .get('/adddata')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end(done);
+});
+
+// testing see data route
+it('tests seedata return html file with status code of 200', (done) => {
+  request(app)
+    .get('/seedata')
+    .expect(200)
     .expect('Content-Type', /html/)
     .end(done);
 });
