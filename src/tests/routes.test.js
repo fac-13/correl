@@ -45,7 +45,7 @@ it('tests errors return html file with status code of 404', (done) => {
 
 // test symptom route
 describe('testing the symptom routes', () => {
-  it('tests symptoms/home return html file with status code of 404', (done) => {
+  it('tests symptoms/home return html file with status code of 200', (done) => {
     request(app)
       .get('/symptoms/home')
       .expect(200)
@@ -53,23 +53,55 @@ describe('testing the symptom routes', () => {
       .end(done);
   });
 
-  it('tests symptoms/new return html file with status code of 404', (done) => {
+  it('tests symptoms/new return html file with status code of 200', (done) => {
     request(app)
       .get('/symptoms/add')
       .expect(200)
       .expect('Content-Type', /html/)
       .end(done);
   });
-  it('tests symptoms/scaleInfo return html file with status code of 404', (done) => {
+  it('tests symptoms/scaleInfo return html file with status code of 200', (done) => {
     request(app)
       .get('/symptoms/scaleInfo')
       .expect(200)
       .expect('Content-Type', /html/)
       .end(done);
   });
-  it('tests symptoms/scaleSetup return html file with status code of 404', (done) => {
+  it('tests symptoms/scaleSetup return html file with status code of 200', (done) => {
     request(app)
       .get('/symptoms/scaleSetup')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+});
+
+describe('testing the factor routes', () => {
+  it('tests factor/home return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/home')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+
+  it('tests factor/new return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/add')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests factor/scaleInfo return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/scaleInfo')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+  it('tests factor/scaleSetup return html file with status code of 200', (done) => {
+    request(app)
+      .get('/factors/scaleSetup')
       .expect(200)
       .expect('Content-Type', /html/)
       .end(done);
