@@ -5,7 +5,7 @@ const assert = require('chai').assert;
 const expect = require('chai').expect;
 const express = require('express');
 
-const app = express();
+const app = require('./../app.js');
 // test home route
 it('tests home returns html file with status code of 200', (done) => {
   request(app)
@@ -15,15 +15,15 @@ it('tests home returns html file with status code of 200', (done) => {
     .end(done);
 });
 
-// test login route
+// // test login route
 it('tests login returns html file with status code of 200', (done) => {
   request(app)
-    .get('/login')
+    .get('/logIn')
     .expect(200)
     .expect('Content-Type', /html/)
     .end(done);
 });
-// test register route
+// // test register route
 
 it('tests register returns html file with status code of 200', (done) => {
   request(app)

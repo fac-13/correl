@@ -11,7 +11,7 @@ const logIn = require('./logIn');
 // const seeData = require('./seeData');
 // const symptoms = require('./symptoms');
 // const factors = require('./factors');
-// const error = require('./error');
+const error = require('./error');
 // const logOut = require('./logOut');
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -19,7 +19,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 // get routes
 
 // router.get('/');
-router.get('/register');
+router.get('/register', register.get);
 router.get('/logIn', logIn.get);
 // router.get('/addData');
 // router.get('/seeData');
