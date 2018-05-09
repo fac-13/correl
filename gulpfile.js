@@ -1,10 +1,14 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 
-gulp.task('sass', () =>
-  gulp.src('./public/**/*.sass') // Look in this directory, in all its sub-directories for sass files
-    .pipe(sass()) // Convert Sass to CSS with gulp-sass
-    .pipe(gulp.dest('./public'))); // Put the converted sass files here
+gulp.task('sass', () => {
+  // Look in this directory, in all its sub-directories for sass files
+  gulp.src('./public/**/*.sass')
+    // Convert Sass to CSS with gulp-sass, logging an error if there is one
+    .pipe(sass().on('error', sass.logError))
+    // Put the converted sass files here
+    .pipe(gulp.dest('./public'));
+});
 
 // watching tasks
 gulp.task('watch', () => {
