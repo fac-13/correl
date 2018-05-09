@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-// const home = require('/');
+const home = require('./home');
 const register = require('./register');
 const logIn = require('./logIn');
 // const addData = require('./addData');
@@ -17,7 +17,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 // get routes
 
-// router.get('/');
+router.get('/', home.get);
 router.get('/register', register.get);
 router.get('/logIn', logIn.get);
 // router.get('/addData');
