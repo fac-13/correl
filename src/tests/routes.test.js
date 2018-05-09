@@ -46,7 +46,7 @@ it('tests errors return html file with status code of 404', (done) => {
 // test symptom route
 it('tests symptom return html file with status code of 404', (done) => {
   request(app)
-    .get('/symptom/home')
+    .get('/symptoms/home')
     .expect(200)
     .expect('Content-Type', /html/)
     .end(done);
