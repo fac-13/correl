@@ -25,8 +25,9 @@ router.get('/logIn', logIn.get);
 // router.get('/seeData');
 // router.get('/symptoms');
 // router.get('/factors');
-// router.get('/error');
 // router.get('/logOut');
+router.use(error.client);
+router.use(error.server);
 
 // post routes
 
