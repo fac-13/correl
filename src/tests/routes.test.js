@@ -44,10 +44,20 @@ it('tests errors return html file with status code of 404', (done) => {
 });
 
 // test symptom route
-it('tests symptom return html file with status code of 404', (done) => {
-  request(app)
-    .get('/symptoms/home')
-    .expect(200)
-    .expect('Content-Type', /html/)
-    .end(done);
+describe('testing the symptom routes', () => {
+  it('tests symptoms/home return html file with status code of 404', (done) => {
+    request(app)
+      .get('/symptoms/home')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
+
+  it('tests symptoms/new return html file with status code of 404', (done) => {
+    request(app)
+      .get('/symptoms/add')
+      .expect(200)
+      .expect('Content-Type', /html/)
+      .end(done);
+  });
 });
