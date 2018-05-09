@@ -76,6 +76,7 @@ describe('testing the symptom routes', () => {
   });
 });
 
+// testing factor routes
 describe('testing the factor routes', () => {
   it('tests factor/home return html file with status code of 200', (done) => {
     request(app)
@@ -106,4 +107,21 @@ describe('testing the factor routes', () => {
       .expect('Content-Type', /html/)
       .end(done);
   });
+});
+// testing add data route
+it('tests adddata return html file with status code of 200', (done) => {
+  request(app)
+    .get('/adddata')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end(done);
+});
+
+// testing see data route
+it('tests seedata return html file with status code of 200', (done) => {
+  request(app)
+    .get('/seedata')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end(done);
 });
