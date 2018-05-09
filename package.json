@@ -1,7 +1,8 @@
 {
   "name": "correl",
   "version": "1.0.0",
-  "description": "an application that allows users to track symptoms and potentially contributing factors and view data that represents these data points over time",
+  "description":
+    "an application that allows users to track symptoms and potentially contributing factors and view data that represents these data points over time",
   "main": "app.js",
   "scripts": {
     "test": "NODE_ENV=test tape ./src/tests/*.js | tap-spec",
@@ -26,6 +27,7 @@
     "nyc": "^11.7.1",
     "supertest": "^3.0.0",
     "tap-spec": "^4.1.1",
+    "mocha": "^5.1.1",
     "tape": "^4.9.0"
   },
   "dependencies": {
