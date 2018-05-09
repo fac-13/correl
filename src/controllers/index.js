@@ -23,6 +23,10 @@ router.get('/logIn', logIn.get);
 // router.get('/addData');
 // router.get('/seeData');
 router.get('/symptoms/home', symptoms.getHome);
+router.get('/symptoms/add', symptoms.getAdd);
+router.get('/symptoms/scaleInfo', symptoms.getScaleInfo);
+router.get('/symptoms/scaleSetup', symptoms.getScaleSetup);
+
 // router.get('/factors');
 // router.get('/logOut');
 router.use(error.client);
