@@ -1,1 +1,14 @@
 <h1>factor home</h1>
+
+<h2>Factors You're Tracking</h2>
+<ul>
+  {{#each factorsList}}
+  <span>
+    <li>{{this.factor}}</li>
+    <button class="delete">Delete</button>
+  </span>
+  {{/each}}
+</ul>
+
+<button class="back">Back</button>
+<button class="add">Add New Symptom</button>
