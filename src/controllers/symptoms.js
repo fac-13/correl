@@ -1,5 +1,7 @@
+const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'dry skin' }];
+
 exports.getHome = (req, res) => {
-  res.render('symptomsHome');
+  res.render('symptomsHome', { symptomsList });
 };
 
 exports.getAdd = (req, res) => {

@@ -1,1 +1,14 @@
 <h1>symptoms Home</h1>
+
+<h2>Symptoms You're Tracking</h2>
+<ul>
+  {{#each symptomsList}}
+  <span>
+    <li>{{this.symptom}}</li>
+    <button id="delete">Delete</button>
+  </span>
+  {{/each}}
+</ul>
+
+<button id="back">Back</button>
+<button id="add">Add New Symptom</button>
