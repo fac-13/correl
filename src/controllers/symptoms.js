@@ -1,5 +1,7 @@
+const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'dry skin' }];
+
 exports.getHome = (req, res) => {
-  res.render('symptomsHome');
+  res.render('symptomsHome', { symptomsList });
 };
 
 exports.getAdd = (req, res) => {
@@ -7,7 +9,7 @@ exports.getAdd = (req, res) => {
 };
 
 exports.getScaleInfo = (req, res) => {
-  res.render('symptomsScaleInfo');
+  res.render('scaleInfo');
 };
 
 exports.getScaleSetup = (req, res) => {
