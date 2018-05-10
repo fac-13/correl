@@ -103,4 +103,6 @@ INSERT into factor_data
   (factor_id, user_id, rating)
 VALUES
   (1, 1, 8);
+INSERT INTO symptom_data(symptom_id, user_id, rating) VALUES(1, 1, 6);
+
 COMMIT;

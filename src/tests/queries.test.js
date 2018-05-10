@@ -7,12 +7,10 @@ const test = require('tape');
 test('testing that getUserData returns an object with user password', (t) => {
   runDbBuild()
     .then((res) => {
-      console.log(res);
       t.ok(res);
       return getUserData('eade');
     })
     .then((queryResult) => {
-      console.log(queryResult);
       t.equal(
         queryResult.password,
         'passworddd',
@@ -20,7 +18,6 @@ test('testing that getUserData returns an object with user password', (t) => {
       );
     })
     .catch((e) => {
-      console.log(e);
       t.error(e, 'error with getting user data');
     });
   t.end();
