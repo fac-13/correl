@@ -9,7 +9,7 @@ exports.getAdd = (req, res) => {
 };
 
 exports.getScaleInfo = (req, res) => {
-  res.render('factorsScaleInfo');
+  res.render('scaleInfo');
 };
 
 exports.getScaleSetup = (req, res) => {
