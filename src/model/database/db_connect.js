@@ -7,7 +7,7 @@ let options = {};
 
 if (process.env.TRAVIS === 'true') {
   options = {
-    database: 'travis_test',
+    database: 'travis_ci_test',
     user: 'postgres',
   };
 } else {
