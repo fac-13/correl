@@ -4,8 +4,7 @@
   "description": "an application that allows users to track symptoms and potentially contributing factors and view data that represents these data points over time",
   "main": "app.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha ./src/tests/*.js",
-    "querytest": "tape src/tests/queries.test.js | tap-spec",
+    "test": "NODE_ENV=test tape ./src/tests/*.test.js | tap-spec",
     "start": "nodemon ./src/index.js",
     "build": "node src/model/database/db_build.js"
   },
@@ -13,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/fac-13/correl.git"
   },
-  "author": "Eade Hemingway, Jenath Kanagesan, Jennah Hylton-Edwards, Tammy Speed",
+  "author": "Eade, Jenath, Jennah, Tammy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fac-13/correl/issues"
