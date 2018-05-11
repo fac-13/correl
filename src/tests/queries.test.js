@@ -20,6 +20,7 @@ test('testing that getUserData returns an object with user password', (t) => {
     })
     .catch((e) => {
       t.error(e, 'error with getting user data');
+      t.end();
     });
 });
 
@@ -33,6 +34,7 @@ test('testing symptoms query returns something', (t) => {
     })
     .catch((e) => {
       t.error(e, 'error with symptoms query');
+      t.end();
     });
 });
 
@@ -48,6 +50,7 @@ test('testing factors query returns something', (t) => {
     })
     .catch((e) => {
       t.error(e, 'error with factors query');
+      t.end();
     });
 });
 
