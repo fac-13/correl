@@ -32,7 +32,7 @@ test('testing that getUserData returns an object with user password', (t) => {
 // test query to get a symptom from symptoms table
 test('testing symptoms query returns something', (t) => {
   runDbBuild()
-    .then(() => getSymptoms(1))
+    .then(() => getSymptoms('eade'))
     .then((queryResult) => {
       t.ok(queryResult);
       t.end();
@@ -48,7 +48,7 @@ test('testing symptoms query returns something', (t) => {
 // test query to get a factor from factors table
 test('testing factors query returns something', (t) => {
   runDbBuild()
-    .then(() => getFactors(1))
+    .then(() => getFactors('eade'))
     .then((queryResult) => {
       t.ok(queryResult);
       t.end();

@@ -4,6 +4,7 @@ const dbConnect = require('../database/db_connect.js');
 const getUserData = username => dbConnect.query('SELECT password FROM users WHERE username=$1', [username])
   .then(res => res[0]);
 
+
 // get all user symptoms from symptoms table
 const getSymptoms = username => dbConnect.query('select symptom from symptoms where user_id = (select id from users where username=$1)', [username]);
 // get all user factors from factor table
