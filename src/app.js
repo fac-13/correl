@@ -10,7 +10,7 @@ const controllers = require('./controllers/');
 const app = express();
 
 app.use(cookieSession({
-  name: 'session',
+  name: 'cook',
   keys: [secret],
 }));
 
