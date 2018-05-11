@@ -1,23 +1,17 @@
 /* eslint-disable */
 var scales = document.querySelectorAll('input[type=range]')
-
 // we need to use an array of comments from the database - this one is for testing only
-const test = ['Comment for 1', '', 'Comment for 3', 'Comment for 4', 'Comment for 5'];
+const test = ['No pain', '', '', '', '4 means I take some pain medication', '', '', '', 'Can\'t focus on anything but my pain', '', ''];
 
-scales.forEach( (scale) => {
-    scale.addEventListener('click', function(){
-        var currentScale = `${this.id}`;
-        var commentBoxId = `result${currentScale.slice(currentScale.indexOf('-'))}`;
-        
-        console.log(`the current scale is: ${currentScale}`);
-        console.log(`the comment box associated with the current scale has an id of ${commentBoxId}`);
+scales.forEach((scale) => {
+    scale.addEventListener('change', function () {
+        var currentScaleId = `${this.id}`;
+        var commentBoxId = `result${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
+        var scaleNumberId = `${this.id}-number`;
+        var scaleNumber = document.querySelector(`#${scaleNumberId}`);
+        var commentBox = document.querySelector(`#${commentBoxId}`);
 
-        var commentBox = document.getElementById('commentBoxId'); //Not working 
-       
-
-        
-        //commentBox.innerHTML = test[`${this.value}`];
-        
-        // result.innerHTML = `the scale is on ${this.value} and the comment is ${arr[this.value-1]}`;
+        scaleNumber.textContent = `${this.value}`;
+        commentBox.textContent = test[this.value] === '' ? "Any comments you've saved will appear here as you move the scale" : `Hint: ${test[this.value]}`
     })
 })
