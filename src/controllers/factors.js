@@ -1,5 +1,7 @@
+const factorsList = [{ factor: 'water' }, { factor: 'sleep' }];
+
 exports.getHome = (req, res) => {
-  res.render('factorsHome');
+  res.render('factorsHome', { factorsList });
 };
 
 exports.getAdd = (req, res) => {
@@ -7,7 +9,7 @@ exports.getAdd = (req, res) => {
 };
 
 exports.getScaleInfo = (req, res) => {
-  res.render('factorsScaleInfo');
+  res.render('scaleInfo');
 };
 
 exports.getScaleSetup = (req, res) => {

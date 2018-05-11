@@ -1,1 +1,27 @@
-<h1>add data</h1>
+<h1>Enter Today's Data</h1>
+
+<h2>Symptoms</h2>
+<ul>
+  {{#each symptomsList}}
+  <span>
+    <li>{{this.symptom}}</li>
+    {{!-- need to add icon at the end --}}
+    <button class="expand">E</button>
+  </span>
+
+  {{/each}}
+</ul>
+
+<h2>Factors</h2>
+
+<ul>
+  {{#each factorsList}}
+  <span>
+    <li>{{this.factor}}</li>
+    {{!-- need to add icon at the end --}}
+    <button class="expand">E</button>
+  </span>
+  {{/each}}
+</ul>
+
+<button class="finish">Finish</button>
