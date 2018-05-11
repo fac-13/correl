@@ -9,9 +9,8 @@ let build;
 build = sql('./db_build.sql');
 
 const runDbBuild = () => dbConnect
-    .query(build)
-    .then()
-    .catch(e => console.error('error', e));
+  .query(build);
+
 
 runDbBuild();
 
