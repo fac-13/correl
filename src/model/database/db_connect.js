@@ -4,7 +4,7 @@ require('env2')('./config.env');
 
 const DB_URL =
   process.env.ENV === 'test'
-    ? process.env.TEST_DB_URL
+    ? process.env.DB_TEST_URL
     : process.env.DB_URL;
 
 if (!DB_URL) {
@@ -12,5 +12,5 @@ if (!DB_URL) {
 }
 
 module.exports = pgp({
-  connectionString: DB_URL,
+  DB_URL,
 });

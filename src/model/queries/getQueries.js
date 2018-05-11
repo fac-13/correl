@@ -5,7 +5,6 @@ const getUserData = username => dbConnect.query('SELECT password FROM users WHER
 
 // get a symptom from symptoms table
 const getSymptoms = userId => dbConnect.query('SELECT * FROM symptoms WHERE user_id=$1', [userId]);
-
 // get scale comments for symptom scale
 
 // get a factor from factors table
