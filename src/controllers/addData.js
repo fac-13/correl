@@ -1,4 +1,4 @@
-const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'dandruff' }];
+const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'headache' }];
 const factorsList = [{ factor: 'water' }, { factor: 'sleep' }];
 
 

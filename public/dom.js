@@ -11,7 +11,10 @@ scales.forEach((scale) => {
         var scaleNumber = document.querySelector(`#${scaleNumberId}`);
         var commentBox = document.querySelector(`#${commentBoxId}`);
 
+
         scaleNumber.textContent = `${this.value}`;
         commentBox.textContent = test[this.value] === '' ? "Any comments you've saved will appear here as you move the scale" : `Hint: ${test[this.value]}`
     })
 })
+
+
