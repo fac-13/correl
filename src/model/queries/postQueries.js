@@ -1,4 +1,9 @@
+const db = require('./../database/db_connect');
+
 // post username and password to users table
+
+const getAllData = () =>
+  db.query(`SELECT * from users`);
 
 // post a symptom to symptom
 
@@ -11,3 +16,5 @@
 // post symptom ratings
 
 // post factor ratings
+
+module.exports = getAllData;
