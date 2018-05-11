@@ -16,11 +16,11 @@ test('testing that getUserData returns an object with user password', (t) => {
         'passworddd',
         'queryResult should contain passworddd',
       );
+      t.end();
     })
     .catch((e) => {
       t.error(e, 'error with getting user data');
     });
-  t.end();
 });
 
 // test query to get a symptom from symptoms table
@@ -29,11 +29,11 @@ test('testing symptoms query returns something', (t) => {
     .then(() => getSymptoms(1))
     .then((queryResult) => {
       t.ok(queryResult);
+      t.end();
     })
     .catch((e) => {
       t.error(e, 'error with symptoms query');
     });
-  t.end();
 });
 
 // test query to get scale comments for symptom scale
@@ -44,11 +44,11 @@ test('testing factors query returns something', (t) => {
     .then(() => getFactors(1))
     .then((queryResult) => {
       t.ok(queryResult);
+      t.end();
     })
     .catch((e) => {
       t.error(e, 'error with factors query');
     });
-  t.end();
 });
 
 // test query to get scale comment for factor scale
