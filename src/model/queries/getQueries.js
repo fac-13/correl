@@ -8,9 +8,10 @@ const getUserData = username =>
     });
 
 // get all user symptoms from symptoms table
-const getSymptoms = username => dbConnect.query('select factor from factors where user_id = (select id from users where username=$1)', [username]);
+const getSymptoms = username => dbConnect.query('select symptom from symptoms where user_id = (select id from users where username=$1)', [username]);
 // get all user factors from factor table
-const getFactors = username => dbConnect.query('select symptom from symptoms where user_id = (select id from users where username=$1)', [username]);
+
+const getFactors = username => dbConnect.query('select factor from factors where user_id = (select id from users where username=$1)', [username]);
 
 // get scale comments for symptom scale
 const getSymptomScale = (symptom, username) => dbConnect.query('select * from symptom_scale where symptom_id = (select id from symptoms where symptom=$1) and user_id = (select id from users where username=$2);)', [symptom, username]);
