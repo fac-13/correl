@@ -10,13 +10,25 @@ exports.getHome = (req, res) => {
 
 
 exports.getAdd = (req, res) => {
-  res.render('factorsAdd');
+  if (req.session.loggedIn) {
+    res.render('factorsAdd');
+  } else {
+    res.render('login');
+  }
 };
 
 exports.getScaleInfo = (req, res) => {
-  res.render('scaleInfo');
+  if (req.session.loggedIn) {
+    res.render('scaleInfo');
+  } else {
+    res.render('login');
+  }
 };
 
 exports.getScaleSetup = (req, res) => {
-  res.render('factorsScaleSetup');
+  if (req.session.loggedIn) {
+    res.render('factorsScaleSetup');
+  } else {
+    res.render('login');
+  }
 };
