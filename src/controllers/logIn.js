@@ -12,8 +12,9 @@ exports.post = (req, res, next) => {
   const { password } = req.body;
   getQueries.getUserData(username)
     .then((result) => {
-      if (result.password.length > 0) {
-        return bcrypt.compare(password, result.password);
+      console.log('RESSSSULLTTT', result);
+      if (result.length > 0) {
+        return bcrypt.compare(password, result[0].password);
       }
       return false;
     }).then((result) => {
