@@ -5,8 +5,8 @@ const test = ['No pain', '', '', '', '4 means I take some pain medication', '', 
 
 scales.forEach((scale) => {
     scale.addEventListener('change', function () {
-        var currentScaleId = `${this.id}`;
-        var commentBoxId = `result${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
+        var currentScaleId = `${this.id}`; //e.g. gives scale-fatigue
+        var commentBoxId = `comment${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
         var scaleNumberId = `${this.id}-number`;
         var scaleNumber = document.querySelector(`#${scaleNumberId}`);
         var commentBox = document.querySelector(`#${commentBoxId}`);
