@@ -1,15 +1,17 @@
-const { getUserData } = require('../model/queries/getQueries');
 const bcrypt = require('bcrypt');
+const getQueries = require('./../model/queries/getQueries');
+
 
 exports.get = (req, res) => {
-  res.render('logIn');
+  res.render('logIn', { loggedOut: true });
 };
+
 
 exports.post = (req, res) => {
   console.log('arrives');
   const { username } = req.body;
   const { password } = req.body;
-  getUserData(username)
+  getQueries.getUserData(username)
     .then((result) => {
       if (result.length > 0) {
         return bcrypt.compare(password, result[0].password);

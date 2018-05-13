@@ -1,7 +1,7 @@
 const dbConnect = require('../database/db_connect.js');
 
 // post username and password to users table
-const postUserData = (username, password) => dbConnect.query('insert into users (username, password) values ($1, $2)', [username, password]);
+const addUser = (username, password) => dbConnect.query('insert into users (username, password) values ($1, $2)', [username, password]);
 // post a symptom to symptom
 const postSymptom = (symptom, username) => dbConnect.query('insert into symptoms (symptom, user_id) values ($1, (select id from users where username=$2))', [symptom, username]);
 
@@ -19,5 +19,5 @@ const postSymptomRating = (symptom, username, rating) => dbConnect.query('insert
 const postFactorRating = (factor, username, rating) => dbConnect.query('insert into factor_data (factor_id, user_id, rating) values((select id from factors where factor = $1 and user_id=(select id from users where username=$2)), (select id from users where username=$2),$3)', [factor, username, rating]);
 
 module.exports = {
-  postUserData, postSymptom, postFactor, postSymptomScale, postFactorScale, postSymptomRating, postFactorRating,
+  addUser, postSymptom, postFactor, postSymptomScale, postFactorScale, postSymptomRating, postFactorRating,
 };
