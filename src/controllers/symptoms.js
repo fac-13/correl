@@ -1,7 +1,7 @@
 const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'dry skin' }];
 
 exports.getHome = (req, res) => {
-  res.render('symptomsHome', { symptomsList });
+  res.render('symptomsHome', { symptomsList, username: req.session.username });
 };
 
 exports.getAdd = (req, res) => {

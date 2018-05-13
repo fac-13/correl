@@ -3,5 +3,5 @@ const { getSymptomRatings, getFactorRatings } = require('../model/queries/getQue
 exports.get = (req, res) => {
   // getSymptomRatings(username);
   // getFactorRatings(username);
-  res.render('seeData');
+  res.render('seeData', { username: req.session.username });
 };
