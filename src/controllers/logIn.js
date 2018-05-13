@@ -1,3 +1,3 @@
 exports.get = (req, res) => {
-  res.render('logIn');
+  res.render('logIn', { loggedOut: true });
 };
