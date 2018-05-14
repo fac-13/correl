@@ -1,4 +1,11 @@
 /* eslint-disable */
+
+
+
+
+
+
+d3.select('#graph').attr('class', 'test')
 var scales = document.querySelectorAll('input[type=range]')
 // we need to use an array of comments from the database - this one is for testing only
 const test = ['No pain', '', '', '', '4 means I take some pain medication', '', '', '', 'Can\'t focus on anything but my pain', '', ''];
