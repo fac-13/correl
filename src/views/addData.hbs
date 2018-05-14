@@ -22,11 +22,17 @@
 
 <ul>
   {{#each factorsList}}
-  <span id="factors-rating">
-    <li>{{this.factor}}</li>
-    {{!-- need to add icon at the end --}}
-    <button class="expand">E</button>
-  </span>
+  <div id="factor-rating">
+    <span>
+      <li>{{this.factor}}</li>
+      {{!-- need to add icon at the end --}}
+      <button class="expand">E</button>
+    </span>
+    <br>
+    <input id="scale-{{this.factor}}" type="range" min="0" max="10" value="0" steps="1">
+    <span id="scale-{{this.factor}}-number"></span>
+    <p id="comment-{{this.factor}}">Any comments you've saved will appear here as you move the scale</p>
+  </div>
   {{/each}}
 </ul>
 
