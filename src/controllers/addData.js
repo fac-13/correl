@@ -6,6 +6,6 @@ exports.get = (req, res) => {
   if (req.session.loggedIn) {
     res.render('addData', { symptomsList, factorsList, username: req.session.username });
   } else {
-    res.render('login');
+    res.render('logIn');
   }
 };
