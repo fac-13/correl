@@ -19,11 +19,12 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/', home.get);
 router.get('/register', register.get);
-router.get('/profile', profile.get);
 router.get('/logIn', logIn.get);
 router.get('/profile', profile.get);
 router.get('/addData', addData.get);
 router.get('/seeData', seeData.get);
+// router.get('/getGraphData', seeData.getData);
+// router.get('/seeData', seeData.getPage);
 router.get('/symptoms/home', symptoms.getHome);
 router.get('/symptoms/add', symptoms.getAdd);
 router.get('/symptoms/scaleInfo', symptoms.getScaleInfo);
@@ -33,17 +34,18 @@ router.get('/factors/add', factors.getAdd);
 router.get('/factors/scaleInfo', factors.getScaleInfo);
 router.get('/factors/scaleSetup', factors.getScaleSetup);
 
-
+// post routes
+router.post('/logIn', logIn.post);
 router.post('/register', register.post);
-router.post('/login', logIn.post);
-router.post('/addData');
-router.post('/symptoms');
-router.post('/factors');
+// router.post('/addData');
+// router.post('/symptoms');
+// router.post('/factors');
+
+
 // router.get('/factors');
 // router.get('/logOut');
 router.use(error.client);
 router.use(error.server);
 
-// post routes
 
 module.exports = router;
