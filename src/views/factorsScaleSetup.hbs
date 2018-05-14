@@ -1,57 +1,11 @@
 <h1>scale setup</h1>
 
-<form action="/factors/scaleSetup" method="post" id="factor-scale">
-  <span id="factor-1" role="button">
-    <label for="1">1</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-
-  <span id="factor-2" role="button">
-    <label for="2">2</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-
-  <span id="factor-3" role="button">
-    <label for="3">3</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-4" role="button">
-    <label for="4">4</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-5" role="button">
-    <label for="5">5</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-6" role="button">
-    <label for="6">6</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-7" role="button">
-    <label for="7">7</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-8" role="button">
-    <label for="8">8</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-9" role="button">
-    <label for="9">9</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
-  <span id="factor-10" role="button">
-    <label for="10">10</label>
-  </span>
-  <input type="text" class="scale-comments hidden">
-  <br>
+<form action="/factors/scaleSetup" method="POST" id="setUpScale">
+  {{#times 10}}
+  <div>
+    <button id="factor-{{this}}" class="scale-buttons" type="button">{{this}}</button>
+    <input type="text" class="scale-comments hidden">
+  </div>
+  <br> {{/times}}
 
 </form>
