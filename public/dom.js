@@ -1,23 +1,10 @@
-/* eslint-disable */
-var xhr = function(url, cb) {
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var response = JSON.parse(xhr.responseText);
-      cb(null, response);
-    } else {
-      cb(new TypeError('XHR error' + xhr.status));
-    }
-  });
-  xhr.open('GET', url, true);
-  xhr.send();
-}
+/*eslint-disable */
 
+// CODE FOR SCALES
 
-d3.select('#graph').attr('class', 'test')
 var scales = document.querySelectorAll('input[type=range]')
 // we need to use an array of comments from the database - this one is for testing only
-const test = ['No pain', '', '', '', '4 means I take some pain medication', '', '', '', 'Can\'t focus on anything but my pain', '', ''];
+var test = ['No pain', '', '', '', '4 means I take some pain medication', '', '', '', 'Can\'t focus on anything but my pain', '', ''];
 
 scales.forEach((scale) => {
   scale.addEventListener('change', function () {
@@ -41,4 +28,22 @@ scaleButtons.forEach(function (button) {
     input.classList.remove('hidden');
   });
 });
+
+
+// CODE FOR D3
+
+const makeRequest = function (url, cb) {
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      cb(null, response);
+    } else {
+      cb(new TypeError(`XHR error${xhr.status}`));
+    }
+  });
+  xhr.open('GET', url, true);
+  xhr.send();
+};
+
 
