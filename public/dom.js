@@ -46,16 +46,23 @@ const makeRequest = function (url, cb) {
   xhr.send();
 };
 
+//global variables 
+var chart_width = 1000;
+var chart_height =8000;
+var padding = 50;
+
+var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z')
+
 const frontRender = function (err, response) {
-  console.log('in front end render');
   if (err) {
     console.log(err);
   } else {
-    console.log('data from backend', response);
+    var dateTime = formatTime('2018-05-13T10:30:10.000Z'); 
+    console.log('time formmatted by d3', dateTime);
+    d3.select('#graph')
+
   }
 };
 
 makeRequest('/getGraphData', frontRender);
-
-d3.select('#graph').attr('class', 'test');
 
