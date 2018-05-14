@@ -41,9 +41,6 @@ router.post('/register', register.post);
 // router.post('/symptoms');
 // router.post('/factors');
 
-
-// router.get('/factors');
-// router.get('/logOut');
 router.use(error.client);
 router.use(error.server);
 
