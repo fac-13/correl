@@ -1,13 +1,14 @@
 <h1>Log In</h1>
 <section>
-  <form action="index.html" method="post">
+  <form action="/" class="signup__form" novalidate>
     <label for="login">Login:
-      <input id="login" type="login" />
+      <input id="login" type="text" required/>
     </label>
     <label for="password">Password:
-      <input id="logPassword" type="password"/>
+      <input id="logPassword" type="password"  required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
     </label>
     <p class="error" aria-live="polite"></p>
     <button>Submit</button>
   </form>
 </section>
+<script src="/login.js"></script>

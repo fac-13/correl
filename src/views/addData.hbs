@@ -3,20 +3,26 @@
 <h2>Symptoms</h2>
 <ul>
   {{#each symptomsList}}
-  <span>
-    <li>{{this.symptom}}</li>
-    {{!-- need to add icon at the end --}}
-    <button class="expand">E</button>
-  </span>
-
+  <div id="symptom-rating">
+    <span>
+      <li>{{this.symptom}}</li>
+      {{!-- need to add icon at the end --}}
+      <button class="expand">E</button>
+    </span>
+    <br>
+    <input id="scale-{{this.symptom}}" type="range" min="0" max="10" value="0" steps="1">
+    <span id="scale-{{this.symptom}}-number"></span>
+    <p id="comment-{{this.symptom}}">Any comments you've saved will appear here as you move the scale</p>
+  </div>
   {{/each}}
 </ul>
+
 
 <h2>Factors</h2>
 
 <ul>
   {{#each factorsList}}
-  <span>
+  <span id="factors-rating">
     <li>{{this.factor}}</li>
     {{!-- need to add icon at the end --}}
     <button class="expand">E</button>

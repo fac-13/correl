@@ -1,54 +1,20 @@
 /* eslint-disable */
 
-var form = document.getElementsByTagName("form")[0];
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var confirmPassword = document.getElementById("confirmPassword");
-var error = document.querySelector(".error");
 
-// login querySelector
-var login = document.getElementById('login');
-var logPassword = document.getElementById('logPassword');
+var scales = document.querySelectorAll('input[type=range]')
+// we need to use an array of comments from the database - this one is for testing only
+const test = ['No pain', '', '', '', '4 means I take some pain medication', '', '', '', 'Can\'t focus on anything but my pain', '', ''];
 
-form.addEventListener("submit", function(event) {
-  if (password.validity.valueMissing || confirmPassword.validity.valueMissing) {
-    error.innerText = "Please enter a password";
-    event.preventDefault();
-  }
+scales.forEach((scale) => {
+    scale.addEventListener('change', function () {
+        var currentScaleId = `${this.id}`; //e.g. gives scale-fatigue
+        var commentBoxId = `comment${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
+        var scaleNumberId = `${this.id}-number`;
+        var scaleNumber = document.querySelector(`#${scaleNumberId}`);
+        var commentBox = document.querySelector(`#${commentBoxId}`);
 
-alert('hello');
 
-  if (
-    password.validity.patternMismatch ||
-    confirmPassword.validity.patternMismatch
-  ) {
-    error.innerText =
-      "Password must contain at least eight characters, including one letter and one number";
-    event.preventDefault();
-  }
-
-  if (password.value != confirmPassword.value) {
-    error.innerText = "Passwords do not match";
-    event.preventDefault();
-  }
-
-  if (email.validity.typeMismatch) {
-    error.innerText = "Please enter a valid email address";
-    event.preventDefault();
-  }
-
-  if (email.validity.valueMissing) {
-    error.innerText = "Please enter an email address";
-    event.preventDefault();
-  }
-
-  if (login.validity.valueMissing) {
-    error.innerText = "Please enter a password";
-    event.preventDefault();
-  }
-
-  if (logPassword.validity.valueMissing) {
-    error.innerText = "Please enter a password";
-    event.preventDefault();
-  }
-});
+        scaleNumber.textContent = `${this.value}`;
+        commentBox.textContent = test[this.value] === '' ? "Any comments you've saved will appear here as you move the scale" : `Hint: ${test[this.value]}`
+    })
+})

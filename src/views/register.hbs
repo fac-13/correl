@@ -1,9 +1,9 @@
 <h1>Register</h1>
 <section class="signup">
 
-   <form class="signup__form" novalidate>
-     <label for="email">Email:
-       <input id="email" type="email" required/>
+   <form action="/login" class="signup__form" novalidate>
+     <label for="username">Username:
+       <input id="username" type="text" required/>
      </label>
      <label for="password">Password:
        <input id="password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
@@ -15,3 +15,4 @@
      <button>Submit</button>
    </form>
  </section>
+<script src="/register.js"></script>
