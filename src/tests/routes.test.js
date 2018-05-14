@@ -15,7 +15,7 @@ test('tests home returns html file with status code of 200', (t) => {
     });
 });
 
-// // test login route
+// test login route
 test('tests login returns html file with status code of 200', (t) => {
   request(app)
     .get('/logIn')
@@ -27,7 +27,7 @@ test('tests login returns html file with status code of 200', (t) => {
       t.end();
     });
 });
-// // test register route
+// test register route
 
 test('tests register returns html file with status code of 200', (t) => {
   request(app)
