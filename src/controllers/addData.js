@@ -1,10 +1,15 @@
-const symptomsList = [{ symptom: 'fatigue' }, { symptom: 'headache' }];
-const factorsList = [{ factor: 'water' }, { factor: 'sleep' }];
-
+let symptomsList;
+let factorsList;
+const queries = require('../model/queries/getQueries');
 
 exports.get = (req, res) => {
   if (req.session.loggedIn) {
-    res.render('addData', { symptomsList, factorsList, username: req.session.username });
+    const promiseArray = [queries.getSymptoms('eade'), queries.getFactors('eade')];
+    Promise.all(promiseArray)
+      .then((resultsArray) => {
+        console.log(resultsArray);
+        res.render('addData', { symptomsList, factorsList, username: req.session.username });
+      });
   } else {
     res.render('logIn');
   }
