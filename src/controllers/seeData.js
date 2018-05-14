@@ -7,6 +7,6 @@ exports.get = (req, res) => {
   if (req.session.loggedIn) {
     res.render('seeData', { username: req.session.username });
   } else {
-    res.render('login');
+    res.render('logIn');
   }
 };
