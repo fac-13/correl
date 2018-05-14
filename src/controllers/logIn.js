@@ -19,8 +19,8 @@ exports.post = (req, res) => {
       return false;
     }).then((result) => {
       if (result) {
-        req.cook.loggedIn = true;
-        req.cook.username = req.body.username;
+        req.session.loggedIn = true;
+        req.session.username = req.body.username;
         res.redirect('/profile');
       } else {
         res.render('login', { notmatch: true });
