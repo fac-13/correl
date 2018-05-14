@@ -1,5 +1,5 @@
 /* eslint-disable */
-var xhr = function(url, cb) {
+var makeRequest = function(url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.addEventListener('load', function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -13,7 +13,15 @@ var xhr = function(url, cb) {
   xhr.send();
 }
 
+var frontRender = function(err, response){
+  console.log('in front end render')
+  if(err){console.log(err)
+  }else{
+  console.log(response)
+  }
+}
 
+makeRequest('/getGraphData', frontRender)
 
 
 
