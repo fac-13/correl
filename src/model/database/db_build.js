@@ -4,17 +4,9 @@ const dbConnect = require('./db_connect.js');
 
 const sql = file => QueryFile(path.join(__dirname, file), { minify: true });
 
-let build;
+const build = sql('./db_build.sql');
 
-build = sql('./db_build.sql');
-
-const runDbBuild = () => {
-  return dbConnect
-    .query(build)
-    .then()
-    .catch(e => console.error('error', e));
-};
-
-runDbBuild();
+const runDbBuild = () => dbConnect
+  .query(build);
 
 module.exports = runDbBuild;
