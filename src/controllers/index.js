@@ -33,16 +33,15 @@ router.get('/factors/add', factors.getAdd);
 router.get('/factors/scaleInfo', factors.getScaleInfo);
 router.get('/factors/scaleSetup', factors.getScaleSetup);
 
-// router.get('/factors');
-// router.get('/logOut');
+// post routes
+router.post('/logIn', logIn.post);
+router.post('/register', register.post);
+// router.post('/addData');
+// router.post('/symptoms');
+// router.post('/factors');
+
 router.use(error.client);
 router.use(error.server);
 
-// post routes
-router.post('/logIn', logIn.post);
-router.post('/register');
-router.post('/addData');
-router.post('/symptoms');
-router.post('/factors');
 
 module.exports = router;

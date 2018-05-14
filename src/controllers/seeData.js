@@ -1,5 +1,5 @@
-
 const { getSymptomRatings, getFactorRatings } = require('../model/queries/getQueries');
+
 
 const getAllData = (username) => {
   const obj = {};

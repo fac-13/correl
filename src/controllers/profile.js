@@ -1,4 +1,8 @@
 
 exports.get = (req, res) => {
-  res.render('profile');
+  if (req.session.loggedIn) {
+    res.render('profile', { username: req.session.username });
+  } else {
+    res.render('logIn');
+  }
 };

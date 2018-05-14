@@ -3,6 +3,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 require('env2')('./config.env');
 const cookieSession = require('cookie-session');
+const helpers = require('./views/helpers/index');
 
 const secret = process.env.SECRET;
 const controllers = require('./controllers/');
@@ -10,7 +11,7 @@ const controllers = require('./controllers/');
 const app = express();
 
 app.use(cookieSession({
-  name: 'cook',
+  name: 'session',
   keys: [secret],
 }));
 
@@ -23,6 +24,7 @@ app.engine(
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'main',
+    helpers,
   }),
 );
 
