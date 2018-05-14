@@ -1,7 +1,13 @@
 <h1>Log In</h1>
-<form method="post" action="/login">
-  Username
-  <input type="text" name="username"> Password
-  <input type="text" name="password">
-  <input type="submit" value="submit">
-</form>
+<section>
+  <form action="index.html" method="post">
+    <label for="login">Login:
+      <input id="login" type="login" />
+    </label>
+    <label for="password">Password:
+      <input id="logPassword" type="password"/>
+    </label>
+    <p class="error" aria-live="polite"></p>
+    <button>Submit</button>
+  </form>
+</section>

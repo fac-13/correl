@@ -6,11 +6,17 @@ var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirmPassword");
 var error = document.querySelector(".error");
 
+// login querySelector
+var login = document.getElementById('login');
+var logPassword = document.getElementById('logPassword');
+
 form.addEventListener("submit", function(event) {
   if (password.validity.valueMissing || confirmPassword.validity.valueMissing) {
     error.innerText = "Please enter a password";
     event.preventDefault();
   }
+
+alert('hello');
 
   if (
     password.validity.patternMismatch ||
@@ -33,6 +39,16 @@ form.addEventListener("submit", function(event) {
 
   if (email.validity.valueMissing) {
     error.innerText = "Please enter an email address";
+    event.preventDefault();
+  }
+
+  if (login.validity.valueMissing) {
+    error.innerText = "Please enter a password";
+    event.preventDefault();
+  }
+
+  if (logPassword.validity.valueMissing) {
+    error.innerText = "Please enter a password";
     event.preventDefault();
   }
 });
