@@ -83,14 +83,30 @@ INSERT into users
   (username, password)
 VALUES
   ('eade', 'passworddd');
+INSERT into users
+  (username, password)
+VALUES
+  ('stanley', 'passworddd');
 INSERT into symptoms
   (symptom, user_id)
 VALUES
   ('rash', 1);
+INSERT into symptoms
+  (symptom, user_id)
+VALUES
+  ('itch', 1);
+INSERT into symptoms
+  (symptom, user_id)
+VALUES
+  ('hyper', 2);
 INSERT into factors
   (factor, user_id)
 VALUES
   ('water', 1);
+INSERT into factors
+  (factor, user_id)
+VALUES
+  ('sleep', 1);
 INSERT into symptom_scale
   (symptom_id, user_id, comment_1, comment_6)
 VALUES
@@ -103,4 +119,20 @@ INSERT into factor_data
   (factor_id, user_id, rating)
 VALUES
   (1, 1, 8);
+INSERT into symptom_data
+  (symptom_id, user_id, rating)
+VALUES
+  (1, 1, 8);
+INSERT into symptom_data
+  (symptom_id, user_id, rating)
+VALUES
+  (1, 1, 6);
+INSERT into symptom_data
+  (symptom_id, user_id, rating)
+VALUES
+  (2, 1, 6);
+INSERT into symptom_data
+  (symptom_id, user_id, rating)
+VALUES
+  (3, 2, 8);
 COMMIT;
