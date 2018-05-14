@@ -17,7 +17,7 @@ test('testing that getUserData returns an object with user password', (t) => {
     })
     .then((queryResult) => {
       t.equal(
-        queryResult.password,
+        queryResult[0].password,
         'passworddd',
         'queryResult should contain passworddd',
       );
