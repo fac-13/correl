@@ -1,8 +1,7 @@
 const dbConnect = require('../database/db_connect.js');
 
 // get username and password from users table
-const getUserData = username => dbConnect.query('SELECT password FROM users WHERE username=$1', [username])
-  .then(res => res[0]);
+const getUserData = username => dbConnect.query('SELECT password FROM users WHERE username=$1', [username]);
 
 
 // get all user symptoms from symptoms table

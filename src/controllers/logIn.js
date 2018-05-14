@@ -7,8 +7,8 @@ exports.get = (req, res) => {
 };
 
 
-exports.post = (req, res) => {
-  console.log('arrives');
+exports.post = (req, res, next) => {
+  console.log('sasdf');
   const { username } = req.body;
   const { password } = req.body;
   getQueries.getUserData(username)
@@ -20,10 +20,13 @@ exports.post = (req, res) => {
     }).then((result) => {
       if (result) {
         req.session.loggedIn = true;
-        req.session.username = req.body.username;
+        req.session.username = username;
         res.redirect('/profile');
       } else {
         res.render('login', { notmatch: true });
       }
+    }).catch((err) => {
+      console.log(err);
+      next(err);
     });
 };
