@@ -46,4 +46,16 @@ const makeRequest = function (url, cb) {
   xhr.send();
 };
 
+const frontRender = function (err, response) {
+  console.log('in front end render');
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('data from backend', response);
+  }
+};
+
+makeRequest('/getGraphData', frontRender);
+
+d3.select('#graph').attr('class', 'test');
 
