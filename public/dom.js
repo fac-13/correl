@@ -46,7 +46,7 @@ const makeRequest = function (url, cb) {
   xhr.send();
 };
 
-//global variables 
+//global variables
 var chart_width = 500;
 var chart_height =500;
 var padding = 50;
@@ -57,26 +57,26 @@ var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z')
 var testData = {
   symptoms: [
     {symptom: 'fatigue', rating: 3, date_entered: '2018-03-11T11:30:00.000Z' },
-    {symptom: 'fatigue', rating: 8, date_entered: '2018-03-12T11:30:00.000Z' }, 
-    {symptom: 'mood', rating: 6, date_entered: '2018-03-12T11:30:00.000Z'}, 
-    {symptom: 'fatigue', rating: 7, date_entered: '2018-03-12T11:30:00.000Z'}, 
+    {symptom: 'fatigue', rating: 8, date_entered: '2018-03-12T11:30:00.000Z' },
+    {symptom: 'mood', rating: 6, date_entered: '2018-03-12T11:30:00.000Z'},
+    {symptom: 'fatigue', rating: 7, date_entered: '2018-03-12T11:30:00.000Z'},
     {symptom: 'mood', rating: 7, date_entered: '2018-03-12T11:30:00.000Z'},
-    {symptom: 'fatigue', rating: 9, date_entered:'2018-03-14T09:15:00.000Z'}, 
-    {symptom: 'mood', rating: 6, date_entered: '2018-03-14T09:15:00.000Z'}, 
-    {symptom: 'fatigue', rating: 7, date_entered: '2018-03-15T08:18:00.000Z'}, 
+    {symptom: 'fatigue', rating: 9, date_entered:'2018-03-14T09:15:00.000Z'},
+    {symptom: 'mood', rating: 6, date_entered: '2018-03-14T09:15:00.000Z'},
+    {symptom: 'fatigue', rating: 7, date_entered: '2018-03-15T08:18:00.000Z'},
     {symptom: 'mood', rating: 7, date_entered: '2018-03-15T08:18:00.000Z'},
-    {symptom: 'fatigue', rating: 9, date_entered: '2018-03-16T12:09:00.000Z'}, 
+    {symptom: 'fatigue', rating: 9, date_entered: '2018-03-16T12:09:00.000Z'},
     {symptom: 'mood', rating: 6, date_entered: '2018-03-16T12:09:00.000Z'}],
 factors: [
-  {factor: 'sleep', rating: 3, date_entered: '2018-03-12T11:30:00.000Z'}, 
-  {factor: 'water', rating: 5, date_entered: '2018-03-12T11:30:00.000Z'}, 
-  {factor: 'sleep', rating: 4, date_entered: '2018-03-13T07:18:00.000Z'}, 
-  {factor: 'water', rating: 4, date_entered: '2018-03-13T07:18:00.000Z'}, 
-  {factor: 'sleep', rating: 5, date_entered:'2018-03-14T09:15:00.000Z'}, 
-  {factor: 'water', rating: 4, date_entered:'2018-03-14T09:15:00.000Z'}, 
-  {factor: 'sleep', rating: 2, date_entered: '2018-03-15T08:18:00.000Z'}, 
-  {factor: 'water', rating: 4, date_entered: '2018-03-15T08:18:00.000Z'}, 
-  {factor: 'sleep', rating: 3, date_entered: '2018-03-16T12:09:00.000Z'}, 
+  {factor: 'sleep', rating: 3, date_entered: '2018-03-12T11:30:00.000Z'},
+  {factor: 'water', rating: 5, date_entered: '2018-03-12T11:30:00.000Z'},
+  {factor: 'sleep', rating: 4, date_entered: '2018-03-13T07:18:00.000Z'},
+  {factor: 'water', rating: 4, date_entered: '2018-03-13T07:18:00.000Z'},
+  {factor: 'sleep', rating: 5, date_entered:'2018-03-14T09:15:00.000Z'},
+  {factor: 'water', rating: 4, date_entered:'2018-03-14T09:15:00.000Z'},
+  {factor: 'sleep', rating: 2, date_entered: '2018-03-15T08:18:00.000Z'},
+  {factor: 'water', rating: 4, date_entered: '2018-03-15T08:18:00.000Z'},
+  {factor: 'sleep', rating: 3, date_entered: '2018-03-16T12:09:00.000Z'},
   {factor: 'water', rating: 6, date_entered: '2018-03-16T12:09:00.000Z'}]
 }
 
@@ -98,13 +98,27 @@ var groupData = function(data, container, typePlural, type) {
     container.push(new Array());
   }
 
-  // adding all objects with the same type name to an array 
+  // adding all objects with the same type name to an array
   uniqueNames.forEach(function(x) {
     container[j] = arr.filter(function(obj) {
       return obj[type] === x;
     });
     j++;
   });
+
+  // uniqueNames.forEach(function(name){
+
+  //   var line = d3
+  //     .line()
+  //     .x(function(d){
+  //       return x_scale(d.date_entered)
+  //     })
+  //     .y(function(d){
+  //       return y_scale(d.rating)
+  //     });
+
+
+
 }
 
 var sympContainer = []
@@ -131,7 +145,7 @@ const frontRender = function (err, response) {
 
     // Scales
     // find minimum and maximum values
-    var minSympDate = 
+    var minSympDate =
       d3.min(testData.symptoms, function(obj){
       return obj.date_entered
     })
@@ -142,7 +156,7 @@ const frontRender = function (err, response) {
     var minDate = d3.min(dates)
     console.log(minDate)
 
-    var maxSympDate = 
+    var maxSympDate =
       d3.max(testData.symptoms, function(obj){
       return obj.date_entered
     })
@@ -169,16 +183,16 @@ const frontRender = function (err, response) {
       .append('svg')
       .attr('width', chart_width)
       .attr('height', chart_height);
-    
+
     // create axes
     var x_axis = d3
       .axisBottom(x_scale)
       .tickFormat(d3.timeFormat('%d-%m-%Y')).ticks(d3.timeDay)
-  
+
     var y_axis = d3
       .axisLeft(y_scale)
       .ticks(11);
-    
+
     svg
       .append('g')
       .attr('transform', 'translate(0,' + (chart_height - padding) + ')')
@@ -189,7 +203,9 @@ const frontRender = function (err, response) {
       .attr('transform', 'translate(' + padding + ', 0)')
       .call(y_axis)
 
-    //create line
+
+
+    // create line
     var line = d3
       .line()
       .x(function(d){
@@ -198,33 +214,58 @@ const frontRender = function (err, response) {
       .y(function(d){
         return y_scale(d.rating)
       })
-   
-    var line_2 = d3
-      .line()
-      .x(function(d){
-        return x_scale(d.date_entered)
+
+    var symptoms = svg
+      .selectAll('.symptoms')
+      .data(sympContainer)
+      .enter()
+      .append('g')
+      .attr('class', 'symptoms')
+
+
+
+    symptoms.append('path')
+      .attr('fill', 'none')
+      .style('stroke', function(){
+        return "hsl(" + Math.random() * 360 + ",100%,50%)";
       })
-      .y(function(d){
-        return y_scale(d.rating)
+      .attr('stroke-width', 3)
+      .attr('d', function(d){
+        console.log(d)
+        return line(d)
       })
 
-   
-      svg
-      .append('path')
-      .datum(sympContainer[0])
-      .attr('fill', 'none')
-      .attr('stroke', '#73FF36')
-      .attr('stroke-width', 5)
-      .attr('d', line);
+    var factors = svg
+      .selectAll('.factors')
+      .data(factContainer)
+      .enter()
+      .append('g')
+      .attr('class', 'factors')
 
-       svg
-      .append('path')
-      .datum(factContainer[0])
+
+
+    factors.append('path')
       .attr('fill', 'none')
-      .attr('stroke', 'purple')
-      .attr('stroke-width', 5)
-      .attr('d', line_2);
-      
+      .style('stroke', function(){
+        return "hsl(" + Math.random() * 360 + ",100%,50%)";
+      })
+      .attr('stroke-width', 3)
+      .attr('d', function(d){
+        console.log(d)
+        return line(d)
+      })
+
+
+
+      // svg
+      // .append('path')
+      // .datum(sympContainer[0])
+      // .attr('fill', 'none')
+      // .attr('stroke', '#73FF36')
+      // .attr('stroke-width', 5)
+      // .attr('d', line);
+
+
   }
 };
 
