@@ -3,14 +3,13 @@
     <img src="">
   </li>
   {{#if loggedOut}}
-
-    <li>Join</li>
-  <li>Login</li>
+  <li>  <a href="/register">join</a>  </li>
+  <li>  <a href="/login">Login</a>  </li>
 
   {{else}}
 
    <li>{{username}}</li>
- <li>Logout</li>
- 
+   <li> <a href="/">logout</a> </li>
+
  {{/if}}
 </nav>
