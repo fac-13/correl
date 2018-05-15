@@ -80,6 +80,66 @@ factors: [
   {factor: 'water', rating: 6, date_entered: '2018-03-16T12:09:00.000Z'}]
 }
 
+var symptomData = function(data, container){
+  var symptomArr = data.symptoms
+  var symptomNames = []
+
+  var j = 0
+
+  // creating an array of the names of the unique symptoms
+  symptomArr.forEach(function(obj){
+    if(!symptomNames.includes(obj.symptom)){
+      symptomNames.push(obj.symptom)
+    }
+  })
+
+  // looping through the names of the symptoms and creating a new array for each one
+  for(var i=0; i < symptomNames.length; i++) {
+    container.push(new Array());
+  }
+
+  // adding all objects with the same symptom name to an array 
+  symptomNames.forEach(function(x){
+    container[j] = symptomArr.filter(function(obj){
+      return obj.symptom === x;
+    })
+    j++
+  })
+}
+
+var factorData = function(data, container){
+  var factorArr = data.factors
+  var factorNames = []
+  
+  var j = 0
+
+  // creating an array of the names of the unique symptoms
+  factorArr.forEach(function(obj){
+    if(!factorNames.includes(obj.factor)){
+      factorNames.push(obj.factor)
+    }
+  })
+
+  // looping through the names of the factors and creating a new array for each one
+  for(var i=0; i < factorNames.length; i++) {
+    container.push(new Array());
+  }
+
+  // adding all objects with the same factor name to an array 
+  factorNames.forEach(function(x){
+    container[j] = factorArr.filter(function(obj){
+      return obj.factor === x;
+    })
+    j++
+  })
+
+  
+}
+
+var sympContainer = []
+var factContainer = []
+symptomData(testData, sympContainer)
+factorData(testData, factContainer)
 
 
 
@@ -180,11 +240,19 @@ const frontRender = function (err, response) {
    
       svg
       .append('path')
-      .datum(testData.symptoms) //symContainer[0]
+      .datum(sympContainer[0])
       .attr('fill', 'none')
       .attr('stroke', '#73FF36')
       .attr('stroke-width', 5)
       .attr('d', line);
+
+       svg
+      .append('path')
+      .datum(factContainer[0])
+      .attr('fill', 'none')
+      .attr('stroke', 'purple')
+      .attr('stroke-width', 5)
+      .attr('d', line_2);
       
   }
 };
