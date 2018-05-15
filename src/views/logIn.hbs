@@ -1,9 +1,16 @@
 <h1>Log In</h1>
-<form method="POST" action="/login">
-  Username
-  <input type="text" name="username"> Password
-  <input type="text" name="password"> {{#if notmatch}}
-  <p>incorrect details, please try again</p>
-  {{/if}}
-  <button>login</button>
-</form>
+<section>
+  <form action="/login" method="POST" class="signup__form" novalidate>
+    <label for="login">Login:
+      <input id="login" type="text" name="username" required/>
+    </label>
+    <label for="password">Password:
+      <input id="logPassword" type="password" name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
+    </label> {{#if notmatch}}
+    <p>incorrect details, please try again</p>
+    {{/if}}
+    <p class="error" aria-live="polite"></p>
+    <button>Submit</button>
+  </form>
+</section>
+<script src="/login.js"></script>

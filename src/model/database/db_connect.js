@@ -11,6 +11,8 @@ if (!DB_URL) {
   throw new Error('Environment variable DB_URL must be set!');
 }
 
+console.log({DB_URL})
+
 module.exports = pgp({
-  DB_URL,
+  connectionString: DB_URL,
 });
