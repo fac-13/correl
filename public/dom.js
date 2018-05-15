@@ -41,4 +41,3 @@ scaleButtons.forEach(function (button) {
     input.classList.remove('hidden');
   });
 });
-
