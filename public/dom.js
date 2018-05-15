@@ -80,67 +80,38 @@ factors: [
   {factor: 'water', rating: 6, date_entered: '2018-03-16T12:09:00.000Z'}]
 }
 
-var symptomData = function(data, container){
-  var symptomArr = data.symptoms
-  var symptomNames = []
+var groupData = function(data, container, typePlural, type) {
+  var arr = data[typePlural];
+  var uniqueNames = [];
 
-  var j = 0
+  var j = 0;
 
   // creating an array of the names of the unique symptoms
-  symptomArr.forEach(function(obj){
-    if(!symptomNames.includes(obj.symptom)){
-      symptomNames.push(obj.symptom)
+  arr.forEach(function(obj){
+    if(!uniqueNames.includes(obj[type])) {
+      uniqueNames.push(obj[type]);
     }
-  })
+  });
 
-  // looping through the names of the symptoms and creating a new array for each one
-  for(var i=0; i < symptomNames.length; i++) {
+  // looping through the names of the types and creating a new array for each one
+  for(var i=0; i < uniqueNames.length; i++) {
     container.push(new Array());
   }
 
-  // adding all objects with the same symptom name to an array 
-  symptomNames.forEach(function(x){
-    container[j] = symptomArr.filter(function(obj){
-      return obj.symptom === x;
-    })
-    j++
-  })
-}
-
-var factorData = function(data, container){
-  var factorArr = data.factors
-  var factorNames = []
-  
-  var j = 0
-
-  // creating an array of the names of the unique symptoms
-  factorArr.forEach(function(obj){
-    if(!factorNames.includes(obj.factor)){
-      factorNames.push(obj.factor)
-    }
-  })
-
-  // looping through the names of the factors and creating a new array for each one
-  for(var i=0; i < factorNames.length; i++) {
-    container.push(new Array());
-  }
-
-  // adding all objects with the same factor name to an array 
-  factorNames.forEach(function(x){
-    container[j] = factorArr.filter(function(obj){
-      return obj.factor === x;
-    })
-    j++
-  })
-
-  
+  // adding all objects with the same type name to an array 
+  uniqueNames.forEach(function(x) {
+    container[j] = arr.filter(function(obj) {
+      return obj[type] === x;
+    });
+    j++;
+  });
 }
 
 var sympContainer = []
 var factContainer = []
-symptomData(testData, sympContainer)
-factorData(testData, factContainer)
 
+groupData(testData, sympContainer, 'symptoms', 'symptom');
+groupData(testData, factContainer, 'factors', 'factor');
 
 
 const frontRender = function (err, response) {
