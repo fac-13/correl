@@ -214,6 +214,9 @@ const frontRender = function (err, response) {
       .y(function(d){
         return y_scale(d.rating)
       })
+      var coloursFact = ['red', 'blue', 'pink', 'orange', 'black']
+      var coloursSymp = ['pink', 'yellow', 'pink', 'orange', 'black']
+
 
     var symptoms = svg
       .selectAll('.symptoms')
@@ -221,19 +224,28 @@ const frontRender = function (err, response) {
       .enter()
       .append('g')
       .attr('class', 'symptoms')
+      .attr('class', function(d){
+        console.log('d', d)
+        return d[0].symptom
+      })
+
     symptoms
       .append('path')
       .attr('fill', 'none')
       .attr('data-legend', function(d){
         return d.symptom
       })
-      .style('stroke', function(){
-        return "hsl(" + Math.random() * 360 + ",100%,50%)";
-      })
+      .style('stroke', function(d, i){
+        return coloursSymp[i] })
       .attr('stroke-width', 3)
       .attr('d', function(d){
         return line(d)
       })
+      .attr('class', function(d){
+        console.log('d', d)
+        return d[0].symptom
+      })
+
 
       // CODE TO ADD LABELS TO THE END OF THE LINES
     // symptoms
@@ -258,6 +270,10 @@ const frontRender = function (err, response) {
       .enter()
       .append('g')
       .attr('class', 'factors')
+      .attr('class', function(d){
+        console.log('d', d)
+        return d[0].factor
+      })
 
     factors
       .append('path')
@@ -265,13 +281,16 @@ const frontRender = function (err, response) {
       .attr('data-legend', function(d){
         return d.factor
       })
-      .style('stroke', function(){
-        return "hsl(" + Math.random() * 360 + ",100%,50%)";
-      })
+      .style('stroke', function(d, i){
+          return coloursFact[i] })
       .attr('stroke-width', 3)
       .attr('d', function(d){
         console.log(d)
         return line(d)
+      })
+      .attr('class', function(d){
+        console.log('d', d)
+        return d[0].factor
       })
 
       var sympLegend = svg
@@ -283,24 +302,73 @@ const frontRender = function (err, response) {
           return "translate(" + (chart_width - 200) + "," + (i * 15 + 20) + ")";
         })
         .attr('class', '.legend')
+        .attr('class', function(d){
+          console.log('d', d)
+          return d[0].symptom
+        })
 
         sympLegend
           .append('rect')
           .attr('width', 10)
           .attr('height', 10)
-          .attr('fill', function(){
-          return "hsl(" + Math.random() * 360 + ",100%,50%)" })
+          .attr('fill', function(d, i){
+          return coloursSymp[i] })
+          .attr('class', function(d){
+            console.log('d', d)
+            return d[0].symptom
+          })
 
         sympLegend
             .append('text')
             .text(function(d){
             return d[0].symptom
             })
-            // .style('font-size', 12)
-            // .attr('y', 6)
-            // .attr('x', chart_width - 24)
-            // .attr('dy', '0.35em')
+            .attr('transform', function(d,i){
+              return "translate(20,10)";
+            })
+            .attr('class', function(d){
+              console.log('d', d)
+              return d[0].symptom
+            })
+            // create legend for factors
 
+        var factLegend = svg
+            .selectAll('.legend')
+            .data(factContainer)
+            .enter()
+            .append('g')
+            .attr('transform', function(d,i){
+              return "translate(" + (chart_width - 200) + "," + (i * 15 + 60) + ")";
+            })
+            .attr('class', '.legend')
+            .attr('class', function(d){
+              console.log('d', d)
+              return d[0].factor
+            })
+
+            factLegend
+              .append('rect')
+              .attr('width', 10)
+              .attr('height', 10)
+              .attr('fill', function(d, i){
+              return coloursFact[i] })
+              .attr('class', function(d){
+                console.log('d', d)
+                return d[0].factor
+              })
+
+            factLegend
+                .append('text')
+                .text(function(d){
+                return d[0].factor
+                })
+                .attr('transform', function(d,i){
+                  return "translate(20,10)";
+                })
+                .attr('class', function(d){
+                  console.log('d', d)
+                  return d[0].factor
+                })
 
 
       // svg
