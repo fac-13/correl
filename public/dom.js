@@ -47,8 +47,8 @@ const makeRequest = function (url, cb) {
 };
 
 //global variables 
-var chart_width = 1000;
-var chart_height =8000;
+var chart_width = 500;
+var chart_height =500;
 var padding = 50;
 
 var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z')
@@ -185,7 +185,7 @@ const frontRender = function (err, response) {
       .attr('stroke', '#73FF36')
       .attr('stroke-width', 5)
       .attr('d', line);
-
+      
   }
 };
 
