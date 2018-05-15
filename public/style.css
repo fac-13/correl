@@ -10,7 +10,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 button {
   margin: 5px;
   background-color: white;
@@ -69,6 +68,7 @@ h1 {
 /* TOP NAV */
 #top-nav {
   background-color: white;
+  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
 }
@@ -79,4 +79,8 @@ h1 {
   margin: .3rem;
   padding: .3rem;
   list-style-type: none;
+}
+
+#top-nav img {
+  max-height: 2.5rem;
 }
