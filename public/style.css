@@ -35,7 +35,9 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
 
 ul {
@@ -54,7 +56,7 @@ h1 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 /* d3 */

@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const favicon = require('express-favicon');
 require('env2')('./config.env');
+const favicon = require('serve-favicon');
 const cookieSession = require('cookie-session');
 const helpers = require('./views/helpers/index');
 
