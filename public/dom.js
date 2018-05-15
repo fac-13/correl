@@ -47,9 +47,9 @@ const makeRequest = function (url, cb) {
 };
 
 //global variables
-var chart_width = 500;
+var chart_width = 700;
 var chart_height =500;
-var padding = 50;
+var padding = 100;
 
 var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z')
 
@@ -221,19 +221,36 @@ const frontRender = function (err, response) {
       .enter()
       .append('g')
       .attr('class', 'symptoms')
-
-
-
-    symptoms.append('path')
+    symptoms
+      .append('path')
       .attr('fill', 'none')
+      .attr('data-legend', function(d){
+        return d.symptom
+      })
       .style('stroke', function(){
         return "hsl(" + Math.random() * 360 + ",100%,50%)";
       })
       .attr('stroke-width', 3)
       .attr('d', function(d){
-        console.log(d)
         return line(d)
       })
+
+      // CODE TO ADD LABELS TO THE END OF THE LINES
+    // symptoms
+    //   .append('text')
+    //   .datum(function(d, i){
+    //     return {symptom: d[i].symptom, date_entered: d[d.length-1].date_entered, rating: d[d.length-1].rating }
+    //   })
+    //   .attr('transform', function(d){
+    //     return 'translate(' + x_scale(d.date_entered) + ',' + y_scale(d.rating) + ')';
+    //   })
+    //   .attr('x', 3)
+    //   .attr('dy', '0.35em')
+    //   .style('font', '10px sans-serif')
+    //   .text(function(d){
+    //     return d.symptom;
+    //   })
+
 
     var factors = svg
       .selectAll('.factors')
@@ -242,10 +259,12 @@ const frontRender = function (err, response) {
       .append('g')
       .attr('class', 'factors')
 
-
-
-    factors.append('path')
+    factors
+      .append('path')
       .attr('fill', 'none')
+      .attr('data-legend', function(d){
+        return d.factor
+      })
       .style('stroke', function(){
         return "hsl(" + Math.random() * 360 + ",100%,50%)";
       })
@@ -254,6 +273,33 @@ const frontRender = function (err, response) {
         console.log(d)
         return line(d)
       })
+
+      var sympLegend = svg
+        .selectAll('.legend')
+        .data(sympContainer)
+        .enter()
+        .append('g')
+        .attr('transform', function(d,i){
+          return "translate(" + (chart_width - 200) + "," + (i * 15 + 20) + ")";
+        })
+        .attr('class', '.legend')
+
+        sympLegend
+          .append('rect')
+          .attr('width', 10)
+          .attr('height', 10)
+          .attr('fill', function(){
+          return "hsl(" + Math.random() * 360 + ",100%,50%)" })
+
+        sympLegend
+            .append('text')
+            .text(function(d){
+            return d[0].symptom
+            })
+            // .style('font-size', 12)
+            // .attr('y', 6)
+            // .attr('x', chart_width - 24)
+            // .attr('dy', '0.35em')
 
 
 
