@@ -3,14 +3,16 @@
     <img src="">
   </li>
   {{#if loggedOut}}
-
+  <div class="cta-links">
     <li>Join</li>
-  <li>Login</li>
+    <li>Login</li>
+  </div>
 
   {{else}}
+  <div class="cta-links">
+    <li>{{username}}</li>
+    <li>Logout</li>
+  </div>
 
-   <li>{{username}}</li>
- <li>Logout</li>
- 
- {{/if}}
+  {{/if}}
 </nav>
