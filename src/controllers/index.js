@@ -11,7 +11,8 @@ const seeData = require('./seeData');
 const symptoms = require('./symptoms');
 const factors = require('./factors');
 const error = require('./error');
-// const logOut = require('./logOut');
+const logOut = require('./logOut');
+const instruction = require('./instruction');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -19,7 +20,11 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/', home.get);
 router.get('/register', register.get);
+// instruction pages
+router.get('/instruction', instruction.get);
+
 router.get('/logIn', logIn.get);
+router.get('/logOut', logOut.get);
 router.get('/profile', profile.get);
 router.get('/addData', addData.get);
 router.get('/seeData', seeData.get);
@@ -37,7 +42,7 @@ router.get('/factors/scaleSetup', factors.getScaleSetup);
 // post routes
 router.post('/logIn', logIn.post);
 router.post('/register', register.post);
-router.post('factors/add', factors.postAdd);
+router.post('/factors/add', factors.postAdd);
 router.post('/factors/scaleSetup', factors.postScaleSetup);
 // router.post('/addData');
 // router.post('/symptoms');
