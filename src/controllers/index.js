@@ -11,8 +11,8 @@ const seeData = require('./seeData');
 const symptoms = require('./symptoms');
 const factors = require('./factors');
 const error = require('./error');
+const logOut = require('./logOut');
 const instruction = require('./instruction');
-// const logOut = require('./logOut');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -24,6 +24,7 @@ router.get('/register', register.get);
 router.get('/instruction', instruction.get);
 
 router.get('/logIn', logIn.get);
+router.get('/logOut', logOut.get);
 router.get('/profile', profile.get);
 router.get('/addData', addData.get);
 router.get('/seeData', seeData.get);
