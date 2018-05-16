@@ -128,7 +128,7 @@ groupData(testData, sympContainer, 'symptoms', 'symptom');
 groupData(testData, factContainer, 'factors', 'factor');
 
 
-const frontRender = function (err, response) {
+var renderGraph = function (err, response) {
   if (err) {
     console.log(err);
   } else {
@@ -381,5 +381,5 @@ const frontRender = function (err, response) {
   }
 };
 
-makeRequest('/getGraphData', frontRender);
+makeRequest('/getGraphData', renderGraph);
 
