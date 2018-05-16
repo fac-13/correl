@@ -207,17 +207,18 @@ const frontRender = function (err, response) {
 
     // create line
     var line = d3
-      .line()
+      .line() 
       .x(function(d){
         return x_scale(d.date_entered)
       })
       .y(function(d){
         return y_scale(d.rating)
       })
-      var coloursFact = ['red', 'blue', 'pink', 'orange', 'black']
-      var coloursSymp = ['pink', 'yellow', 'pink', 'orange', 'black']
 
-
+      var colorsSymPalette = d3.scaleOrdinal(d3.schemeCategory10); 
+      var colorsFactPalette = d3.scaleOrdinal(d3.schemeSet3);
+      
+      
     var symptoms = svg
       .selectAll('.symptoms')
       .data(sympContainer)
@@ -236,7 +237,7 @@ const frontRender = function (err, response) {
         return d.symptom
       })
       .style('stroke', function(d, i){
-        return coloursSymp[i] })
+        return colorsSymPalette(i) })
       .attr('stroke-width', 3)
       .attr('d', function(d){
         return line(d)
@@ -281,8 +282,9 @@ const frontRender = function (err, response) {
       .attr('data-legend', function(d){
         return d.factor
       })
-      .style('stroke', function(d, i){
-          return coloursFact[i] })
+      .style('stroke', function(d, i) {
+        return colorsFactPalette(i);
+      })
       .attr('stroke-width', 3)
       .attr('d', function(d){
         console.log(d)
@@ -312,7 +314,7 @@ const frontRender = function (err, response) {
           .attr('width', 10)
           .attr('height', 10)
           .attr('fill', function(d, i){
-          return coloursSymp[i] })
+          return colorsSymPalette(i) })
           .attr('class', function(d){
             console.log('d', d)
             return d[0].symptom
@@ -351,7 +353,7 @@ const frontRender = function (err, response) {
               .attr('width', 10)
               .attr('height', 10)
               .attr('fill', function(d, i){
-              return coloursFact[i] })
+              return colorsFactPalette(i) })
               .attr('class', function(d){
                 console.log('d', d)
                 return d[0].factor
