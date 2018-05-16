@@ -8,7 +8,6 @@ exports.get = (req, res) => {
 
 
 exports.post = (req, res, next) => {
-  console.log('sasdf');
   const { username } = req.body;
   const { password } = req.body;
   getQueries.getUserData(username)
