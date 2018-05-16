@@ -13,8 +13,8 @@ var xhr = function (url, cb) {
     xhr.send();
 }
 
+// CODE FOR SCALES
 
-d3.select('#graph').attr('class', 'test')
 var scales = document.querySelectorAll('input[type=range]')
 
 scales.forEach((scale) => {
