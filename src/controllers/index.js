@@ -12,6 +12,7 @@ const symptoms = require('./symptoms');
 const factors = require('./factors');
 const error = require('./error');
 const logOut = require('./logOut');
+const instruction = require('./instruction');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -19,6 +20,9 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/', home.get);
 router.get('/register', register.get);
+// instruction pages
+router.get('/instruction', instruction.get);
+
 router.get('/logIn', logIn.get);
 router.get('/logOut', logOut.get);
 router.get('/profile', profile.get);
