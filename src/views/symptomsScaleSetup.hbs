@@ -1,14 +1,13 @@
 <h1>scale setup</h1>
-
-<form action="/symptoms/scaleSetup" method="post" id="setUpScale">
+<span>
+  <a href="/scaleInfo">Go Back</a>
+</span>
+<form action="/symptoms/scaleSetup" method="POST" id="setUpScale">
   {{#times 10}}
   <div>
     <button id="symptom-{{this}}" class="scale-buttons" type="button">{{this}}</button>
-    <input type="text" class="scale-comments hidden">
+    <input type="text" class="inline-input hidden">
   </div>
   <br> {{/times}}
-
+  <button class="add" type="submit">Save &amp; Finish</button>
 </form>
-
-<a href="scaleInfo">back</a>
-<a href="home">save & finish</a>
