@@ -44,7 +44,7 @@ var scaleButtons = document.querySelectorAll('.scale-buttons');
 
 
 var expandButtons = document.querySelectorAll('.expand');
-var scales = document.querySelectorAll('.scale-data');
+
 
 expandButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
