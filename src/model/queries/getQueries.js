@@ -11,8 +11,10 @@ left join symptom_scale AS sc on sy.id=sc.symptom_id
 where sy.user_id = (select id from users where username=$1)`, [username]);
 
 // get all user factors from factor table
-const getFactors = username => dbConnect.query('select factor, factors.id as factorid, factor_scale.* from factors left join factor_scale on factors.id=factor_scale.factor_id where factors.user_id = (select id from users where username=$1)', [username]);
-
+const getFactors = (username) => {
+  console.log('');
+  return dbConnect.query('select factor, factors.id as factorid, factor_scale.* from factors left join factor_scale on factors.id=factor_scale.factor_id where factors.user_id = (select id from users where username=$1)', [username]);
+};
 // get scale comments for symptom scale
 const getSymptomScale = (symptom, username) => dbConnect.query('select * from symptom_scale where symptom_id = (select id from symptoms where symptom=$1) and user_id = (select id from users where username=$2);)', [symptom, username]);
 

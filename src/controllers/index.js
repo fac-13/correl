@@ -37,6 +37,7 @@ router.get('/factors/scaleSetup', factors.getScaleSetup);
 // post routes
 router.post('/logIn', logIn.post);
 router.post('/register', register.post);
+router.post('/factors/scaleSetup', factors.postScaleSetup);
 // router.post('/addData');
 // router.post('/symptoms');
 // router.post('/factors');
