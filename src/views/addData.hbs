@@ -3,16 +3,26 @@
 <h2>Symptoms</h2>
 <ul>
   {{#each symptomsList}}
-  <div id="symptom-rating">
+  <div class="symptom-rating">
     <span>
       <li>{{this.symptom}}</li>
       {{!-- need to add icon at the end --}}
       <button class="expand">E</button>
     </span>
     <br>
-    <input id="scale-{{this.symptom}}" type="range" min="0" max="10" value="0" steps="1">
-    <span id="scale-{{this.symptom}}-number"></span>
-    <p id="comment-{{this.symptom}}">Any comments you've saved will appear here as you move the scale</p>
+    <input id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
+    <span id="scale-s{{this.symptomid}}-number"></span>
+    <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+    <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-3" class="hidden">{{this.comment_3}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-4" class="hidden">{{this.comment_4}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-5" class="hidden">{{this.comment_5}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-6" class="hidden">{{this.comment_6}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-7" class="hidden">{{this.comment_7}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-8" class="hidden">{{this.comment_8}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-9" class="hidden">{{this.comment_9}}</p>
+    <p id="symptom-s{{this.symptomid}}-comment-10" class="hidden">{{this.comment_10}}</p>
   </div>
   {{/each}}
 </ul>
@@ -22,11 +32,27 @@
 
 <ul>
   {{#each factorsList}}
-  <span id="factors-rating">
-    <li>{{this.factor}}</li>
-    {{!-- need to add icon at the end --}}
-    <button class="expand">E</button>
-  </span>
+  <div class="factor-rating">
+    <span>
+      <li>{{this.factor}}</li>
+      {{!-- need to add icon at the end --}}
+      <button class="expand">E</button>
+    </span>
+    <br>
+    <input id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="0" steps="1">
+    <span id="scale-f{{this.factorid}}-number"></span>
+    <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
+  </div>
+  <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
+  <p id="factor-f{{this.factorid}}-comment-2" class="hidden">{{this.comment_2}}</p>
+  <p id="factor-f{{this.factorid}}-comment-3" class="hidden">{{this.comment_3}}</p>
+  <p id="factor-f{{this.factorid}}-comment-4" class="hidden">{{this.comment_4}}</p>
+  <p id="factor-f{{this.factorid}}-comment-5" class="hidden">{{this.comment_5}}</p>
+  <p id="factor-f{{this.factorid}}-comment-6" class="hidden">{{this.comment_6}}</p>
+  <p id="factor-f{{this.factorid}}-comment-7" class="hidden">{{this.comment_7}}</p>
+  <p id="factor-f{{this.factorid}}-comment-8" class="hidden">{{this.comment_8}}</p>
+  <p id="factor-f{{this.factorid}}-comment-9" class="hidden">{{this.comment_9}}</p>
+  <p id="factor-f{{this.factorid}}-comment-10" class="hidden">{{this.comment_10}}</p>
   {{/each}}
 </ul>
 

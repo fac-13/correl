@@ -12,5 +12,5 @@ if (!DB_URL) {
 }
 
 module.exports = pgp({
-  DB_URL,
+  connectionString: DB_URL,
 });
