@@ -19,7 +19,7 @@ var scales = document.querySelectorAll('input[type=range]')
 
 scales.forEach((scale) => {
     scale.addEventListener('change', function () {
-        var currentScaleId = `${this.id}`; //e.g. gives scale-s1   
+        var currentScaleId = this.id; //e.g. gives scale-s1   
         var commentBoxId = `comment${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
         var scaleNumberId = `${this.id}-number`;
         var symptomScaleNumber = document.querySelector(`#${scaleNumberId}`);
@@ -31,10 +31,10 @@ scales.forEach((scale) => {
         var factorComment = document.querySelector(`#factor${currentScaleId.slice(currentScaleId.indexOf('-'))}-comment-${this.value}`);
         if (scale.parentNode.className.includes('symptom')) {
             //Symptoms
-            symptomScaleNumber.textContent = `${this.value}`;
+            symptomScaleNumber.textContent = this.value;
             symptomCommentBox.textContent = symptomComment.textContent === null || symptomComment.textContent === '' ? "Any comments you've saved will appear here as you move the scale" : symptomComment.textContent;
         } else {
-            factorScaleNumber.textContent = `${this.value}`;
+            factorScaleNumber.textContent = this.value;
             factorCommentBox.textContent = factorComment.textContent === null || factorComment.textContent === '' ? "Any comments you've saved will appear here as you move the scale" : factorComment.textContent;
         }
     });
@@ -44,7 +44,7 @@ var scaleButtons = document.querySelectorAll('.scale-buttons');
 
 scaleButtons.forEach(function (button) {
     button.addEventListener('click', function () {
-        let input = button.parentNode.querySelector('input');
+        var input = button.parentNode.querySelector('input');
         input.classList.remove('hidden');
     });
 });
