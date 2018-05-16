@@ -47,16 +47,9 @@ exports.getScaleSetup = (req, res) => {
   }
 };
 
-exports.postScaleSetup = (req, res) => {
-  console.log(req.body);
-  console.log('username', req.session.username);
-  return getQueries
-    .getFactors(req.session.username)
-    .then((factor) => {
-      console.log('factor', factor[factor.length - 1].factor);
-      return postQueries
-        .postFactorScale(factor[factor.length - 1].factor, req.session.username, req.body['1'], req.body['2'], req.body['3'], req.body['4'], req.body['5'], req.body['6'], req.body['7'], req.body['8'], req.body['9'], req.body['10']);
-    })
-    .then(() => res.render('profile'))
-    .catch(err => console.log(err.message));
-};
+exports.postScaleSetup = (req, res) => getQueries
+  .getFactors(req.session.username)
+  .then(factor => postQueries
+    .postFactorScale(factor[factor.length - 1].factor, req.session.username, req.body['1'], req.body['2'], req.body['3'], req.body['4'], req.body['5'], req.body['6'], req.body['7'], req.body['8'], req.body['9'], req.body['10']))
+  .then(() => res.render('profile'))
+  .catch(err => console.log(err.message));
