@@ -48,15 +48,20 @@ var scales = document.querySelectorAll('.scale-data');
 
 expandButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
-      var expandId = e.target.id
-      var symptom = expandId.split('-')[1]
-      var container = 'container-' + symptom
-      console.log(container)
-      var cont = document.querySelector('#' + container)
-      cont.style.display = 'block'
-
+      console.log(button.parentNode)
+    if(button.parentNode.className.includes('symptom')){
+      var symptom = 'container-' +  e.target.id.split('-')[1]
+      var container = document.querySelector('#' + symptom)
+      container.style.display = 'block'
+    }else{
+      var factor = 'container-' +  e.target.id.split('-')[1]
+      container = document.querySelector('#' + factor)
+      container.style.display = 'block'
+    }
     })
 })
+
+
 
 scaleButtons.forEach(function (button) {
     button.addEventListener('click', function () {
