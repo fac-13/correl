@@ -7,12 +7,14 @@
     <span>
       <li>{{this.symptom}}</li>
       {{!-- need to add icon at the end --}}
-      <button class="expand">E</button>
+      <button class="expand" id='expand-{{this.symptom}}'>E</button>
     </span>
     <br>
-    <input id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
-    <span id="scale-s{{this.symptomid}}-number"></span>
-    <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+    <div id='container-{{this.symptom}}' class='hidden'>
+      <input id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
+      <span id="scale-s{{this.symptomid}}-number">0</span>
+      <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+    </div>
     <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
     <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
     <p id="symptom-s{{this.symptomid}}-comment-3" class="hidden">{{this.comment_3}}</p>

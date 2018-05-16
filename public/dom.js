@@ -42,6 +42,22 @@ scales.forEach((scale) => {
 
 var scaleButtons = document.querySelectorAll('.scale-buttons');
 
+
+var expandButtons = document.querySelectorAll('.expand');
+var scales = document.querySelectorAll('.scale-data');
+
+expandButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var expandId = e.target.id
+      var symptom = expandId.split('-')[1]
+      var container = 'container-' + symptom
+      console.log(container)
+      var cont = document.querySelector('#' + container)
+      cont.style.display = 'block'
+
+    })
+})
+
 scaleButtons.forEach(function (button) {
     button.addEventListener('click', function () {
         var input = button.parentNode.querySelector('input');
