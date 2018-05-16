@@ -169,9 +169,19 @@ let renderGraph = function (err, response) {
           return y_scale(d.rating)
         });
 
-      // Create color palettes - used for line colours and legend
+    // Create color palettes - used for line colours and legend
     let colorsSymPalette = d3.scaleOrdinal(d3.schemeCategory10);
     let colorsFactPalette = d3.scaleOrdinal(d3.schemeSet3);
+
+    // Calculate path length of lines 
+    // From https://stackoverflow.com/questions/30355241/get-the-length-of-a-svg-line-rect-polygon-and-circle-tags/30376660
+    var getPathLength = function(el) {
+      var pathCoords = el.get(0);
+      var pathLength = pathCoords.getTotalLength();
+        return pathLength;
+    }
+
+    var totalLength = chart_width*3
 
     // Add lines for each of the symptoms to the graph
     let symptoms = svg
@@ -182,7 +192,7 @@ let renderGraph = function (err, response) {
       .attr('class', 'symptoms')
       .attr('class', (d) => {
             return d[0].symptom;
-          })
+      })
       .attr('id', (d) => {
             return d[0].symptom + '-line';
           });
@@ -204,6 +214,16 @@ let renderGraph = function (err, response) {
             return d[0].symptom;
           });
 
+    // Animate line drawing for symptom
+    symptoms
+        .attr('stroke-dasharray', totalLength + ' ' + totalLength)
+        .attr('stroke-dashoffset', totalLength)
+        .transition()
+          .duration(9000)
+          .ease(d3.easeLinear)
+          .attr('stroke-dashoffset', 0)
+
+    
     // Add lines for each of the factors to the graph
     let factors = svg
       .selectAll('.factors')
@@ -234,6 +254,15 @@ let renderGraph = function (err, response) {
       .attr('class', (d) => {
             return d[0].factor;
           });
+
+    // Animate line drawing for factor 
+      factors
+        .attr('stroke-dasharray', totalLength + ' ' + totalLength)
+        .attr('stroke-dashoffset', totalLength)
+        .transition()
+          .duration(9000)
+          .ease(d3.easeLinear)
+          .attr('stroke-dashoffset', 0)
 
     // Create legend for symptoms
     let sympLegend = svg
