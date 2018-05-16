@@ -247,6 +247,9 @@ var renderGraph = function (err, response) {
         .attr('class', 'factors')
         .attr('class', function(d) {
           return d[0].factor;
+        })
+        .attr('id', function(d) {
+          return d[0].factor + '-line';
         });
 
     factors
@@ -292,33 +295,8 @@ var renderGraph = function (err, response) {
         })
         .style('opacity', 1)
         .on('click', function(d) {
-          // Create variable for the legend key that was clicked
           var legendKey = this;
-
-          // Find the corresponding line
-          var lineForKey = document.querySelector('#' + d[0].symptom + '-line');
-
-          if(legendKey.style.opacity == 1) {
-            // Change legendKey opacity to indicate that it was clicked
-            d3
-            .select(legendKey)
-              .style('opacity', 0.25);
-
-            // Now hide the corresponding scale
-            d3
-            .select(lineForKey)
-              .style('display', 'none');
-
-          } else {
-            // Show both the legend and the scale 
-            d3
-            .select(legendKey)
-              .style('opacity', 1);
-
-            d3
-            .select(lineForKey)
-              .style('display', 'block');
-          }
+          toggleLines(d, legendKey, 'symptom');
         });
 
     sympLegend
@@ -356,6 +334,12 @@ var renderGraph = function (err, response) {
         })
         .attr('class', function(d) {
           return d[0].factor;
+        })
+        .style('opacity', 1)
+        .on('click', function(d) {
+           // Create variable for the legend key that was clicked
+          var legendKey = this;
+          toggleLines(d, legendKey, 'factor');
         });
 
     factLegend
@@ -373,4 +357,32 @@ var renderGraph = function (err, response) {
 };
 
 makeRequest('/getGraphData', renderGraph);
+
+function toggleLines(d, legendKey, type) {
+  // Find the corresponding line
+  var lineForKey = document.querySelector('#' + d[0][type] + '-line');
+
+  if(legendKey.style.opacity == 1) {
+    // Change legendKey opacity to indicate that it was clicked
+    d3
+    .select(legendKey)
+      .style('opacity', 0.25);
+
+    // Now hide the corresponding scale
+    d3
+    .select(lineForKey)
+      .style('display', 'none');
+
+  } else {
+    // Show both the legend and the scale 
+    d3
+    .select(legendKey)
+      .style('opacity', 1);
+
+    d3
+    .select(lineForKey)
+      .style('display', 'block');
+  }
+
+}
 
