@@ -1,12 +1,12 @@
 /*eslint-disable */
-const makeRequest = function (url, cb) {
-  const xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', () => {
+var makeRequest = function (url, cb) {
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener('load', function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      const response = JSON.parse(xhr.responseText);
+      var response = JSON.parse(xhr.responseText);
       cb(null, response);
     } else {
-      cb(new TypeError(`XHR error${xhr.status}`));
+      cb(new TypeError('XHR error' + xhr.status));
     }
   });
   xhr.open('GET', url, true);
@@ -14,14 +14,14 @@ const makeRequest = function (url, cb) {
 };
 
 // global variables
-let chart_width = 700;
-let chart_height = 500;
-let padding = 100;
+var chart_width = 700;
+var chart_height = 500;
+var padding = 100;
 
-let formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z');
+var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z');
 
 
-let testData = {
+var testData = {
   symptoms: [
     { symptom: 'fatigue', rating: 3, date_entered: '2018-03-11T11:30:00.000Z' },
     { symptom: 'fatigue', rating: 8, date_entered: '2018-03-12T11:30:00.000Z' },
@@ -47,26 +47,26 @@ let testData = {
     { factor: 'water', rating: 6, date_entered: '2018-03-16T12:09:00.000Z' }],
 };
 
-let groupData = function (data, container, typePlural, type) {
-  let arr = data[typePlural];
-  let uniqueNames = [];
+var groupData = function (data, container, typePlural, type) {
+  var arr = data[typePlural];
+  var uniqueNames = [];
 
-  let j = 0;
+  var j = 0;
 
   // creating an array of the names of the unique symptoms
-  arr.forEach((obj) => {
+  arr.forEach(function(obj) {
       if(!uniqueNames.includes(obj[type])) {
         uniqueNames.push(obj[type]);
       }
     });
 
   // looping through the names of the types and creating a new array for each one
-  for (let i = 0; i < uniqueNames.length; i++) {
+  for (var i = 0; i < uniqueNames.length; i++) {
     container.push(new Array());
   }
 
   // adding all objects with the same type name to an array
-  uniqueNames.forEach((x) => {
+  uniqueNames.forEach(function(x){
       container[j] = arr.filter(function(obj) {
         return obj[type] === x;
       });
@@ -74,106 +74,106 @@ let groupData = function (data, container, typePlural, type) {
     });
 };
 
-let sympContainer = [];
-let factContainer = [];
+var sympContainer = [];
+var factContainer = [];
 
 groupData(testData, sympContainer, 'symptoms', 'symptom');
 groupData(testData, factContainer, 'factors', 'factor');
 
 
-let renderGraph = function (err, response) {
+var renderGraph = function (err, response) {
   if (err) {
     console.log(err);
   } else {
-    let dateTime = formatTime(testData.factors[0].date_entered);
+    var dateTime = formatTime(testData.factors[0].date_entered);
 
     // Change date_entered into d3's required time format
-    testData.symptoms.forEach((obj) => {
+    testData.symptoms.forEach(function(obj){
         obj.date_entered = formatTime(obj.date_entered);
     });
 
-    testData.factors.forEach((obj) => {
+    testData.factors.forEach(function(obj){
         obj.date_entered = formatTime(obj.date_entered);
     });
 
     // Scales
     // find minimum and maximum values
-    let minSympDate =d3.min(testData.symptoms, (obj) => {
+    var minSympDate =d3.min(testData.symptoms, function(obj){
         return obj.date_entered;
     });
 
-    let minFactDate = d3.min(testData.factors, (obj) => {
+    var minFactDate = d3.min(testData.factors, function(obj){
         return obj.date_entered;
       });
 
     var dates = [minSympDate, minFactDate];
-    let minDate = d3.min(dates);
+    var minDate = d3.min(dates);
 
-    let maxSympDate = d3.max(testData.symptoms, (obj) => {
+    var maxSympDate = d3.max(testData.symptoms, function (obj) {
         return obj.date_entered;
     });
 
-    let maxFactDate = d3.max(testData.factors, (obj) => {
+    var maxFactDate = d3.max(testData.factors, function(obj){
         return obj.date_entered;
     });
 
     var dates = [maxSympDate, maxFactDate];
-    let maxDate = d3.max(dates);
+    var maxDate = d3.max(dates);
 
     // use these min/max values to set up scales
-    let x_scale = d3
-      .scaleTime()
+    var x_scale = d3
+      .scavarime()
       .domain([minDate, maxDate])
       .range([padding, chart_width - padding]);
 
-    let y_scale = d3
+    var y_scale = d3
       .scaleLinear()
       .domain([0, 10])
       .range([chart_height - padding, padding]);
 
       // create svg
-    let svg = d3
+    var svg = d3
       .select('#graph')
       .append('svg')
       .attr('width', chart_width)
       .attr('height', chart_height);
 
       // create axes
-    let x_axis = d3
+    var x_axis = d3
       .axisBottom(x_scale)
       .tickFormat(d3.timeFormat('%d-%m-%Y')).ticks(d3.timeDay);
 
-    let y_axis = d3
+    var y_axis = d3
       .axisLeft(y_scale)
       .ticks(11);
 
     svg
       .append('g')
-      .attr('transform', `translate(0,${  chart_height - padding  })`)
+      .attr('transform', 'translate(0,' + chart_height - padding  +')')
       .call(x_axis);
 
     svg
       .append('g')
-      .attr('transform', `translate(${  padding  }, 0)`)
+      .attr('transform', 'translate(' +  padding + ', 0)')
       .call(y_axis);
 
 
 
       // Create line - used to create all other lines
-    let line = d3
+    var line = d3
       .line()
-      .x((d) => {
+      .x(function(d) {
           return x_scale(d.date_entered);
         })
-      .y((d) => {
+      .y(function(d) {
           return y_scale(d.rating)
         });
 
-    // Create color palettes - used for line colours and legend
-    let colorsSymPalette = d3.scaleOrdinal(d3.schemeCategory10);
-    let colorsFactPalette = d3.scaleOrdinal(d3.schemeSet3);
+    // Create color pavartes - used for line colours and legend
+    var colorsSymPavarte = d3.scaleOrdinal(d3.schemeCategory10);
+    var colorsFactPavarte = d3.scaleOrdinal(d3.schemeSet3);
 
-    // Calculate path length of lines 
+    // Calculate path length of lines
     // From https://stackoverflow.com/questions/30355241/get-the-length-of-a-svg-line-rect-polygon-and-circle-tags/30376660
     var getPathLength = function(el) {
       var pathCoords = el.get(0);
@@ -184,33 +184,33 @@ let renderGraph = function (err, response) {
     var totalLength = chart_width*3
 
     // Add lines for each of the symptoms to the graph
-    let symptoms = svg
+    var symptoms = svg
       .selectAll('.symptoms')
       .data(sympContainer)
       .enter()
       .append('g')
       .attr('class', 'symptoms')
-      .attr('class', (d) => {
+      .attr('class', function (d){
             return d[0].symptom;
       })
-      .attr('id', (d) => {
+      .attr('id', function(d) {
             return d[0].symptom + '-line';
           });
 
     symptoms
       .append('path')
       .attr('fill', 'none')
-      .attr('data-legend', (d) => {
+      .attr('data-legend', function(d) {
             return d.symptom;
           })
-      .style('stroke', (d, i) => {
-            return colorsSymPalette(i); 
+      .style('stroke', function(d, i) {
+            return colorsSymPavarte(i);
           })
       .attr('stroke-width', 3)
-      .attr('d', (d) => {
+      .attr('d', function(d) {
             return line(d);
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].symptom;
           });
 
@@ -223,39 +223,39 @@ let renderGraph = function (err, response) {
           .ease(d3.easeLinear)
           .attr('stroke-dashoffset', 0)
 
-    
+
     // Add lines for each of the factors to the graph
-    let factors = svg
+    var factors = svg
       .selectAll('.factors')
       .data(factContainer)
       .enter()
       .append('g')
       .attr('class', 'factors')
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].factor;
           })
-      .attr('id', (d) => {
+      .attr('id', function(d) {
             return d[0].factor + '-line';
           });
 
     factors
       .append('path')
       .attr('fill', 'none')
-      .attr('data-legend', (d) => {
+      .attr('data-legend', function(d) {
             return d.factor;
           })
-      .style('stroke', (d, i) => {
-            return colorsFactPalette(i);
+      .style('stroke', function (d, i) {
+            return colorsFactPavarte(i);
           })
       .attr('stroke-width', 3)
-      .attr('d', (d) => {
+      .attr('d', function(d) {
             return line(d);
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].factor;
           });
 
-    // Animate line drawing for factor 
+    // Animate line drawing for factor
       factors
         .attr('stroke-dasharray', totalLength + ' ' + totalLength)
         .attr('stroke-dashoffset', totalLength)
@@ -265,16 +265,16 @@ let renderGraph = function (err, response) {
           .attr('stroke-dashoffset', 0)
 
     // Create legend for symptoms
-    let sympLegend = svg
+    var sympLegend = svg
       .selectAll('.legend')
       .data(sympContainer)
       .enter()
       .append('g')
-      .attr('transform', (d, i) => {
+      .attr('transform', function (d, i) {
             return "translate(" + (chart_width - 200) + "," + (i * 15 + 20) + ")";
           })
       .attr('class', '.legend')
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].symptom;
           });
 
@@ -282,41 +282,41 @@ let renderGraph = function (err, response) {
       .append('rect')
       .attr('width', 10)
       .attr('height', 10)
-      .attr('fill', (d, i) => {
-            return colorsSymPalette(i); 
+      .attr('fill', function (d, i){
+            return colorsSymPavarte(i);
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].symptom;
           })
       .style('opacity', 1)
       .on('click', function (d) {
-        let legendKey = this;
+        var legendKey = this;
         toggleLines(d, legendKey, 'symptom');
       });
 
     sympLegend
       .append('text')
-      .text((d) => {
+      .text(function(d) {
             return d[0].symptom;
           })
-      .attr('transform', (d, i) => {
+      .attr('transform', function (d, i) {
             return "translate(20,10)";
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].symptom;
           });
 
     // create legend for factors
-    let factLegend = svg
+    var factLegend = svg
       .selectAll('.legend')
       .data(factContainer)
       .enter()
       .append('g')
-      .attr('transform', (d, i) => {
+      .attr('transform', function (d, i){
             return "translate(" + (chart_width - 200) + "," + (i * 15 + 60) + ")";
           })
       .attr('class', '.legend')
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].factor;
           });
 
@@ -324,28 +324,28 @@ let renderGraph = function (err, response) {
       .append('rect')
       .attr('width', 10)
       .attr('height', 10)
-      .attr('fill', (d, i) => {
-            return colorsFactPalette(i); 
+      .attr('fill', function (d, i) {
+            return colorsFactPavarte(i);
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].factor;
           })
       .style('opacity', 1)
       .on('click', function (d) {
         // Create variable for the legend key that was clicked
-        let legendKey = this;
+        var legendKey = this;
         toggleLines(d, legendKey, 'factor');
       });
 
     factLegend
       .append('text')
-      .text((d) => {
+      .text(function(d) {
             return d[0].factor;
           })
-      .attr('transform', (d, i) => {
+      .attr('transform', function (d, i){
             return "translate(20,10)";
           })
-      .attr('class', (d) => {
+      .attr('class', function(d) {
             return d[0].factor;
           });
   }
@@ -355,7 +355,7 @@ makeRequest('/getGraphData', renderGraph);
 
 function toggleLines(d, legendKey, type) {
   // Find the corresponding line
-  let lineForKey = document.querySelector(`#${  d[0][type]  }-line`);
+  var lineForKey = document.querySelector('#' +  d[0][type]  + '-line');
 
   if (legendKey.style.opacity == 1) {
     // Change legendKey opacity to indicate that it was clicked

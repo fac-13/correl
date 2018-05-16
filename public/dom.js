@@ -19,16 +19,16 @@ var scales = document.querySelectorAll('input[type=range]')
 
 scales.forEach((scale) => {
     scale.addEventListener('change', function () {
-        var currentScaleId = this.id; //e.g. gives scale-s1   
-        var commentBoxId = `comment${currentScaleId.slice(currentScaleId.indexOf('-'))}`;
-        var scaleNumberId = `${this.id}-number`;
-        var symptomScaleNumber = document.querySelector(`#${scaleNumberId}`);
-        var factorScaleNumber = document.querySelector(`#${scaleNumberId}`)
-        var symptomCommentBox = document.querySelector(`#${commentBoxId}`);
-        var factorCommentBox = document.querySelector(`#${commentBoxId}`)
+        var currentScaleId = this.id; //e.g. gives scale-s1
+        var commentBoxId = 'comment' + currentScaleId.slice(currentScaleId.indexOf('-'));
+        var scaleNumberId = this.id + '-number';
+        var symptomScaleNumber = document.querySelector('#' + scaleNumberId);
+        var factorScaleNumber = document.querySelector('#' + scaleNumberId)
+        var symptomCommentBox = document.querySelector('#' + commentBoxId);
+        var factorCommentBox = document.querySelector('#' + commentBoxId)
 
-        var symptomComment = document.querySelector(`#symptom${currentScaleId.slice(currentScaleId.indexOf('-'))}-comment-${this.value}`);
-        var factorComment = document.querySelector(`#factor${currentScaleId.slice(currentScaleId.indexOf('-'))}-comment-${this.value}`);
+        var symptomComment = document.querySelector('#symptom' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
+        var factorComment = document.querySelector('#factor' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
         if (scale.parentNode.className.includes('symptom')) {
             //Symptoms
             symptomScaleNumber.textContent = this.value;
