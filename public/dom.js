@@ -230,7 +230,10 @@ var renderGraph = function (err, response) {
         .attr('class', 'symptoms')
         .attr('class', function(d) {
           return d[0].symptom;
-        });
+        })
+        .attr('id', function(d) {
+          return d[0].symptom + '-line';
+        })
 
     symptoms
       .append('path')
@@ -317,6 +320,36 @@ var renderGraph = function (err, response) {
         })
         .attr('class', function(d) {
           return d[0].symptom;
+        })
+        .style('opacity', 1)
+        .on('click', function(d) {
+          // Create variable for the legend key that was clicked
+          var legendKey = this;
+
+          // Find the corresponding line
+          var lineForKey = document.querySelector('#' + d[0].symptom + '-line');
+
+          if(legendKey.style.opacity == 1) {
+            // Change legendKey opacity to indicate that it was clicked
+            d3
+            .select(legendKey)
+              .style('opacity', 0.25);
+
+            // Now hide the corresponding scale
+            d3
+            .select(lineForKey)
+              .style('display', 'none');
+
+          } else {
+            // Show both the legend and the scale 
+            d3
+            .select(legendKey)
+              .style('opacity', 1);
+
+            d3
+            .select(lineForKey)
+              .style('display', 'block');
+          }
         });
 
     sympLegend
