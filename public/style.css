@@ -16,7 +16,9 @@ body {
 
 h1{
   margin-bottom: 4rem;
+  text-transform: uppercase;
 }
+
 button {
   margin: 5px;
   background-color: white;
@@ -24,6 +26,7 @@ button {
   padding: .7rem .7rem;
   border-radius: 3px;
   border: none;
+  cursor: pointer;
   box-shadow: 0px 3px 3px rgba(255, 119, 0, 0.685);
 }
 
@@ -33,7 +36,7 @@ input {
   margin: .4rem;
 }
 /* input fields on scale setup page - want these to show up next to number button */
-.scale-comments {
+.inline-input {
   display: inline-block;
 }
 
@@ -42,7 +45,6 @@ main {
   background-color: hsl(28, 100%, 97%);
   border-left: solid 9px hsl(28, 30%, 94%);
   border-right: solid 9px hsl(28, 30%, 94%);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +52,7 @@ main {
   width: 50%;
   margin: auto;
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 ul {
@@ -66,17 +68,11 @@ li {
 h1 {
   text-align: center;
   font-weight: lighter;
+  margin-bottom: 2rem;
 }
 
 .hidden {
   display: none;
-}
-
-/* d3 */
-.test{
-  width: 100px;
-  height: 100px;
-  background-color: red;
 }
 
 /* PARTIALS */
@@ -99,18 +95,27 @@ h1 {
 #top-nav img {
   max-height: 2.5rem;
 }
-.test:link, .test:visited {
-  display: block;
+
+#user-options {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+.profile-links, .profile-links:visited {
+  min-width: 10rem;
+  min-height: 10rem;
   width: 6em;
   padding: 0.2em;
   line-height: 1.4;
-  background-color: #94B8E9;
-  color: #000;
+  background-color: rgb(255, 255, 255);
+  color: 	hsl(19, 56%, 40%);
+  box-shadow: 0px 3px 3px rgba(255, 119, 0, 0.685);  
   text-decoration: none;
   text-align: center;
 }
 
-.test:hover {
- background-color: #369;
- color: #fff;
+.profile-links:hover {
+  background-color:rgba(255, 119, 0, 0.363);
+  color: #fff;
 }
