@@ -10,7 +10,7 @@
       <button class="expand">E</button>
     </span>
     <br>
-    <input id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
+    <input aria-label="{{this.symptom}} scale" id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
     <span id="scale-s{{this.symptomid}}-number"></span>
     <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
     <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
@@ -39,7 +39,7 @@
       <button class="expand">E</button>
     </span>
     <br>
-    <input id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="0" steps="1">
+    <input aria-label="{{this.factor}} scale" id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="0" steps="1">
     <span id="scale-f{{this.factorid}}-number"></span>
     <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
   </div>
