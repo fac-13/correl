@@ -99,3 +99,18 @@ h1 {
 #top-nav img {
   max-height: 2.5rem;
 }
+.test:link, .test:visited {
+  display: block;
+  width: 6em;
+  padding: 0.2em;
+  line-height: 1.4;
+  background-color: #94B8E9;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+}
+
+.test:hover {
+ background-color: #369;
+ color: #fff;
+}

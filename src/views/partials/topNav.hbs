@@ -4,14 +4,21 @@
   </li>
   {{#if loggedOut}}
   <div class="cta-links">
-    <li>Join</li>
-    <li>Login</li>
+    <li>
+      <a href="/register">join</a>
+    </li>
+    <li>
+      <a href="/login">Login</a>
+    </li>
   </div>
+
 
   {{else}}
   <div class="cta-links">
     <li>{{username}}</li>
-    <li>Logout</li>
+    <li>
+      <a href="/">logout</a>
+    </li>
   </div>
 
   {{/if}}

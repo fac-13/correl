@@ -1,5 +1,4 @@
-
 exports.get = (req, res) => {
-  res.session = null;
+  req.session = null;
   res.render('logIn', { loggedOut: true });
 };
