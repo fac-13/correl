@@ -23,7 +23,6 @@ exports.postAdd = (req, res) => {
     .catch((err) => { console.log(err.message); });
 };
 
-
 exports.getScaleInfo = (req, res) => {
   if (req.session.loggedIn) {
     res.render('scaleInfo');
