@@ -105,20 +105,6 @@ var groupData = function(data, container, typePlural, type) {
     });
     j++;
   });
-
-  // uniqueNames.forEach(function(name){
-
-  //   var line = d3
-  //     .line()
-  //     .x(function(d){
-  //       return x_scale(d.date_entered)
-  //     })
-  //     .y(function(d){
-  //       return y_scale(d.rating)
-  //     });
-
-
-
 }
 
 var sympContainer = [];
@@ -252,23 +238,6 @@ var renderGraph = function (err, response) {
           return d[0].symptom;
         });
 
-
-      // CODE TO ADD LABELS TO THE END OF THE LINES
-    // symptoms
-    //   .append('text')
-    //   .datum(function(d, i){
-    //     return {symptom: d[i].symptom, date_entered: d[d.length-1].date_entered, rating: d[d.length-1].rating }
-    //   })
-    //   .attr('transform', function(d){
-    //     return 'translate(' + x_scale(d.date_entered) + ',' + y_scale(d.rating) + ')';
-    //   })
-    //   .attr('x', 3)
-    //   .attr('dy', '0.35em')
-    //   .style('font', '10px sans-serif')
-    //   .text(function(d){
-    //     return d.symptom;
-    //   })
-
     // Add lines for each of the factors to the graph
     var factors = svg
       .selectAll('.factors')
@@ -400,17 +369,6 @@ var renderGraph = function (err, response) {
         .attr('class', function(d) {
           return d[0].factor;
         });
-
-
-      // svg
-      // .append('path')
-      // .datum(sympContainer[0])
-      // .attr('fill', 'none')
-      // .attr('stroke', '#73FF36')
-      // .attr('stroke-width', 5)
-      // .attr('d', line);
-
-
   }
 };
 
