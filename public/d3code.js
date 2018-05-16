@@ -122,7 +122,7 @@ var renderGraph = function (err, response) {
 
     // use these min/max values to set up scales
     var x_scale = d3
-      .scavarime()
+      .scaleTime()
       .domain([minDate, maxDate])
       .range([padding, chart_width - padding]);
 
@@ -149,7 +149,7 @@ var renderGraph = function (err, response) {
 
     svg
       .append('g')
-      .attr('transform', 'translate(0,' + chart_height - padding  +')')
+      .attr('transform', 'translate(0,' + (chart_height - padding)  +')')
       .call(x_axis);
 
     svg
@@ -169,9 +169,9 @@ var renderGraph = function (err, response) {
           return y_scale(d.rating)
         });
 
-    // Create color pavartes - used for line colours and legend
-    var colorsSymPavarte = d3.scaleOrdinal(d3.schemeCategory10);
-    var colorsFactPavarte = d3.scaleOrdinal(d3.schemeSet3);
+    // Create color palettes - used for line colours and legend
+    var colorsSymPalette = d3.scaleOrdinal(d3.schemeCategory10);
+    var colorsFactPalette = d3.scaleOrdinal(d3.schemeSet3);
 
     // Calculate path length of lines
     // From https://stackoverflow.com/questions/30355241/get-the-length-of-a-svg-line-rect-polygon-and-circle-tags/30376660
@@ -204,7 +204,7 @@ var renderGraph = function (err, response) {
             return d.symptom;
           })
       .style('stroke', function(d, i) {
-            return colorsSymPavarte(i);
+            return colorsSymPalette(i);
           })
       .attr('stroke-width', 3)
       .attr('d', function(d) {
@@ -245,7 +245,7 @@ var renderGraph = function (err, response) {
             return d.factor;
           })
       .style('stroke', function (d, i) {
-            return colorsFactPavarte(i);
+            return colorsFactPalette(i);
           })
       .attr('stroke-width', 3)
       .attr('d', function(d) {
@@ -283,7 +283,7 @@ var renderGraph = function (err, response) {
       .attr('width', 10)
       .attr('height', 10)
       .attr('fill', function (d, i){
-            return colorsSymPavarte(i);
+            return colorsSymPalette(i);
           })
       .attr('class', function(d) {
             return d[0].symptom;
@@ -325,7 +325,7 @@ var renderGraph = function (err, response) {
       .attr('width', 10)
       .attr('height', 10)
       .attr('fill', function (d, i) {
-            return colorsFactPavarte(i);
+            return colorsFactPalette(i);
           })
       .attr('class', function(d) {
             return d[0].factor;
