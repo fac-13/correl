@@ -1,15 +1,25 @@
 <nav id="top-nav">
   <li>
-    <img src="">
+    <img src="/assets/correl-c.png">
   </li>
   {{#if loggedOut}}
-  <li>  <a href="/register">join</a>  </li>
-  <li>  <a href="/login">Login</a>  </li>
+  <div class="cta-links">
+    <li>
+      <a href="/register">join</a>
+    </li>
+    <li>
+      <a href="/login">Login</a>
+    </li>
+  </div>
+
 
   {{else}}
+  <div class="cta-links">
+    <li>{{username}}</li>
+    <li>
+      <a href="/">logout</a>
+    </li>
+  </div>
 
-   <li>{{username}}</li>
-   <li> <a href="/">logout</a> </li>
-
- {{/if}}
+  {{/if}}
 </nav>
