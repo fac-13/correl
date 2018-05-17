@@ -102,27 +102,27 @@ factButtons.forEach(function(button){
 var next = document.getElementById('next');
 var back = document.getElementById('back');
 
-var red = document.getElementById('red');
-var green = document.getElementById('green');
-var blue = document.getElementById('blue');
+var pageTwo = document.getElementById('pageTwo');
+var pageThree = document.getElementById('pageThree');
+var pageOne = document.getElementById('pageOne');
 
 next.addEventListener('click', function(){
-  if(red.style.zIndex == 0) {
-    red.style.zIndex = "1";
-    blue.style.zIndex = "0";
-  } else if(red.style.zIndex == 1) {
-    green.style.zIndex = "1";
-    red.style.zIndex = "0";
+  if(pageTwo.style.zIndex == 0) {
+    pageTwo.style.zIndex = "1";
+    pageOne.style.zIndex = "0";
+  } else if(pageTwo.style.zIndex == 1) {
+    pageThree.style.zIndex = "1";
+    pageTwo.style.zIndex = "0";
   }
 });
 
 back.addEventListener('click', function(){
-  if(green.style.zIndex == 1) {
-    red.style.zIndex = "1";
-    green.style.zIndex = "0";
-  } else if(red.style.zIndex == 1) {
-    red.style.zIndex = "0";
-    blue.style.zIndex = "1";
+  if(pageThree.style.zIndex == 1) {
+    pageTwo.style.zIndex = "1";
+    pageThree.style.zIndex = "0";
+  } else if(pageTwo.style.zIndex == 1) {
+    pageTwo.style.zIndex = "0";
+    pageOne.style.zIndex = "1";
   }
 });
 
