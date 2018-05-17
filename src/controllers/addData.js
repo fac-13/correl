@@ -16,25 +16,39 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  console.log('body', req.body);
   const keys = Object.keys(req.body);
-  const symptoms = keys.filter(key => key.startsWith('s'));
-  console.log(symptoms);
-  const symptomsRatings = Object.values(req.body);
-  const factors = keys.filter(key => key.startsWith('f'));
-  console.log(factors);
-  const factorsRating = Object.values(req.body);
-  for (let i = 0; i < keys.length; i++) {
-    const symptomsRes = getSymptoms(req.session.username)
-      .then(syms => console.log(syms));
+  console.log('keys: ', keys);
 
-    const promiseArray = [postQueries.postSymptomRating(symptomsRes[0].symptom, req.session.username, symptomsRatings[i]), postQueries.postFactorRating(factors[i], req.session.username, factorsRating[i])];
-    Promise.all(promiseArray)
-      .then(() => {
-        // res.render('profile');
-        console.log('sent!');
-      })
+  const symptoms = keys.filter(key => key.startsWith('s'));
+  const factors = keys.filter(key => key.startsWith('f'));
+
+  const allRatings = Object.values(req.body);
+  const symptomsRatings = allRatings.slice(0, symptoms.length);
+  const factorsRatings = allRatings.slice(symptomsRatings.length);
+
+  console.log('S ratings: ', symptomsRatings);
+  console.log('F ratings: ', factorsRatings);
+
+
+  for (let i = 0; i < keys.length - 1; i++) {
+    getSymptoms(req.session.username)
+      .then(syms => syms.symptom)
+      .then((symptom) => {
+        const promiseArray = [
+          postQueries.postSymptomRating(symptom, req.session.username, symptomsRatings[i]),
+          // postQueries.postFactorRating(factors[i], req.session.username, factorsRatings[i]),
+        ];
+        Promise.all(promiseArray);
+      }).then(() => res.redirect('/profile'))
       .catch(err => console.log(err.message));
+
+    // const promiseArray = [postQueries.postSymptomRating(symptoms[i], req.session.username, symptomsRatings[i]), postQueries.postFactorRating(factors[i], req.session.username, factorsRating[i])];
+    // Promise.all(promiseArray)
+    //   .then(() => {
+    //     // res.render('profile');
+    //     console.log('sent!');
+    //   })
+    //   .catch(err => console.log(err.message));
   }
 };
 
