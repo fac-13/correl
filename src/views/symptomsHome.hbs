@@ -5,7 +5,9 @@
   {{#each symptomsList}}
   <div>
     <li id="{{this.symptom}}">{{this.symptom}}</li>
-    <button class="delete" id="delete-{{this.symptom}}">Delete</button>
+    <button class="delete" id="delete-{{this.symptom}}">
+      <i class="fa fa-trash"></i>
+    </button>
   </div>
   {{/each}}
 </ul>
