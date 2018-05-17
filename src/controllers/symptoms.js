@@ -22,7 +22,7 @@ exports.getHome = (req, res) => {
 
 exports.getAdd = (req, res) => {
   if (req.session.loggedIn) {
-    res.render('symptomsAdd');
+    res.render('symptomsAdd', { username: req.session.username });
   } else {
     res.render('logIn');
   }
@@ -30,12 +30,12 @@ exports.getAdd = (req, res) => {
 
 exports.postAdd = (req, res) => postQueries
   .postSymptom(req.body.symptom, req.session.username)
-  .then(() => res.render('symptomScaleInfo'))
+  .then(() => res.render('symptomScaleInfo', { username: req.session.username }))
   .catch(err => console.log(err.message));
 
 exports.getScaleInfo = (req, res) => {
   if (req.session.loggedIn) {
-    res.render('symptomScaleInfo');
+    res.render('symptomScaleInfo', { username: req.session.username });
   } else {
     res.render('logIn');
   }
@@ -43,7 +43,7 @@ exports.getScaleInfo = (req, res) => {
 
 exports.getScaleSetup = (req, res) => {
   if (req.session.loggedIn) {
-    res.render('symptomsScaleSetup');
+    res.render('symptomsScaleSetup', { username: req.session.username });
   } else {
     res.render('logIn');
   }
@@ -56,7 +56,7 @@ exports.postScaleSetup = (req, res) => getQueries
     postQueries
       .postSymptomScale(symptom[symptom.length - 1].symptom, req.session.username, req.body['1'], req.body['2'], req.body['3'], req.body['4'], req.body['5'], req.body['6'], req.body['7'], req.body['8'], req.body['9'], req.body['10']);
   })
-  .then(() => res.render('profile'))
+  .then(() => res.render('profile', { username: req.session.username }))
   .catch(err => console.log(err.message));
 
 
