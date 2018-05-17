@@ -5,7 +5,6 @@ exports.get = (req, res) => {
     const promiseArray = [getSymptoms(req.session.username), getFactors(req.session.username)];
     Promise.all(promiseArray)
       .then((resultsArray) => {
-        console.log(resultsArray);
         const [symptomsList, factorsList] = resultsArray;
         res.render('addData', { symptomsList, factorsList, username: req.session.username });
       })

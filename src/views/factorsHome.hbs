@@ -3,10 +3,10 @@
 <h2>Factors You're Tracking</h2>
 <ul>
   {{#each factorsList}}
-  <div>
-    <li id="{{this.symptom}}">{{this.factor}}</li>
+  <li>
+    <p id="{{this.factor}}">{{this.factor}}</p>
     <button class="factDelete" id="delete-{{this.factor}}">Delete</button>
-  </div>
+  </li>
   {{/each}}
 </ul>
 
