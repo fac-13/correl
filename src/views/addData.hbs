@@ -1,6 +1,7 @@
 <h1>Enter Today's Data</h1>
 
 <h2>Symptoms</h2>
+<form action="/addData" method="POST"></form>
 <ul>
   {{#each symptomsList}}
   <div class="symptom-rating">
@@ -28,6 +29,7 @@
   </div>
   {{/each}}
 </ul>
+
 
 
 <h2>Factors</h2>
@@ -60,5 +62,8 @@
   {{/each}}
 
 </ul>
-
-<button class="finish">Finish</button>
+<a href="/profile">back</a>
+<button type="submit">
+  <a href="/profile">Finish</a>
+</button>
+</form>

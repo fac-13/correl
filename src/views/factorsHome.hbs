@@ -4,8 +4,8 @@
 <ul>
   {{#each factorsList}}
   <div>
-    <li>{{this.factor}}</li>
-    <button class="delete">Delete</button>
+    <li id="{{this.symptom}}">{{this.factor}}</li>
+    <button class="factDelete" id="delete-{{this.factor}}">Delete</button>
   </div>
   {{/each}}
 </ul>
