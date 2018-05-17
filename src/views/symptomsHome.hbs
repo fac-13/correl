@@ -3,12 +3,13 @@
 <h2>Symptoms You're Tracking</h2>
 <ul>
   {{#each symptomsList}}
-    <li class="symptoms-list">
-      <p>{{this}}</p>
-      <button class="delete">Delete</button>
-    </li>
+  <li>
+    <p id="{{this.symptom}}">{{this.symptom}}</p>
+    <button class="delete" id="delete-{{this.symptom}}">Delete</button>
+  </li>
   {{/each}}
 </ul>
 
-<button id="back">Back</button>
-<a href="add">next</a>
+<a href="profile">Back</a>
+
+<a href="add">add new symptom</a>
