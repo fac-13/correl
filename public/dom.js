@@ -69,3 +69,34 @@ scaleButtons.forEach(function (button) {
         input.classList.remove('hidden');
     });
 });
+
+//delete buttons
+
+var sympButtons = document.querySelectorAll('.sympDelete')
+var factButtons = document.querySelectorAll('.factDelete')
+
+sympButtons.forEach(function(button){
+    button.addEventListener('click', function(e){
+        var symptom = e.target.id.split('-')[1]
+        e.preventDefault();
+        const xhr = new XMLHttpRequest();
+        xhr.open('DELETE', '/deleteSymptom/' + symptom);
+        xhr.send();
+        window.location.assign('/symptoms/home');
+      });
+    })
+
+factButtons.forEach(function(button){
+        button.addEventListener('click', function(e){
+            var factor = e.target.id.split('-')[1]
+            e.preventDefault();
+            const xhr = new XMLHttpRequest();
+            xhr.open('DELETE', '/deleteFactor/' + factor);
+            xhr.send();
+            window.location.assign('/factors/home');
+          });
+        })
+
+
+
+

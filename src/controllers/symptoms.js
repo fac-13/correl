@@ -1,5 +1,6 @@
 const postQueries = require('./../model/queries/postQueries');
 const getQueries = require('./../model/queries/getQueries');
+const deleteQueries = require('./../model/queries/deleteQueries');
 
 exports.getHome = (req, res) => {
   if (req.session.loggedIn) {
@@ -55,3 +56,12 @@ exports.postScaleSetup = (req, res) => getQueries
   .then(() => res.render('profile'))
   .catch(err => console.log(err.message));
 
+exports.delete = (req, res) => {
+  const { symptom } = req.params;
+  const { username } = req.session;
+  return deleteQueries
+    .deleteSymptom(symptom, username)
+    .catch((err) => {
+      console.log(err.message);
+    });
+};

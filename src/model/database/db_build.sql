@@ -60,25 +60,35 @@ CREATE TABLE factor_data
 );
 -- add foreign keys
 ALTER TABLE symptoms ADD COLUMN user_id INTEGER REFERENCES USERS
-(id);
+(id) ON
+DELETE CASCADE;
 ALTER TABLE factors ADD COLUMN user_id INTEGER REFERENCES USERS
-(id);
+(id) ON
+DELETE CASCADE;
 ALTER TABLE symptom_scale ADD COLUMN user_id INTEGER REFERENCES USERS
-(id),
+(id) ON
+DELETE CASCADE,
 ADD COLUMN symptom_id INTEGER REFERENCES symptoms
-(id);
+(id) ON
+DELETE CASCADE;
 ALTER TABLE factor_scale ADD COLUMN user_id INTEGER REFERENCES USERS
-(id),
+(id) ON
+DELETE CASCADE,
 ADD COLUMN factor_id INTEGER REFERENCES factors
-(id);
+(id) ON
+DELETE CASCADE;
 ALTER TABLE symptom_data ADD COLUMN user_id INTEGER REFERENCES USERS
-(id),
+(id) ON
+DELETE CASCADE,
 ADD COLUMN symptom_id INTEGER REFERENCES symptoms
-(id);
+(id) ON
+DELETE CASCADE;
 ALTER TABLE factor_data ADD COLUMN user_id INTEGER REFERENCES USERS
-(id),
+(id) ON
+DELETE CASCADE,
 ADD COLUMN factor_id INTEGER REFERENCES factors
-(id);
+(id) ON
+DELETE CASCADE;
 INSERT into users
   (username, password)
 VALUES
