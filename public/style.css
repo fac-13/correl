@@ -21,6 +21,7 @@ h1{
 
 a {
   text-decoration: none;
+  color: 	hsl(19, 56%, 40%);
 }
 
 .fa {
@@ -102,12 +103,14 @@ h1 {
   margin: 0rem 0.5rem;
 }
 
-#top-nav-img {
-  margin-right: auto;
-}
 
-#top-nav-img img {
-  max-height: 2.5rem;
+
+#correl {
+  font-size: 2.5rem;
+  margin-right: auto;
+  color: 	hsla(19, 56%, 40%, 0.7);
+  letter-spacing: 0.3rem;
+  padding: 0.8rem;
 }
 
 #user-options {
