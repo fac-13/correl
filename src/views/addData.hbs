@@ -2,6 +2,9 @@
 
 <h2>Symptoms</h2>
 <form action="/addData" method="POST">
+
+
+
   <ul>
     {{#each symptomsList}}
     <li class="symptom-rating">
@@ -14,9 +17,9 @@
       </span>
       <br>
       <div id='container-{{this.symptom}}' class='hidden symptom'>
-        <input aria-label="{{this.symptom}} scale" name="{{this.symptom}}" id="scale-s{{this.symptomid}}" type="range" min="1" max="10"
-          steps="1">
-        <span id="scale-s{{this.symptomid}}-number">1</span>
+        <input aria-label="{{this.symptom}} scale" name="s{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range" min="0"
+          max="10" value="0" steps="1">
+        <span id="scale-s{{this.symptomid}}-number"></span>
         <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
@@ -36,7 +39,6 @@
 
 
   <h2>Factors</h2>
-
   <ul>
     {{#each factorsList}}
     <li class="factor-rating">
@@ -49,9 +51,9 @@
       </span>
       <br>
       <div id='container-{{this.factor}}' class='hidden'>
-        <input aria-label="{{this.factor}} scale" name="{{this.symptom}}" id="scale-f{{this.factorid}}" type="range" min="1" max="10"
+        <input aria-label="{{this.factor}} scale" name="f{{this.factorid}}" id="scale-f{{this.factorid}}" type="range" min="0" max="10"
           value="0" steps="1">
-        <span id="scale-f{{this.factorid}}-number">1</span>
+        <span id="scale-f{{this.factorid}}-number"></span>
         <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
