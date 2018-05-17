@@ -108,6 +108,9 @@ h2{
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
+.profile-links{
+  transition: 2s;
+}
 .profile-links, .profile-links:visited {
   min-width: 10rem;
   min-height: 10rem;
@@ -124,6 +127,8 @@ h2{
 .profile-links:hover {
   background-color:rgba(255, 119, 0, 0.363);
   color: #fff;
+  background: rgba(187, 210, 233, 0.39);
+  transform: rotateY(360deg);
 }
 
 ul {
@@ -213,6 +218,7 @@ form{
   height: 5rem;
   background: white;
 }
+
 
 
 .help{
