@@ -1,73 +1,73 @@
 <h1>Enter Today's Data</h1>
 
 <h2>Symptoms</h2>
-<form action="/addData" method="POST"></form>
-<ul>
-  {{#each symptomsList}}
-  <li class="symptom-rating">
-    <span class="symptom-span">
-      <p>{{this.symptom}}</p>
-      {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.symptom}}'>
-        <i class="fa fa-angle-down"></i>
-      </button>
-    </span>
-    <br>
-    <div id='container-{{this.symptom}}' class='hidden symptom'>
-      <input aria-label="{{this.symptom}} scale" id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="1" steps="1">
-      <span id="scale-s{{this.symptomid}}-number">1</span>
-      <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
-    </div>
-    <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-3" class="hidden">{{this.comment_3}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-4" class="hidden">{{this.comment_4}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-5" class="hidden">{{this.comment_5}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-6" class="hidden">{{this.comment_6}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-7" class="hidden">{{this.comment_7}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-8" class="hidden">{{this.comment_8}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-9" class="hidden">{{this.comment_9}}</p>
-    <p id="symptom-s{{this.symptomid}}-comment-10" class="hidden">{{this.comment_10}}</p>
-  </li>
-  {{/each}}
-</ul>
+<form action="/addData" method="POST">
+  <ul>
+    {{#each symptomsList}}
+    <li class="symptom-rating">
+      <span class="symptom-span">
+        <p>{{this.symptom}}</p>
+        {{!-- need to add icon at the end --}}
+        <button class="expand" type="button" id='expand-{{this.symptom}}'>
+          <i class="fa fa-angle-down"></i>
+        </button>
+      </span>
+      <br>
+      <div id='container-{{this.symptom}}' class='hidden symptom'>
+        <input aria-label="{{this.symptom}} scale" name="{{this.symptom}}" id="scale-s{{this.symptomid}}" type="range" min="1" max="10"
+          steps="1">
+        <span id="scale-s{{this.symptomid}}-number">1</span>
+        <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+      </div>
+      <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-3" class="hidden">{{this.comment_3}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-4" class="hidden">{{this.comment_4}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-5" class="hidden">{{this.comment_5}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-6" class="hidden">{{this.comment_6}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-7" class="hidden">{{this.comment_7}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-8" class="hidden">{{this.comment_8}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-9" class="hidden">{{this.comment_9}}</p>
+      <p id="symptom-s{{this.symptomid}}-comment-10" class="hidden">{{this.comment_10}}</p>
+    </li>
+    {{/each}}
+  </ul>
 
 
 
-<h2>Factors</h2>
+  <h2>Factors</h2>
 
-<ul>
-  {{#each factorsList}}
-  <li class="factor-rating">
-    <span class="factor-span">
-      <p>{{this.factor}}</p>
-      {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.factor}}'>
-        <i class="fa fa-angle-down"></i>
-      </button>
-    </span>
-    <br>
-    <div id='container-{{this.factor}}' class='hidden'>
-      <input aria-label="{{this.factor}} scale" id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="1" steps="1">
-      <span id="scale-f{{this.factorid}}-number">1</span>
-      <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
-    </div>
-    <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
-    <p id="factor-f{{this.factorid}}-comment-2" class="hidden">{{this.comment_2}}</p>
-    <p id="factor-f{{this.factorid}}-comment-3" class="hidden">{{this.comment_3}}</p>
-    <p id="factor-f{{this.factorid}}-comment-4" class="hidden">{{this.comment_4}}</p>
-    <p id="factor-f{{this.factorid}}-comment-5" class="hidden">{{this.comment_5}}</p>
-    <p id="factor-f{{this.factorid}}-comment-6" class="hidden">{{this.comment_6}}</p>
-    <p id="factor-f{{this.factorid}}-comment-7" class="hidden">{{this.comment_7}}</p>
-    <p id="factor-f{{this.factorid}}-comment-8" class="hidden">{{this.comment_8}}</p>
-    <p id="factor-f{{this.factorid}}-comment-9" class="hidden">{{this.comment_9}}</p>
-    <p id="factor-f{{this.factorid}}-comment-10" class="hidden">{{this.comment_10}}</p>
-  </li>
-  {{/each}}
+  <ul>
+    {{#each factorsList}}
+    <li class="factor-rating">
+      <span class="factor-span">
+        <p>{{this.factor}}</p>
+        {{!-- need to add icon at the end --}}
+        <button class="expand" type="button" id='expand-{{this.factor}}'>
+          <i class="fa fa-angle-down"></i>
+        </button>
+      </span>
+      <br>
+      <div id='container-{{this.factor}}' class='hidden'>
+        <input aria-label="{{this.factor}} scale" name="{{this.symptom}}" id="scale-f{{this.factorid}}" type="range" min="1" max="10"
+          value="0" steps="1">
+        <span id="scale-f{{this.factorid}}-number">1</span>
+        <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
+      </div>
+      <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
+      <p id="factor-f{{this.factorid}}-comment-2" class="hidden">{{this.comment_2}}</p>
+      <p id="factor-f{{this.factorid}}-comment-3" class="hidden">{{this.comment_3}}</p>
+      <p id="factor-f{{this.factorid}}-comment-4" class="hidden">{{this.comment_4}}</p>
+      <p id="factor-f{{this.factorid}}-comment-5" class="hidden">{{this.comment_5}}</p>
+      <p id="factor-f{{this.factorid}}-comment-6" class="hidden">{{this.comment_6}}</p>
+      <p id="factor-f{{this.factorid}}-comment-7" class="hidden">{{this.comment_7}}</p>
+      <p id="factor-f{{this.factorid}}-comment-8" class="hidden">{{this.comment_8}}</p>
+      <p id="factor-f{{this.factorid}}-comment-9" class="hidden">{{this.comment_9}}</p>
+      <p id="factor-f{{this.factorid}}-comment-10" class="hidden">{{this.comment_10}}</p>
+    </li>
+    {{/each}}
 
-</ul>
-<a href="/profile">back</a>
-<button type="submit">
-  <a href="/profile">Finish</a>
-</button>
+  </ul>
+  <a href="/profile">back</a>
+  <button type="submit">Finish</button>
 </form>

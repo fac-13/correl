@@ -1,4 +1,5 @@
 const { getSymptoms, getFactors } = require('../model/queries/getQueries');
+const postQueries = require('../model/queries/postQueries');
 
 exports.get = (req, res) => {
   if (req.session.loggedIn) {
@@ -13,3 +14,9 @@ exports.get = (req, res) => {
     res.render('logIn');
   }
 };
+
+exports.post = (req, res) => {
+  console.log('body', req.body);
+  // const promiseArray = [postSymptomRating(req.body.symptom, req.session.username), postFactorRating];
+};
+
