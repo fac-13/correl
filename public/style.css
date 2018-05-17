@@ -133,3 +133,12 @@ h1 {
   background-color:rgba(255, 119, 0, 0.363);
   color: #fff;
 }
+
+
+/*Modal styling*/
+
+#modal {
+  border: solid 1px red;
+  background-color: lightseagreen;
+  display: none;
+}
