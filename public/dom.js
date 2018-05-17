@@ -98,5 +98,18 @@ factButtons.forEach(function(button){
         })
 
 
+// Code for modal
+var modal = document.querySelector('#modal');
+var showModal = document.querySelector('#help');
+var hideModal = document.querySelector('#close-modal');
 
+showModal.addEventListener('click', function() {
+    modal.style.display = 'block';
+});
+
+hideModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+})
+
+// Manage modal focus 
 
