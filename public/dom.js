@@ -29,7 +29,7 @@ scales.forEach((scale) => {
 
         var symptomComment = document.querySelector('#symptom' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
         var factorComment = document.querySelector('#factor' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
-        
+
         if (scale.parentNode.className.includes('symptom')) {
             //Symptoms
             symptomScaleNumber.textContent = this.value;
@@ -97,6 +97,15 @@ factButtons.forEach(function(button){
           });
         })
 
+// trigger modal
 
+var help = document.getElementById('help')
+var modal = document.getElementById('modal')
+var overlay = document.getElementById('overlay')
+help.addEventListener('click', function(){
+    console.log('inside help listerner')
+    modal.style.display = "block"
+    overlay.style.display = "block"
+})
 
 
