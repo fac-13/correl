@@ -4,11 +4,12 @@
 <ul>
   {{#each symptomsList}}
   <li>
-    <p id="{{this.symptom}}">{{this.symptom}}</li>
-  <button class="sympDelete" id="delete-{{this.symptom}}">
-    <i class="fa fa-trash"></i>
 
-  </button>
+    <button class="sympDelete" id="delete-{{this.symptom}}">
+      {{this.symptom}}
+      <i class="fa fa-trash"></i>
+
+    </button>
   </li>
   {{/each}}
 </ul>

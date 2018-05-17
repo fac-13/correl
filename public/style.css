@@ -12,11 +12,15 @@ body {
 
 
 
-a {
+a, p {
   text-decoration: none;
   color: 	hsl(19, 56%, 40%);
 }
-
+p{
+  width: 50%;
+  margin-bottom: 4rem;
+  text-align: center;
+}
 .fa {
  color: rgba(250, 117, 0, 0.993);
 }
@@ -70,6 +74,7 @@ h1 {
 h2{
   text-align: left;
   color: 	hsl(19, 56%, 70%);
+
 }
 
 .hidden {
@@ -133,10 +138,10 @@ h2{
 
 ul {
 padding-top: 1.2rem;
-  margin: 0;
+  margin-bottom: 4rem;
 }
 
-.expand{
+.expand, .factDelete, .sympDelete{
   padding: 0.5rem;
   width: 30rem;
   display: block;
