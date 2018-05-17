@@ -58,7 +58,7 @@ expandButtons.forEach(function (button) {
       container = document.querySelector('#' + factor)
       container.style.display = 'block'
     }
-    }, false)
+    })
 })
 
 

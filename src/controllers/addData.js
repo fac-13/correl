@@ -16,6 +16,5 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  console.log('postttttt!');
   res.render('profile');
 };

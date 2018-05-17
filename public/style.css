@@ -8,6 +8,7 @@ body {
   background-color:hsl(28, 30%, 97%);
   color: 	hsl(19, 56%, 40%);
   font-family: 'Hammersmith One', sans-serif;
+
 }
 
 h1{
@@ -56,6 +57,7 @@ main {
   margin: auto;
   text-align: center;
   padding-top: 2rem;
+  height: 100vh;
 }
 
 
@@ -132,7 +134,7 @@ ul {
 
 .expand{
   padding: 0.5rem;
-  width: 200px;
+  width: 30rem;
   display: block;
   text-align: left;
   position: relative;
