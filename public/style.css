@@ -126,8 +126,8 @@ h2{
 
 .profile-links:hover {
   background-color:rgba(255, 119, 0, 0.363);
-  color: #fff;
-  background: rgba(187, 210, 233, 0.39);
+
+  background: rgba(187, 210, 233, 0.2);
   transform: rotateY(360deg);
 }
 
