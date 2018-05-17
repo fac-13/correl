@@ -3,16 +3,16 @@
 <h2>Symptoms</h2>
 <ul>
   {{#each symptomsList}}
-  <div class="symptom-rating">
+  <li class="symptom-rating">
     <span class="symptom-span">
-      <li>{{this.symptom}}</li>
+      <p>{{this.symptom}}</p>
       {{!-- need to add icon at the end --}}
       <button class="expand" id='expand-{{this.symptom}}'>E</button>
     </span>
     <br>
-    <div id='container-{{this.symptom}}' class='hidden'>
-      <input id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="0" steps="1">
-      <span id="scale-s{{this.symptomid}}-number">0</span>
+    <div id='container-{{this.symptom}}' class='hidden symptom'>
+      <input aria-label="{{this.symptom}} scale" id="scale-s{{this.symptomid}}" type="range" min="1" max="10" value="1" steps="1">
+      <span id="scale-s{{this.symptomid}}-number">1</span>
       <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
     </div>
     <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
@@ -25,7 +25,7 @@
     <p id="symptom-s{{this.symptomid}}-comment-8" class="hidden">{{this.comment_8}}</p>
     <p id="symptom-s{{this.symptomid}}-comment-9" class="hidden">{{this.comment_9}}</p>
     <p id="symptom-s{{this.symptomid}}-comment-10" class="hidden">{{this.comment_10}}</p>
-  </div>
+  </li>
   {{/each}}
 </ul>
 
@@ -34,16 +34,16 @@
 
 <ul>
   {{#each factorsList}}
-  <div class="factor-rating">
+  <li class="factor-rating">
     <span class="factor-span">
-      <li>{{this.factor}}</li>
+      <p>{{this.factor}}</p>
       {{!-- need to add icon at the end --}}
       <button class="expand" id='expand-{{this.factor}}'>E</button>
     </span>
     <br>
     <div id='container-{{this.factor}}' class='hidden'>
-      <input id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="0" steps="1">
-      <span id="scale-f{{this.factorid}}-number">0</span>
+      <input aria-label="{{this.factor}} scale" id="scale-f{{this.factorid}}" type="range" min="1" max="10" value="1" steps="1">
+      <span id="scale-f{{this.factorid}}-number">1</span>
       <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
     </div>
     <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
@@ -56,7 +56,7 @@
     <p id="factor-f{{this.factorid}}-comment-8" class="hidden">{{this.comment_8}}</p>
     <p id="factor-f{{this.factorid}}-comment-9" class="hidden">{{this.comment_9}}</p>
     <p id="factor-f{{this.factorid}}-comment-10" class="hidden">{{this.comment_10}}</p>
-  </div>
+  </li>
   {{/each}}
 
 </ul>
