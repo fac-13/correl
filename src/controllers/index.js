@@ -46,6 +46,7 @@ router.post('/factors/add', factors.postAdd);
 router.post('/factors/scaleSetup', factors.postScaleSetup);
 router.post('/symptoms/add', symptoms.postAdd);
 router.post('/symptoms/scaleSetup', symptoms.postScaleSetup);
+router.post('/addData', addData.post);
 // router.post('/addData');
 router.delete('/deleteSymptom/:symptom', symptoms.delete);
 router.delete('/deleteFactor/:factor', factors.delete);
