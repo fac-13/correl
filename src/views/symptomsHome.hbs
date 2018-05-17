@@ -4,11 +4,12 @@
 <ul>
   {{#each symptomsList}}
   <div>
-    <li>{{this.symptom}}</li>
-    <button class="delete">Delete</button>
+    <li id="{{this.symptom}}">{{this.symptom}}</li>
+    <button class="delete" id="delete-{{this.symptom}}">Delete</button>
   </div>
   {{/each}}
 </ul>
 
-<button id="back">Back</button>
-<a href="add">next</a>
+<a href="profile">Back</a>
+
+<a href=" add ">add new symptom</a>
