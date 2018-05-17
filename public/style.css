@@ -6,11 +6,7 @@ html {
 body {
   margin: 0 auto;
   background-color:hsl(28, 30%, 97%);
-  /* color: gray; */
   color: 	hsl(19, 56%, 40%);
-  /* color:hsl(9, 100%, 64%); */
-  /* color:hsl(248, 39%, 39%); */
-  /* font-family: 'Josefin Sans', sans-serif; */
   font-family: 'Hammersmith One', sans-serif;
 }
 

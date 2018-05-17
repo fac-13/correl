@@ -1,4 +1,5 @@
 const { getSymptoms, getFactors } = require('../model/queries/getQueries');
+const postQueries = require('../model/queries/postQueries');
 
 exports.get = (req, res) => {
   if (req.session.loggedIn) {
@@ -12,4 +13,9 @@ exports.get = (req, res) => {
   } else {
     res.render('logIn');
   }
+};
+
+exports.post = (req, res) => {
+  console.log('postttttt!');
+  res.render('profile');
 };
