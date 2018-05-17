@@ -29,6 +29,7 @@ scales.forEach((scale) => {
 
         var symptomComment = document.querySelector('#symptom' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
         var factorComment = document.querySelector('#factor' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
+        
         if (scale.parentNode.className.includes('symptom')) {
             //Symptoms
             symptomScaleNumber.textContent = this.value;
