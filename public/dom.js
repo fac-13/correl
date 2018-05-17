@@ -98,18 +98,71 @@ factButtons.forEach(function(button){
         })
 
 
-// Code for modal
+// CODE FOR MODAL
 var modal = document.querySelector('#modal');
 var showModal = document.querySelector('#help');
 var hideModal = document.querySelector('#close-modal');
+var focusedElementBeforeModal; 
 
-showModal.addEventListener('click', function() {
+showModal.addEventListener('click', openModal);
+hideModal.addEventListener('click', closeModal);
+
+function openModal() {
+    // Show the modal and overlay
     modal.style.display = 'block';
-});
+    // modalOverlay.style.display = 'block';
 
-hideModal.addEventListener('click', function() {
+    // Save the current focus 
+    focusedElementBeforeModal = document.activeElement;
+
+    //Listen for keydown in order to trap focus 
+    modal.addEventListener('keydown', trapTab);
+
+    // Find all the focusable children
+    var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+    var focusableElements = modal.querySelectorAll(focusableElementsString);
+    var focusableElements = Array.prototype.slice.call(focusableElements);  //convert node list to array
+
+    console.log(focusableElements);
+
+    // Find the first and last focusable elements
+    firstFocusableEl = focusableElements[0];
+    lastFocusableEl = focusableElements[focusableElements.length-1];
+
+    // Move focus to the first focusbale element in the modal
+    firstFocusableEl.focus();
+
+
+    // Trap focus inside the modal 
+    function trapTab(e) {
+        // Check if the tab key was pressed 
+        if(e.keyCode == 9) {
+            // shift-tab
+            if(e.shiftKey) {
+                if (document.activeElement === firstFocusableEl) {
+                    e.preventDefault();
+                    lastFocusableEl.focus();
+                }
+            // tab without shift pressed    
+            } else {
+                if (document.activeElement === lastFocusableEl) {
+                    e.preventDefault();
+                    firstFocusableEl.focus();
+                  }
+            }
+        }
+        // close modal if esc pressed
+        if (e.keyCode === 27) {
+            closeModal();
+        }
+    }
+}
+
+function closeModal() {
+    // Hide the modal and overlay
     modal.style.display = 'none';
-})
+    // modalOverlay.style.display = 'none';
 
-// Manage modal focus 
-
+    // Set focus back to element that had it before the modal was opened
+    focusedElementBeforeModal.focus();
+}
