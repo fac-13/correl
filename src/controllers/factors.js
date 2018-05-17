@@ -3,13 +3,16 @@ const getQueries = require('./../model/queries/getQueries');
 
 exports.getHome = (req, res) => {
   if (req.session.loggedIn) {
-    const factorsList = {};
+    const factorsList = [];
     return getQueries
       .getFactors(req.session.username)
       .then((factors) => {
         factors.forEach((factor) => {
-          factorsList[factor.factor] = factor.factor;
+          const obj = {};
+          obj.factor = factor.factor;
+          factorsList.push(obj);
         });
+
         console.log(factorsList);
         return factorsList;
       })
@@ -28,12 +31,12 @@ exports.getAdd = (req, res) => {
 
 exports.postAdd = (req, res) => postQueries
   .postFactor(req.body.factor, req.session.username)
-  .then(() => res.render('factorsScaleSetup'))
+  .then(() => res.render('factorScaleInfo'))
   .catch((err) => { console.log(err.message); });
 
 exports.getScaleInfo = (req, res) => {
   if (req.session.loggedIn) {
-    res.render('scaleInfo');
+    res.render('factorScaleInfo');
   } else {
     res.render('logIn');
   }
