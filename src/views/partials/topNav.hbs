@@ -1,25 +1,12 @@
-<nav id="top-nav">
-  <li>
-    <img src="/assets/correl-c.png">
-  </li>
-  {{#if loggedOut}}
-  <div class="cta-links">
-    <li>
-      <a href="/register">join</a>
-    </li>
-    <li>
-      <a href="/login">Login</a>
-    </li>
-  </div>
-
-
-  {{else}}
-  <div class="cta-links">
+<nav id='top-nav'>
+  <ul class='top-nav-list'>
+    <li id='top-nav-img'><a href='/'><img src="/assets/correl-c.png" alt="Correl Logo"></a></li>
+    {{#if loggedOut}}
+    <li><a href="/register">join</a></li>
+    <li><a href="/login">Login</a></li>
+    {{else}}
     <li>{{username}}</li>
-    <li>
-      <a href="/">logout</a>
-    </li>
-  </div>
-
-  {{/if}}
+    <li><a href="/">logout</a></li>
+    {{/if}}
+  </ul>
 </nav>
