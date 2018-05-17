@@ -139,14 +139,27 @@ h2{
 ul {
 padding-top: 1.2rem;
   margin-bottom: 4rem;
+  padding-left: 0;
 }
 
 .expand, .factDelete, .sympDelete{
   padding: 0.5rem;
-  width: 30rem;
+  width: 100%;
   display: block;
   text-align: left;
   position: relative;
+}
+
+.addDataUl {
+  width: 95%;
+}
+
+.commentBox{
+  width: 100%;
+  border: 1px solid  hsl(19, 56%, 80%);
+  font-size: 0.8rem;
+  padding:0.8rem;
+  text-align: left;
 }
 i{
   position: absolute;

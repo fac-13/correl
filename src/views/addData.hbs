@@ -4,7 +4,7 @@
 
 <form action="/addData" method="POST">
   <h2>Symptoms</h2>
-  <ul>
+  <ul class="addDataUl">
     {{#each symptomsList}}
     <li class="symptom-rating">
       <span class="symptom-span">
@@ -17,7 +17,7 @@
         <input class="sliders" aria-label="{{this.symptom}} scale" name="{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range"
           min="1" max="10" value="1" steps="1">
         <span class="scaleNumber" id="scale-s{{this.symptomid}}-number"></span>
-        <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+        <p class="commentBox" id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
       <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
@@ -36,7 +36,7 @@
 
 
   <h2>Factors</h2>
-  <ul>
+  <ul class="addDataUl">
     {{#each factorsList}}
     <li class="factor-rating">
       <span class="factor-span">
@@ -49,7 +49,7 @@
         <input class="sliders" aria-label="{{this.factor}} scale" name="{{this.factorid}}" id="scale-f{{this.factorid}}" type="range"
           min="1" max="10" value="1" steps="1">
         <span id="scale-f{{this.factorid}}-number"></span>
-        <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
+        <p class="commentBox" id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
       <p id="factor-f{{this.factorid}}-comment-2" class="hidden">{{this.comment_2}}</p>
