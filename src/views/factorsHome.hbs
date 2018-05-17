@@ -4,8 +4,11 @@
 <ul>
   {{#each factorsList}}
   <li class="factors-list">
-    <p>{{this.factor}}</p>
-    <button class="delete">Delete</button>
+    <p id="{{this.factor}}">{{this.factor}}</p>
+    <button class="factDelete" id="delete-{{this.factor}}">
+      <i class="fa fa-trash"></i>
+
+    </button>
   </li>
   {{/each}}
 </ul>

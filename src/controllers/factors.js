@@ -1,5 +1,6 @@
 const postQueries = require('./../model/queries/postQueries');
 const getQueries = require('./../model/queries/getQueries');
+const deleteQueries = require('./../model/queries/deleteQueries');
 
 exports.getHome = (req, res) => {
   if (req.session.loggedIn) {
@@ -56,3 +57,14 @@ exports.postScaleSetup = (req, res) => getQueries
     .postFactorScale(factor[factor.length - 1].factor, req.session.username, req.body['1'], req.body['2'], req.body['3'], req.body['4'], req.body['5'], req.body['6'], req.body['7'], req.body['8'], req.body['9'], req.body['10']))
   .then(() => res.render('profile'))
   .catch(err => console.log(err.message));
+
+exports.delete = (req, res) => {
+  console.log('delete factor');
+  const { factor } = req.params;
+  const { username } = req.session;
+  return deleteQueries
+    .deleteFactor(factor, username)
+    .catch((err) => {
+      console.log(err.message);
+    });
+};

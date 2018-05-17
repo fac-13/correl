@@ -33,6 +33,7 @@ router.get('/symptoms/home', symptoms.getHome);
 router.get('/symptoms/add', symptoms.getAdd);
 router.get('/symptoms/scaleInfo', symptoms.getScaleInfo);
 router.get('/symptoms/scaleSetup', symptoms.getScaleSetup);
+
 router.get('/factors/home', factors.getHome);
 router.get('/factors/add', factors.getAdd);
 router.get('/factors/scaleInfo', factors.getScaleInfo);
@@ -46,6 +47,8 @@ router.post('/factors/scaleSetup', factors.postScaleSetup);
 router.post('/symptoms/add', symptoms.postAdd);
 router.post('/symptoms/scaleSetup', symptoms.postScaleSetup);
 // router.post('/addData');
+router.delete('/deleteSymptom/:symptom', symptoms.delete);
+router.delete('/deleteFactor/:factor', factors.delete);
 
 
 router.use(error.client);
