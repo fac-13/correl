@@ -140,7 +140,9 @@ h1 {
   left: 0;
   right: 0;
   margin: 3em;
-  top: 30%;
+  top: 5%;
+  height: 500px;
+
 }
 
 #overlay {
@@ -153,4 +155,25 @@ h1 {
   position: fixed;
   display: none;
   z-index: 5;
+}
+
+/* modal */
+
+.one {
+  z-index: 1;
+}
+
+
+.box {
+  width:300px;
+  height:500px;
+  position:absolute;
+}
+
+#next {
+  float:right;
+}
+
+#back {
+  float:right;
 }
