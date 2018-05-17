@@ -82,19 +82,26 @@ h1 {
 #top-nav {
   background-color: white;
   text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 }
 
-#top-nav li,.cta-links {
+.top-nav-list {
   display: flex;
   justify-content: flex-end;
-  margin: .3rem;
-  padding: .3rem;
-  list-style-type: none;
+  align-items: center;
 }
 
-#top-nav img {
+.top-nav-list li {
+  text-transform: uppercase;
+  list-style-type: none;
+  margin: 0rem 0.5rem;
+}
+
+#top-nav-img {
+  margin-right: auto;
+}
+
+#top-nav-img img {
   max-height: 2.5rem;
 }
 

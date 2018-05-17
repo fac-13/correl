@@ -29,6 +29,7 @@ scales.forEach((scale) => {
 
         var symptomComment = document.querySelector('#symptom' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
         var factorComment = document.querySelector('#factor' + currentScaleId.slice(currentScaleId.indexOf('-')) + '-comment-' + this.value);
+        
         if (scale.parentNode.className.includes('symptom')) {
             //Symptoms
             symptomScaleNumber.textContent = this.value;
@@ -48,7 +49,6 @@ var expandButtons = document.querySelectorAll('.expand');
 
 expandButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
-      console.log(button.parentNode)
     if(button.parentNode.className.includes('symptom')){
       var symptom = 'container-' +  e.target.id.split('-')[1]
       var container = document.querySelector('#' + symptom)
