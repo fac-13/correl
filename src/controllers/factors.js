@@ -59,7 +59,6 @@ exports.postScaleSetup = (req, res) => getQueries
   .catch(err => console.log(err.message));
 
 exports.delete = (req, res) => {
-  console.log('delete factor');
   const { factor } = req.params;
   const { username } = req.session;
   return deleteQueries

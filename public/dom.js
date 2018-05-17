@@ -97,15 +97,60 @@ factButtons.forEach(function(button){
           });
         })
 
-// trigger modal
+// MODEL-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 var help = document.getElementById('help')
 var modal = document.getElementById('modal')
 var overlay = document.getElementById('overlay')
+var closeModal = document.getElementById('close-modal')
+
 help.addEventListener('click', function(){
-    console.log('inside help listerner')
     modal.style.display = "block"
     overlay.style.display = "block"
 })
 
+
+function closeModalFunc() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+    previouslyFocusedEl.focus();
+  }
+closeModal.addEventListener('click', closeModalFunc)
+overlay.addEventListener('click', closeModalFunc)
+
+
+// make modal accessible ------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function tabModal(){
+var previouslyFocusedEl = document.activeElement;
+var focusableElsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, tabindex:not([tabindex="-1"])';
+var focusableEls = modal.querySelectorAll(focusableElsString);
+var firstFocusable = focusableEls[0];
+var lastFocusable = focusableEls[1];
+firstFocusable.focus();
+modal.addEventListener("keydown", trapFocus);
+  // defining trap function to say that if you press a key nothing happens - focus doesnt leave the modal
+  function trapFocus(e) {
+    if (e.keyCode == 9) {
+      // if tab pressed
+      if (e.shiftKey) {
+        // if tab is pressed with shift
+        if (document.activeElement === firstFocusable) {
+          // if currently on first element
+          event.preventDefault(); // then go to the last element
+          lastFocusable.focus();
+        }
+      } else {
+        // if tab pressed without shift
+        if (document.activeElement === lastFocusable) {
+          // and active element is the last element
+          event.preventDefault(); // then send to the first tabable element in the modal (i.e. stops from escaping)
+          firstFocusable.focus();
+        }
+      }
+    }
+    if (e.keyCode == 27) closeModalFunc(); // if press esc then call close modal function
+  }
+}
 
