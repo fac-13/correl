@@ -6,9 +6,8 @@
   {{#each symptomsList}}
   <li class="symptom-rating">
     <span class="symptom-span">
-      <p>{{this.symptom}}</p>
       {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.symptom}}'>
+      <button class="expand" id='expand-{{this.symptom}}'>{{this.symptom}}
         <i class="fa fa-angle-down"></i>
       </button>
     </span>
@@ -40,9 +39,9 @@
   {{#each factorsList}}
   <li class="factor-rating">
     <span class="factor-span">
-      <p>{{this.factor}}</p>
+
       {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.factor}}'>
+      <button class="expand" id='expand-{{this.factor}}'>{{this.factor}}
         <i class="fa fa-angle-down"></i>
       </button>
     </span>
