@@ -8,7 +8,9 @@
     <span class="symptom-span">
       <p>{{this.symptom}}</p>
       {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.symptom}}'>E</button>
+      <button class="expand" id='expand-{{this.symptom}}'>
+        <i class="fa fa-angle-down"></i>
+      </button>
     </span>
     <br>
     <div id='container-{{this.symptom}}' class='hidden symptom'>
@@ -40,7 +42,9 @@
     <span class="factor-span">
       <p>{{this.factor}}</p>
       {{!-- need to add icon at the end --}}
-      <button class="expand" id='expand-{{this.factor}}'>E</button>
+      <button class="expand" id='expand-{{this.factor}}'>
+        <i class="fa fa-angle-down"></i>
+      </button>
     </span>
     <br>
     <div id='container-{{this.factor}}' class='hidden'>

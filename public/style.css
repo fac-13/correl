@@ -18,14 +18,19 @@ h1{
   margin-bottom: 4rem;
   text-transform: uppercase;
 }
-a{
+
+a {
   text-decoration: none;
 }
-a, button {
+
+.fa {
+ color: rgba(250, 117, 0, 0.993);
+}
+.button-links, button {
   margin: 5px;
   background-color: white;
   font-size: 1.2rem;
-  padding: .7rem .7rem;
+  padding: .5rem .5rem;
   border-radius: 3px;
   border: none;
   cursor: pointer;
