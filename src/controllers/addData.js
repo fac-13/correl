@@ -16,25 +16,25 @@ exports.get = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  console.log('body', req.body);
   const keys = Object.keys(req.body);
   const symptoms = keys.filter(key => key.startsWith('s'));
-  console.log(symptoms);
-  const symptomsRatings = Object.values(req.body);
   const factors = keys.filter(key => key.startsWith('f'));
-  console.log(factors);
-  const factorsRating = Object.values(req.body);
-  for (let i = 0; i < keys.length; i++) {
-    const symptomsRes = getSymptoms(req.session.username)
-      .then(syms => console.log(syms));
+  const promiseArray = [];
 
-    const promiseArray = [postQueries.postSymptomRating(symptomsRes[0].symptom, req.session.username, symptomsRatings[i]), postQueries.postFactorRating(factors[i], req.session.username, factorsRating[i])];
-    Promise.all(promiseArray)
-      .then(() => {
-        // res.render('profile');
-        console.log('sent!');
-      })
-      .catch(err => console.log(err.message));
+  for (let i = 0; i < symptoms.length; i++) {
+    const symptomRating = req.body[symptoms[i]];
+    symptoms[i] = symptoms[i].substr(1);
+    promiseArray.push(postQueries.postSymptomRating(symptoms[i], req.session.username, symptomRating));
   }
-};
+  for (let i = 0; i < factors.length; i++) {
+    const factorRating = req.body[factors[i]];
+    factors[i] = factors[i].substr(1);
+    promiseArray.push(postQueries.postFactorRating(factors[i], req.session.username, factorRating));
+  }
 
+  Promise.all(promiseArray)
+    .then(() => {
+      res.render('profile');
+    })
+    .catch(err => console.log(err.message));
+};
