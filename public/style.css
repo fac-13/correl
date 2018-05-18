@@ -329,3 +329,7 @@ form{
   color: hsl(19, 98%, 80%);;
   transform: scale(2);
 }
+
+.home-image {
+  width: 50%;
+}
