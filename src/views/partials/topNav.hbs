@@ -1,12 +1,20 @@
 <nav id='top-nav'>
   <ul class='top-nav-list'>
-    <li id='top-nav-img'><a href='/'><img src="/assets/correl-c.png" alt="Correl Logo"></a></li>
+    <li id="correl">
+      <a href='/'>CORREL</a>
+    </li>
     {{#if loggedOut}}
-    <li><a href="/register">join</a></li>
-    <li><a href="/login">Login</a></li>
+    <li>
+      <a href="/register">join</a>
+    </li>
+    <li>
+      <a href="/login">Login</a>
+    </li>
     {{else}}
     <li>{{username}}</li>
-    <li><a href="/">logout</a></li>
+    <li>
+      <a href="/logout">logout</a>
+    </li>
     {{/if}}
   </ul>
 </nav>

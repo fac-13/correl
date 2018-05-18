@@ -12,7 +12,6 @@ const symptoms = require('./symptoms');
 const factors = require('./factors');
 const error = require('./error');
 const logOut = require('./logOut');
-const instruction = require('./instruction');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
@@ -21,7 +20,6 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.get('/', home.get);
 router.get('/register', register.get);
 // instruction pages
-router.get('/instruction', instruction.get);
 
 router.get('/logIn', logIn.get);
 router.get('/logOut', logOut.get);
@@ -46,7 +44,9 @@ router.post('/factors/add', factors.postAdd);
 router.post('/factors/scaleSetup', factors.postScaleSetup);
 router.post('/symptoms/add', symptoms.postAdd);
 router.post('/symptoms/scaleSetup', symptoms.postScaleSetup);
-// router.post('/addData');
+router.post('/addData', addData.post);
+
+// delete routes
 router.delete('/deleteSymptom/:symptom', symptoms.delete);
 router.delete('/deleteFactor/:factor', factors.delete);
 

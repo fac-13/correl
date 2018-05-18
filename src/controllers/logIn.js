@@ -22,7 +22,7 @@ exports.post = (req, res, next) => {
         req.session.username = username;
         res.redirect('/profile');
       } else {
-        res.render('logIn', { notmatch: true });
+        res.render('logIn', { loggedOut: true, notmatch: true });
       }
     }).catch((err) => {
       console.log(err);

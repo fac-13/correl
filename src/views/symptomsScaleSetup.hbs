@@ -4,11 +4,10 @@
   {{#times 10}}
   <div>
     <button id="symptom-{{this}}" class="scale-buttons" type="button">{{this}}</button>
-    <input type="text" class="inline-input hidden">
+    <input type="text" class="inline-input hidden" name="{{this}}">
   </div>
   <br> {{/times}}
+  <a href="/symptoms/scaleInfo" class="button-links">Go Back</a>
+
   <button class="add" type="submit">Save &amp; Finish</button>
 </form>
-<span>
-  <a href="/scaleInfo">Go Back</a>
-</span>

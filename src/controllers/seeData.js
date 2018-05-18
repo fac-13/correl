@@ -15,7 +15,7 @@ const getAllData = (username) => {
 
 
 exports.getPage = (req, res) => {
-  res.render('seeData');
+  res.render('seeData', { username: req.session.username });
 };
 
 exports.getData = (req, res) => {

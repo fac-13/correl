@@ -1,14 +1,14 @@
-<h1>scale setup</h1>
+<h1>Factor Scale Setup</h1>
 
 <form action="/factors/scaleSetup" method="POST" id="setUpScale">
   {{#times 10}}
   <div>
     <button id="factor-{{this}}" class="scale-buttons" type="button">{{this}}</button>
-    <input name="{{this}}" type="text" class="inline-inputs hidden">
+    <input name="{{this}}" type="text" class="inline-input hidden">
   </div>
   <br> {{/times}}
-  <button type="submit" id="add">save & finish</button>
+  <a href="scaleInfo" class="button-links">Back</a>
+
+  <button type="submit" id="add">Save &amp; Finish</button>
 
 </form>
-
-<a href="scaleInfo">back</a>
