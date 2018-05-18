@@ -49,15 +49,15 @@ var expandButtons = document.querySelectorAll('.expand');
 
 expandButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
-    if(button.parentNode.className.includes('symptom')){
-      var symptom = 'container-' +  e.target.id.split('-')[1]
-      var container = document.querySelector('#' + symptom)
-      container.style.display = 'block'
-    }else{
-      var factor = 'container-' +  e.target.id.split('-')[1]
-      container = document.querySelector('#' + factor)
-      container.style.display = 'block'
-    }
+        if (button.parentNode.className.includes('symptom')) {
+            var symptom = 'container-' + e.target.id.split('-')[1]
+            var container = document.querySelector('#' + symptom)
+            container.style.display = 'block'
+        } else {
+            var factor = 'container-' + e.target.id.split('-')[1]
+            container = document.querySelector('#' + factor)
+            container.style.display = 'block'
+        }
     })
 })
 
@@ -75,27 +75,27 @@ scaleButtons.forEach(function (button) {
 var sympButtons = document.querySelectorAll('.sympDelete')
 var factButtons = document.querySelectorAll('.factDelete')
 
-sympButtons.forEach(function(button){
-    button.addEventListener('click', function(e){
+sympButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
         var symptom = e.target.id.split('-')[1]
         e.preventDefault();
         const xhr = new XMLHttpRequest();
         xhr.open('DELETE', '/deleteSymptom/' + symptom);
         xhr.send();
         window.location.assign('/symptoms/home');
-      });
-    })
+    });
+})
 
-factButtons.forEach(function(button){
-        button.addEventListener('click', function(e){
-            var factor = e.target.id.split('-')[1]
-            e.preventDefault();
-            const xhr = new XMLHttpRequest();
-            xhr.open('DELETE', '/deleteFactor/' + factor);
-            xhr.send();
-            window.location.assign('/factors/home');
-          });
-        })
+factButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+        var factor = e.target.id.split('-')[1]
+        e.preventDefault();
+        const xhr = new XMLHttpRequest();
+        xhr.open('DELETE', '/deleteFactor/' + factor);
+        xhr.send();
+        window.location.assign('/factors/home');
+    });
+})
 
 
 // Modal control buttons
