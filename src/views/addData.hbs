@@ -15,7 +15,7 @@
       </span>
       <br> {{!-- class of symptom because input parent must have symptom in class --}}
 
-      <div id='container-{{this.symptom}}' class='hidden symptom'>
+      <div id='container-{{this.symptomid}}' class='hidden symptom'>
         <input class="sliders" aria-label="{{this.symptom}} scale" name="s{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range"
           min="0" max="10" value="0" steps="1">
         <span class="scaleNumber" id="scale-s{{this.symptomid}}-number"></span>
@@ -44,12 +44,12 @@
     {{#each factorsList}}
     <li class="factor-rating">
       <span class="factor-span">
-        <button class="expand" type="button" id='expand-{{this.factor}}'>{{this.factor}}
+        <button class="expand" type="button" id='expand-{{this.factorid}}'>{{this.factor}}
           <i class="fa fa-angle-down"></i>
         </button>
       </span>
       <br>
-      <div id='container-{{this.factor}}' class='hidden'>
+      <div id='container-{{this.factorid}}' class='hidden'>
         <input class="sliders" aria-label="{{this.factor}} scale" name="f{{this.factorid}}" id="scale-f{{this.factorid}}" type="range"
           min="0" max="10" value="0" steps="1">
         <span id="scale-f{{this.factorid}}-number"></span>
