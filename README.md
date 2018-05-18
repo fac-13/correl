@@ -58,7 +58,7 @@ We learned a considerable amount specifically roles and the iterative process of
 - [x] Importance of MVP.
 
 ## Team Roles
-#### Eade Hemingway - Scrum Master
-#### Jennah Hylton-Edwards - QA
-#### Jenath Kanagesan - Devops
-#### Tammy Speed - UX
+#### Eade - Scrum Master
+#### Jennah - QA
+#### Jenath - Devops
+#### Tammy - UX
