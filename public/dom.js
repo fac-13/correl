@@ -102,32 +102,69 @@ factButtons.forEach(function(button){
 var next = document.getElementById('next');
 var back = document.getElementById('back');
 
-var pageTwo = document.getElementById('pageTwo');
-var pageThree = document.getElementById('pageThree');
-var pageOne = document.getElementById('pageOne');
+// var pageTwo = document.getElementById('pageTwo');
+// var pageThree = document.getElementById('pageThree');
+// var pageOne = document.getElementById('pageOne');
 
-next.addEventListener('click', function(){
-  if(pageTwo.style.zIndex == 0) {
-    pageTwo.style.zIndex = "1";
-    pageOne.style.zIndex = "0";
-  } else if(pageTwo.style.zIndex == 1) {
-    pageThree.style.zIndex = "1";
-    pageTwo.style.zIndex = "0";
-  }
+// next.addEventListener('click', function(){
+//   if(pageTwo.style.zIndex == 0) {
+//     pageTwo.style.zIndex = "1";
+//     pageOne.style.zIndex = "0";
+//   } else if(pageTwo.style.zIndex == 1) {
+//     pageThree.style.zIndex = "1";
+//     pageTwo.style.zIndex = "0";
+//   }
+// });
+
+// back.addEventListener('click', function(){
+//   if(pageThree.style.zIndex == 1) {
+//     pageTwo.style.zIndex = "1";
+//     pageThree.style.zIndex = "0";
+//   } else if(pageTwo.style.zIndex == 1) {
+//     pageTwo.style.zIndex = "0";
+//     pageOne.style.zIndex = "1";
+//   }
+// });
+
+var instructions1 = document.querySelector('#instructions-1');
+var instructions2 = document.querySelector('#instructions-2');
+var instructions3 = document.querySelector('#instructions-3');
+var instructionsPages = [instructions1, instructions2, instructions3];
+
+next.addEventListener('click', function() {
+    // Find el that is not hidden
+    var visibileIndex = findVisibleInstruction();
+
+    // Hide currently visible el and show the el after it
+    if(visibileIndex != 2) {
+        instructionsPages[visibileIndex].classList.toggle('hidden');
+        instructionsPages[visibileIndex+1].classList.toggle('hidden');
+    } 
 });
 
-back.addEventListener('click', function(){
-  if(pageThree.style.zIndex == 1) {
-    pageTwo.style.zIndex = "1";
-    pageThree.style.zIndex = "0";
-  } else if(pageTwo.style.zIndex == 1) {
-    pageTwo.style.zIndex = "0";
-    pageOne.style.zIndex = "1";
-  }
+back.addEventListener('click', function() {
+    var visibileIndex = findVisibleInstruction();
+
+    if(visibileIndex != 0) {
+        instructionsPages[visibileIndex].classList.toggle('hidden');
+        instructionsPages[visibileIndex-1].classList.toggle('hidden');
+    } 
 });
+
+function findVisibleInstruction() {
+    for(var i=0; i < instructionsPages.length; i++) {
+        if(!instructionsPages[i].classList.contains('hidden')) {
+            return i;
+        }
+    }
+}
+
+
+
 
 // CODE FOR MODAL
 var modal = document.querySelector('#modal');
+var modalOverlay = document.querySelector('#overlay');
 var showModal = document.querySelector('#help');
 var hideModal = document.querySelector('#close-modal');
 var focusedElementBeforeModal; 
@@ -138,7 +175,7 @@ hideModal.addEventListener('click', closeModal);
 function openModal() {
     // Show the modal and overlay
     modal.style.display = 'block';
-    // modalOverlay.style.display = 'block';
+    modalOverlay.style.display = 'block';
 
     // Save the current focus 
     focusedElementBeforeModal = document.activeElement;
@@ -189,7 +226,7 @@ function openModal() {
 function closeModal() {
     // Hide the modal and overlay
     modal.style.display = 'none';
-    // modalOverlay.style.display = 'none';
+    modalOverlay.style.display = 'none';
 
     // Set focus back to element that had it before the modal was opened
     focusedElementBeforeModal.focus();
