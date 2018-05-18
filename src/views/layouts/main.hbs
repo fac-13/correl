@@ -6,6 +6,17 @@
   {{>topNav}}
   <main>
     {{{body}}}
+    <button id="help">HELP</button>
+    <div id="modal">
+      <img src="image/pageOne.jpg" id="blue" class="box one">
+      <img src="image/pageTwo.jpg" id="red" class="box two">
+      <img src="image/pageThree.jpg" id="green" class="box three">
+
+      <button id="next">next</button>
+      <button id="back">back</button>
+      <button id="close-modal">close</button>
+    </div>
+    <div id="overlay"></div>
   </main>
   <button class="help" disabled="disabled">?</button>
   {{>bottomNav}}

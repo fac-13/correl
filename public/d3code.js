@@ -23,16 +23,16 @@ var formatTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L%Z');
 
 var testData = {
   symptoms: [
-    { symptom: 'fatigue', rating: 3, date_entered: '2018-03-11T11:30:00.000Z' },
-    { symptom: 'fatigue', rating: 8, date_entered: '2018-03-12T11:30:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-11T11:30:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-12T11:30:00.000Z' },
     { symptom: 'mood', rating: 6, date_entered: '2018-03-12T11:30:00.000Z' },
-    { symptom: 'fatigue', rating: 7, date_entered: '2018-03-12T11:30:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-12T11:30:00.000Z' },
     { symptom: 'mood', rating: 7, date_entered: '2018-03-12T11:30:00.000Z' },
-    { symptom: 'fatigue', rating: 9, date_entered: '2018-03-14T09:15:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-14T09:15:00.000Z' },
     { symptom: 'mood', rating: 6, date_entered: '2018-03-14T09:15:00.000Z' },
-    { symptom: 'fatigue', rating: 7, date_entered: '2018-03-15T08:18:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-15T08:18:00.000Z' },
     { symptom: 'mood', rating: 7, date_entered: '2018-03-15T08:18:00.000Z' },
-    { symptom: 'fatigue', rating: 9, date_entered: '2018-03-16T12:09:00.000Z' },
+    { symptom: 'fatigue', rating: 10, date_entered: '2018-03-16T12:09:00.000Z' },
     { symptom: 'mood', rating: 6, date_entered: '2018-03-16T12:09:00.000Z' }],
   factors: [
     { factor: 'sleep', rating: 3, date_entered: '2018-03-12T11:30:00.000Z' },

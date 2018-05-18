@@ -251,6 +251,56 @@ form{
   transition: 2s;
   font-size: 4rem;
 }
+
+/* MODAL */
+#modal {
+  border: 2px solid lightgrey;
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: #fffcf9;
+  padding: 2rem;
+  left: 0;
+  right: 0;
+  margin: 3em;
+  top: 5%;
+  height: 500px;
+
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  z-index: 5;
+}
+
+/* modal */
+
+.one {
+  z-index: 1;
+}
+
+
+.box {
+  width:300px;
+  height:500px;
+  position:absolute;
+}
+
+#next {
+  float:right;
+}
+
+#back {
+  float:right;
+}
+
 .help:hover {
   color: hsl(19, 98%, 80%);;
   transform: scale(2);

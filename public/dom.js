@@ -97,6 +97,45 @@ factButtons.forEach(function (button) {
     });
 })
 
+// trigger modal
 
+var help = document.getElementById('help')
+var modal = document.getElementById('modal')
+var overlay = document.getElementById('overlay')
+help.addEventListener('click', function(){
+    console.log('inside help listerner')
+    modal.style.display = "block"
+    overlay.style.display = "block"
+})
 
+// for MODAL
 
+var next = document.getElementById('next');
+
+var back = document.getElementById('back');
+
+var red = document.getElementById('red');
+
+var green = document.getElementById('green');
+
+var blue = document.getElementById('blue');
+
+next.addEventListener('click', function(){
+  if(red.style.zIndex == 0) {
+    red.style.zIndex = "1";
+    blue.style.zIndex = "0";
+  } else if(red.style.zIndex == 1) {
+    green.style.zIndex = "1";
+    red.style.zIndex = "0";
+  }
+});
+
+back.addEventListener('click', function(){
+  if(green.style.zIndex == 1) {
+    red.style.zIndex = "1";
+    green.style.zIndex = "0";
+  } else if(red.style.zIndex == 1) {
+    red.style.zIndex = "0";
+    blue.style.zIndex = "1";
+  }
+});
