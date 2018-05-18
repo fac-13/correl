@@ -8,15 +8,15 @@
       <span class="symptom-span">
         <p>{{this.symptom}}</p>
         {{!-- need to add icon at the end --}}
-        <button class="expand" id='expand-{{this.symptom}}'>
+        <button class="expand" type="button" id='expand-{{this.symptom}}'>
           <i class="fa fa-angle-down"></i>
         </button>
       </span>
       <br> {{!-- class of symptom because input parent must have symptom in class --}}
       <div id='container-{{this.symptom}}' class='hidden symptom'>
-        <input aria-label="{{this.symptom}} scale" name="{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range" min="1"
-          max="10" value="1" steps="1">
-        <span id="scale-s{{this.symptomid}}-number">1</span>
+        <input aria-label="{{this.symptom}} scale" name="s{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range" min="0"
+          max="10" value="0" steps="1">
+        <span id="scale-s{{this.symptomid}}-number"></span>
         <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
@@ -36,22 +36,21 @@
 
 
   <h2>Factors</h2>
-
   <ul>
     {{#each factorsList}}
     <li class="factor-rating">
       <span class="factor-span">
         <p>{{this.factor}}</p>
         {{!-- need to add icon at the end --}}
-        <button class="expand" id='expand-{{this.factor}}'>
+        <button class="expand" type="button" id='expand-{{this.factor}}'>
           <i class="fa fa-angle-down"></i>
         </button>
       </span>
       <br>
       <div id='container-{{this.factor}}' class='hidden'>
-        <input aria-label="{{this.factor}} scale" name="{{this.factorid}}" id="scale-f{{this.factorid}}" type="range" min="1" max="10"
-          value="1" steps="1">
-        <span id="scale-f{{this.factorid}}-number">1</span>
+        <input aria-label="{{this.factor}} scale" name="f{{this.factorid}}" id="scale-f{{this.factorid}}" type="range" min="0" max="10"
+          value="0" steps="1">
+        <span id="scale-f{{this.factorid}}-number"></span>
         <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
