@@ -106,14 +106,6 @@ h2{
   color: 	hsl(19, 56%, 70%);
 }
 
-
-#bottom-nav {
-  position: fixed;
-  background-color: white;
-  width: 100%;
-  bottom: 0;
-}
-
 #user-options {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -247,7 +239,6 @@ form{
 
 /* help button */
 .help{
-  z-index: 4;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -300,18 +291,7 @@ form{
   left: 0;
   position: fixed;
   display: none;
-}
-
-
-.one {
   z-index: 1;
-}
-
-
-.box {
-  width:300px;
-  height:500px;
-  position:absolute;
 }
 
 .instructions {
