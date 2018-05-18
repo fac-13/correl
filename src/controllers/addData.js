@@ -34,7 +34,7 @@ exports.post = (req, res) => {
 
   Promise.all(promiseArray)
     .then(() => {
-      res.render('profile');
+      res.render('profile', { username: req.session.username });
     })
     .catch(err => console.log(err.message));
 };
