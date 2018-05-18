@@ -149,6 +149,9 @@ padding-top: 1.2rem;
   text-align: left;
   position: relative;
 }
+.factDelete, .sympDelete{
+  width: 18rem;
+}
 
 .addDataUl {
   width: 95%;
@@ -174,8 +177,6 @@ form{
 .formLables{
   color: 	hsl(19, 56%, 40%);
   font-size: 1.5rem;
-
-
 }
 
 .textInput{
@@ -191,7 +192,6 @@ form{
 }
 
 .textInput:focus{
-
   outline:none;
   border: 2px solid hsl(19, 56%, 80%);
 }
@@ -238,7 +238,7 @@ form{
 }
 
 
-
+/* help button */
 .help{
   z-index: 4;
   width: 120px;
@@ -252,7 +252,6 @@ form{
   font-size: 4rem;
 }
 .help:hover {
-
   color: hsl(19, 98%, 80%);;
   transform: scale(2);
 }
