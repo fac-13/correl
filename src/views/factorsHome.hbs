@@ -4,13 +4,14 @@
 <ul>
   {{#each factorsList}}
   <li class="factors-list">
-    <p id="{{this.factor}}">{{this.factor}}</p>
     <button class="factDelete" id="delete-{{this.factor}}">
-      <i class="fa fa-trash"></i>
+      {{this.factor}}
+      <i class="fa fa-trash faFact"></i>
     </button>
   </li>
   {{/each}}
 </ul>
-
-<a href="/factors/add" class="button-links">Add New Factor</a>
-<a href="/profile" class="button-links">Go Back</a>
+<span>
+  <a href="/factors/add" class="button-links">Add New Factor</a>
+  <a href="/profile" class="button-links">Go Back</a>
+</span>

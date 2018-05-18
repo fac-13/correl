@@ -1,23 +1,26 @@
 <h1>Enter Today's Data</h1>
 
-<h2>Symptoms</h2>
+
+
 <form action="/addData" method="POST">
-  <ul>
+  <h2>Symptoms</h2>
+  <ul class="addDataUl">
     {{#each symptomsList}}
     <li class="symptom-rating">
       <span class="symptom-span">
-        <p>{{this.symptom}}</p>
-        {{!-- need to add icon at the end --}}
-        <button class="expand" type="button" id='expand-{{this.symptom}}'>
+        <button class="expand" type="button" id='expand-{{this.symptomid}}'>{{this.symptom}}
+
           <i class="fa fa-angle-down"></i>
         </button>
       </span>
       <br> {{!-- class of symptom because input parent must have symptom in class --}}
+
       <div id='container-{{this.symptom}}' class='hidden symptom'>
-        <input aria-label="{{this.symptom}} scale" name="s{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range" min="0"
-          max="10" value="0" steps="1">
-        <span id="scale-s{{this.symptomid}}-number"></span>
-        <p id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+        <input class="sliders" aria-label="{{this.symptom}} scale" name="s{{this.symptomid}}" id="scale-s{{this.symptomid}}" type="range"
+          min="0" max="10" value="0" steps="1">
+        <span class="scaleNumber" id="scale-s{{this.symptomid}}-number"></span>
+        <p class="commentBox" id="comment-s{{this.symptomid}}">Any comments you've saved will appear here as you move the scale</p>
+
       </div>
       <p id="symptom-s{{this.symptomid}}-comment-1" class="hidden">{{this.comment_1}}</p>
       <p id="symptom-s{{this.symptomid}}-comment-2" class="hidden">{{this.comment_2}}</p>
@@ -36,22 +39,21 @@
 
 
   <h2>Factors</h2>
-  <ul>
+
+  <ul class="addDataUl">
     {{#each factorsList}}
     <li class="factor-rating">
       <span class="factor-span">
-        <p>{{this.factor}}</p>
-        {{!-- need to add icon at the end --}}
-        <button class="expand" type="button" id='expand-{{this.factor}}'>
+        <button class="expand" type="button" id='expand-{{this.factor}}'>{{this.factor}}
           <i class="fa fa-angle-down"></i>
         </button>
       </span>
       <br>
       <div id='container-{{this.factor}}' class='hidden'>
-        <input aria-label="{{this.factor}} scale" name="f{{this.factorid}}" id="scale-f{{this.factorid}}" type="range" min="0" max="10"
-          value="0" steps="1">
+        <input class="sliders" aria-label="{{this.factor}} scale" name="f{{this.factorid}}" id="scale-f{{this.factorid}}" type="range"
+          min="0" max="10" value="0" steps="1">
         <span id="scale-f{{this.factorid}}-number"></span>
-        <p id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
+        <p class="commentBox" id="comment-f{{this.factorid}}">Any comments you've saved will appear here as you move the scale</p>
       </div>
       <p id="factor-f{{this.factorid}}-comment-1" class="hidden">{{this.comment_1}}</p>
       <p id="factor-f{{this.factorid}}-comment-2" class="hidden">{{this.comment_2}}</p>
