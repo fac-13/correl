@@ -102,30 +102,6 @@ factButtons.forEach(function (button) {
 var next = document.getElementById('next');
 var back = document.getElementById('back');
 
-// var pageTwo = document.getElementById('pageTwo');
-// var pageThree = document.getElementById('pageThree');
-// var pageOne = document.getElementById('pageOne');
-
-// next.addEventListener('click', function(){
-//   if(pageTwo.style.zIndex == 0) {
-//     pageTwo.style.zIndex = "1";
-//     pageOne.style.zIndex = "0";
-//   } else if(pageTwo.style.zIndex == 1) {
-//     pageThree.style.zIndex = "1";
-//     pageTwo.style.zIndex = "0";
-//   }
-// });
-
-// back.addEventListener('click', function(){
-//   if(pageThree.style.zIndex == 1) {
-//     pageTwo.style.zIndex = "1";
-//     pageThree.style.zIndex = "0";
-//   } else if(pageTwo.style.zIndex == 1) {
-//     pageTwo.style.zIndex = "0";
-//     pageOne.style.zIndex = "1";
-//   }
-// });
-
 var instructions1 = document.querySelector('#instructions-1');
 var instructions2 = document.querySelector('#instructions-2');
 var instructions3 = document.querySelector('#instructions-3');
@@ -133,21 +109,21 @@ var instructionsPages = [instructions1, instructions2, instructions3];
 
 next.addEventListener('click', function() {
     // Find el that is not hidden
-    var visibileIndex = findVisibleInstruction();
+    var visibleIndex = findVisibleInstruction();
 
     // Hide currently visible el and show the el after it
-    if(visibileIndex != 2) {
-        instructionsPages[visibileIndex].classList.toggle('hidden');
-        instructionsPages[visibileIndex+1].classList.toggle('hidden');
+    if(visibleIndex != 2) {
+        instructionsPages[visibleIndex].classList.toggle('hidden');
+        instructionsPages[visibleIndex+1].classList.toggle('hidden');
     } 
 });
 
 back.addEventListener('click', function() {
-    var visibileIndex = findVisibleInstruction();
+    var visibleIndex = findVisibleInstruction();
 
-    if(visibileIndex != 0) {
-        instructionsPages[visibileIndex].classList.toggle('hidden');
-        instructionsPages[visibileIndex-1].classList.toggle('hidden');
+    if(visibleIndex != 0) {
+        instructionsPages[visibleIndex].classList.toggle('hidden');
+        instructionsPages[visibleIndex-1].classList.toggle('hidden');
     } 
 });
 
