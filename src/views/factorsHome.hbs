@@ -3,12 +3,15 @@
 <h2>Factors You're Tracking</h2>
 <ul>
   {{#each factorsList}}
-  <div>
-    <li>{{this}}</li>
-    <button class="delete">Delete</button>
-  </div>
+  <li class="factors-list">
+    <button class="factDelete" id="delete-{{this.factor}}">
+      {{this.factor}}
+      <i class="fa fa-trash faFact"></i>
+    </button>
+  </li>
   {{/each}}
 </ul>
-
-<a href="/factors/add">Add New Factor</a>
-<a href="/profile">Back</a>
+<span>
+  <a href="/factors/add" class="button-links">Add New Factor</a>
+  <a href="/profile" class="button-links">Go Back</a>
+</span>

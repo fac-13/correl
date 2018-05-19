@@ -1,9 +1,10 @@
 <h1>What symptom would you like to track?</h1>
 
 <form action="/symptoms/add" method="POST">
-  <input type="text" name="symptom" class="inline-input" placeholder="Enter symptom">
+  <input class="textInput" aria-label="Symptom to track" type="text" name="symptom" class="inline-input" placeholder="Enter symptom"
+    required>
+  <a href="/profile" class="button-links">Go Back</a>
+
   <button type="submit" name="button" class="add">Add</button>
   <br>
 </form>
-
-<a href="/profile">Go Back</a>

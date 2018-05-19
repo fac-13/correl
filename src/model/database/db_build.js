@@ -9,5 +9,9 @@ const build = sql('./db_build.sql');
 const runDbBuild = () => dbConnect
   .query(build);
 
+<<<<<<< HEAD
+=======
+// runDbBuild().catch(err => console.log(err));
+>>>>>>> master
 
 module.exports = runDbBuild;
