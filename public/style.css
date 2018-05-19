@@ -55,7 +55,7 @@ main {
   width: 50%;
   margin: auto;
   padding-top: 2rem;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
@@ -89,6 +89,7 @@ h2{
   width: 100%;
   position:fixed;
   height:4rem;
+  z-index: 100;
 
 }
 
