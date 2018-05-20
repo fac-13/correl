@@ -67,3 +67,12 @@ We learned a considerable amount about the iterative process of designing an app
 #### Jennah - QA
 #### Jenath - Devops
 #### Tammy - UX
+
+## Planning the Project
+#### Creating our prototype in Figma
+<img src="https://i.imgur.com/2jRQlCr.png" alt="figma prototype for correl project" width="400">
+
+#### Creating our database schema
+<img src="https://i.imgur.com/NjrIhmF.png" alt="database tables for correl project" width="400">
+
+
