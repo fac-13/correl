@@ -1,21 +1,19 @@
-
 # Correl
 Correlation station! Choo choo! :station:
 
 ## Description
-Correl helps you track a symptoms severity with factors you wish to track it with so you can find a link between any factors which cause irritation to your symptom.
+Correl is an application that allows users to enter symptoms they are suffering with and potentially contributing factors to  see any correlations between them over time.
 
 ## User Journey/User Stories
 #### As a user, I can...
 - Easily set up an account
-- Enter a physical symptom (ie. fatigue, itchy skin)
-- Enter an emotional symptom (ie. stress, mood changes)
-- Set my own scale to rate my symptoms by a measure that is meaningful to me
+- Enter a symptom (ie. fatigue, itchy skin, stress)
 - Enter an external factor (ie. water intake, exercise)
-- Set my own factor scale to rate external factors in a way that is meaningful to me
-- Easily rate my symptom(s) daily using my custom scale
-- Easily rate my factor(s) daily using my custom scale
-- Decide which data to update and not be required to enter all data
+- Customise my scale to rate symptoms and factors in a way that is meaningful to me
+- Easily rate my symptom(s) and factor(s) daily using my custom scale
+- See a graph of my symptom and factor ratings over time
+- Choose which data I want to show on my graph
+- Find clear instructions on how to use the application
 
 ## Gitflow
 
@@ -44,18 +42,23 @@ Correl helps you track a symptoms severity with factors you wish to track it wit
 	- run the app: `npm start`
 
 ## Tech Stack
-- html
-- css
-- javascript
+- Express
+- Handlebars
 - d3
+- PostgreSQL
+- HTML/CSS
+- Tape/Supertest
+
 
 ## What we've learned
-We learned a considerable amount specifically roles and the iterative process of designing an app from scratch. What stands out from what we've learnt:
-- [x] Collaborative process in working in small dev teams.
-- [x] The importance of the design process and figma sketch up before coding.
-- [x] Testing with Travis.
-- [x] Use of Handlebars.
-- [x] Importance of MVP.
+We learned a considerable amount about the iterative process of designing an app from scratch. What stands out from what we've learned:
+- [x] Collaborative process in working in small dev teams
+- [x] The various roles in a development team (ie. Scrum Master, QA, Devops, UX, etc)
+- [x] Using User Journeys/Problem Statements to guide a project and fine tune the end product
+- [x] The importance of the design process and figma sketch up before coding
+- [x] Testing with Travis
+- [x] Importance of MVP
+- [x] Benefits of Technical Spikes
 
 ## Team Roles
 #### Eade - Scrum Master
