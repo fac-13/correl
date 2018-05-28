@@ -25,7 +25,7 @@ exports.post = (req, res, next) => {
         res.render('logIn', { loggedOut: true, notmatch: true });
       }
     }).catch((err) => {
-      console.log(err);
+      res.render('error');
       next(err);
     });
 };
