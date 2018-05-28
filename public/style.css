@@ -41,6 +41,8 @@ p{
 /* input fields on scale setup page - want these to show up next to number button */
 .inline-input {
   display: inline-block;
+  height: 2.2rem;
+  width: 15rem;
 }
 
 main {
