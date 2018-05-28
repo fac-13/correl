@@ -52,15 +52,14 @@ expandButtons.forEach(function (button) {
         if (button.parentNode.className.includes('symptom')) {
             var symptom = 'container-' + e.target.id.split('-')[1]
             var container = document.querySelector('#' + symptom)
-            container.style.display = 'block'
+            container.classList.toggle('hidden');
         } else {
             var factor = 'container-' + e.target.id.split('-')[1]
             container = document.querySelector('#' + factor)
-            container.style.display = 'block'
+            container.classList.toggle('hidden');
         }
     })
 })
-
 
 
 scaleButtons.forEach(function (button) {
@@ -107,29 +106,29 @@ var instructions2 = document.querySelector('#instructions-2');
 var instructions3 = document.querySelector('#instructions-3');
 var instructionsPages = [instructions1, instructions2, instructions3];
 
-next.addEventListener('click', function() {
+next.addEventListener('click', function () {
     // Find el that is not hidden
     var visibleIndex = findVisibleInstruction();
 
     // Hide currently visible el and show the el after it
-    if(visibleIndex != 2) {
+    if (visibleIndex != 2) {
         instructionsPages[visibleIndex].classList.toggle('hidden');
-        instructionsPages[visibleIndex+1].classList.toggle('hidden');
-    } 
+        instructionsPages[visibleIndex + 1].classList.toggle('hidden');
+    }
 });
 
-back.addEventListener('click', function() {
+back.addEventListener('click', function () {
     var visibleIndex = findVisibleInstruction();
 
-    if(visibleIndex != 0) {
+    if (visibleIndex != 0) {
         instructionsPages[visibleIndex].classList.toggle('hidden');
-        instructionsPages[visibleIndex-1].classList.toggle('hidden');
-    } 
+        instructionsPages[visibleIndex - 1].classList.toggle('hidden');
+    }
 });
 
 function findVisibleInstruction() {
-    for(var i=0; i < instructionsPages.length; i++) {
-        if(!instructionsPages[i].classList.contains('hidden')) {
+    for (var i = 0; i < instructionsPages.length; i++) {
+        if (!instructionsPages[i].classList.contains('hidden')) {
             return i;
         }
     }
@@ -143,7 +142,7 @@ var modal = document.querySelector('#modal');
 var modalOverlay = document.querySelector('#overlay');
 var showModal = document.querySelector('#help');
 var hideModal = document.querySelector('#close-modal');
-var focusedElementBeforeModal; 
+var focusedElementBeforeModal;
 
 showModal.addEventListener('click', openModal);
 hideModal.addEventListener('click', closeModal);
@@ -168,7 +167,7 @@ function openModal() {
 
     // Find the first and last focusable elements
     firstFocusableEl = focusableElements[0];
-    lastFocusableEl = focusableElements[focusableElements.length-1];
+    lastFocusableEl = focusableElements[focusableElements.length - 1];
 
     // Move focus to the first focusbale element in the modal
     firstFocusableEl.focus();
@@ -177,19 +176,19 @@ function openModal() {
     // Trap focus inside the modal 
     function trapTab(e) {
         // Check if the tab key was pressed 
-        if(e.keyCode == 9) {
+        if (e.keyCode == 9) {
             // shift-tab
-            if(e.shiftKey) {
+            if (e.shiftKey) {
                 if (document.activeElement === firstFocusableEl) {
                     e.preventDefault();
                     lastFocusableEl.focus();
                 }
-            // tab without shift pressed    
+                // tab without shift pressed    
             } else {
                 if (document.activeElement === lastFocusableEl) {
                     e.preventDefault();
                     firstFocusableEl.focus();
-                  }
+                }
             }
         }
         // close modal if esc pressed
