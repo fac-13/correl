@@ -21,9 +21,8 @@ p{
   margin-bottom: 4rem;
   text-align: center;
 }
-.fa {
- color: rgba(250, 117, 0, 0.993);
-}
+
+
 .button-links, button {
   font-family: 'Hammersmith One', sans-serif;
   margin: 5px;
@@ -41,6 +40,8 @@ p{
 /* input fields on scale setup page - want these to show up next to number button */
 .inline-input {
   display: inline-block;
+  height: 2.2rem;
+  width: 15rem;
 }
 
 main {
@@ -55,12 +56,8 @@ main {
   width: 50%;
   margin: auto;
   padding-top: 2rem;
-  height: 100vh;
+  min-height: 100vh;
 }
-
-
-
-
 
 h1 {
   text-align: center;
@@ -89,6 +86,7 @@ h2{
   width: 100%;
   position:fixed;
   height:4rem;
+  z-index: 100;
 
 }
 
@@ -129,9 +127,6 @@ h2{
 }
 
 .profile-links:hover {
-  background-color:rgba(255, 119, 0, 0.363);
-
-  background: rgba(187, 210, 233, 0.2);
   transform: rotateY(360deg);
 }
 
@@ -167,6 +162,20 @@ i{
   position: absolute;
   right: 15px;
 }
+
+.fa {
+  color: rgba(250, 117, 0, 0.993);
+}
+
+.fa-exclamation-triangle {
+  display: block;
+  width: 100%;
+  padding-top: 2rem;
+  padding-left: .8rem;
+  position: relative;
+  text-align: center;
+}
+
 li {
   list-style-type: none;
 }
@@ -248,6 +257,14 @@ form{
   color:hsl(19, 98%, 48%);
   transition: 2s;
   font-size: 4rem;
+}
+
+.error__desc {
+  width: 100%;
+}
+
+.error__msg {
+  display: block;
 }
 
 

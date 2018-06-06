@@ -9,7 +9,7 @@ exports.get = (req, res) => {
         const [symptomsList, factorsList] = resultsArray;
         res.render('addData', { symptomsList, factorsList, username: req.session.username });
       })
-      .catch(err => console.log(err.message));
+      .catch(err => res.render('error'));
   } else {
     res.render('logIn');
   }
@@ -36,5 +36,5 @@ exports.post = (req, res) => {
     .then(() => {
       res.render('profile', { username: req.session.username });
     })
-    .catch(err => console.log(err.message));
+    .catch(err => res.render('error'));
 };
