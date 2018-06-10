@@ -232,6 +232,7 @@ form {
   border-radius: 50%;
   background: orange;
   cursor: pointer;
+  box-shadow: inset 2px -6px 7px rgb(250, 117, 0);
 }
 
 .scaleNumber {
