@@ -3,14 +3,14 @@
 
   <form action="/register" method="POST" class="signup__form" novalidate>
     <label for="username" class="formLables">Username:
-      <input class="textInput" id="username" type="text" name="username" required/>
+      <input class="textInput" id="username" type="text" autocomplete='off' name="username" required/>
     </label>
     <label for="password" class="formLables">Password:
-      <input class="textInput" id="password" type="password" name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+      <input class="textInput" id="password" type="password" autocomplete='off' name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label>
     <label for="confirmPassword" class="formLables">Confirm password:
-      <input class="textInput" id="confirmPassword" type="password" name="confirmPassword" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+      <input class="textInput" id="confirmPassword" type="password" autocomplete='off' name="confirmPassword" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label>
     <p class="error" aria-live="polite"></p>
