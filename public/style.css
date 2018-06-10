@@ -114,7 +114,7 @@ h2 {
   grid-gap: 10px;
 }
 
-.profile-links{
+.profile-links {
   min-width: 10rem;
   min-height: 10rem;
   width: 6em;
@@ -126,8 +126,6 @@ h2 {
   text-decoration: none;
   text-align: center;
 }
-
-
 
 ul {
   padding-top: 1.2rem;
@@ -280,6 +278,7 @@ form {
   overflow: scroll;
   padding-bottom: 1%;
   text-align: center;
+  margin-top: 5rem;
 }
 
 #modal p {
@@ -349,8 +348,7 @@ form {
   width: 50%;
 }
 
-.scale-buttons{
+.scale-buttons {
   margin: 2px;
   width: 2rem;
-
 }
