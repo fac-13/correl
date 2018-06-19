@@ -2,13 +2,13 @@
 <section>
   <form action="/login" method="POST" class="signup__form" novalidate>
     <label for="login" class="formLables">Login:
-      <input class="textInput" id="login" type="text" name="username" required/>
+      <input class="textInput" id="login" type="text" name="username" autocomplete='off' required/>
     </label>
     <label for="password" class="formLables">Password:
-      <input class="textInput" id="logPassword" type="password" name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+      <input class="textInput" id="logPassword" type="password" name="password" autocomplete='off' required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label> {{#if notmatch}}
-    <p>incorrect details, please try again</p>
+    <p class="errMessage">incorrect details, please try again</p>
     {{/if}}
     <p class="error" aria-live="polite"></p>
     <button>Submit</button>

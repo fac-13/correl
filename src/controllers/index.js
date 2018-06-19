@@ -50,9 +50,7 @@ router.post('/addData', addData.post);
 router.delete('/deleteSymptom/:symptom', symptoms.delete);
 router.delete('/deleteFactor/:factor', factors.delete);
 
-
 router.use(error.client);
 router.use(error.server);
-
 
 module.exports = router;
