@@ -8,9 +8,9 @@
     {{#each symptomsList}}
     <li class="symptom-rating">
       <span class="symptom-span">
-        <button class="expand" type="button" id='expand-{{this.symptomid}}'>{{this.symptom}}
-
-          <i class="fa fa-angle-down"></i>
+        <button class="expand" type="button" id='expand-{{this.symptomid}}'>
+          <div class="symptom-names" id='text-{{this.symptomid}}'>{{this.symptom}}</div>
+          <div class="down-arrow" id='icon-{{this.symptomid}}'></div>
         </button>
       </span>
       <br> {{!-- class of symptom because input parent must have symptom in class --}}
@@ -44,8 +44,9 @@
     {{#each factorsList}}
     <li class="factor-rating">
       <span class="factor-span">
-        <button class="expand" type="button" id='expand-{{this.factorid}}'>{{this.factor}}
-          <i class="fa fa-angle-down"></i>
+        <button class="expand" type="button" id='expand-{{this.factorid}}'>
+          <div class="factor-names" id='text-{{this.factorid}}'>{{this.factor}}</div>
+          <div class="down-arrow" id='icon-{{this.factorid}}'></div>
         </button>
       </span>
       <br>
