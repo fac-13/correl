@@ -135,8 +135,9 @@ var renderGraph = function(err, response) {
     var svg = d3
       .select('#graph')
       .append('svg')
-      .attr('width', chart_width)
-      .attr('height', chart_height);
+      .attr('width', '100%')
+      .attr('height', '100%')
+      .attr('viewBox', '60 0 600 700');
 
     // create axes
     var x_axis = d3

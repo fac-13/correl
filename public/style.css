@@ -369,3 +369,9 @@ form {
   margin: 2px;
   width: 2rem;
 }
+
+/*Styling for seeData*/
+#graph {
+  width: 100%;
+  border: solid 1px black;
+}
