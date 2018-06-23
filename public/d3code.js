@@ -148,7 +148,13 @@ var renderGraph = function(err, response) {
     svg
       .append('g')
       .attr('transform', 'translate(0,' + (chart_height - padding) + ')')
-      .call(x_axis);
+      .call(x_axis)
+      .selectAll('text')
+      .style('text-anchor', 'end')
+      .attr('dx', '-.8em')
+      .attr('dy', '.15em')
+      .attr('font-size', '0.8rem')
+      .attr('transform', 'rotate(-65)');
 
     svg
       .append('g')

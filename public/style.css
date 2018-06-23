@@ -373,7 +373,6 @@ form {
 /*Styling for seeData*/
 #graph {
   width: 100%;
-  border: solid 1px black;
 }
 
 @media only screen and (max-width: 480px) {
