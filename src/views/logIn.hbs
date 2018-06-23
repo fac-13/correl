@@ -1,11 +1,11 @@
-<h1>Log In</h1>
-<section>
+<section class='login--section'>
+  <h1 class="title">Log In</h1>
   <form action="/login" method="POST" class="signup__form" novalidate>
-    <label for="login" class="formLables">Login:
-      <input class="textInput" id="login" type="text" name="username" autocomplete='off' required/>
+    <label for="login" class="form--label">Login:
+      <input class="form--input" id="login" type="text" name="username" autocomplete='off' required/>
     </label>
-    <label for="password" class="formLables">Password:
-      <input class="textInput" id="logPassword" type="password" name="password" autocomplete='off' required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+    <label for="password" class="form--label">Password:
+      <input class="form--input" id="logPassword" type="password" name="password" autocomplete='off' required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label> {{#if notmatch}}
     <p class="errMessage">incorrect details, please try again</p>

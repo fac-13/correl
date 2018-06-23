@@ -10,6 +10,15 @@ body {
   position: relative;
 }
 
+.title {
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+  color: hsl(19, 56%, 40%);
+  text-transform: uppercase;
+}
+
 .errMessage {
   color: red;
   width: 100%;
@@ -64,14 +73,14 @@ main {
   min-height: 100vh;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   font-weight: lighter;
   margin-bottom: 5rem;
   margin-top: 2rem;
   color: hsl(19, 56%, 40%);
   text-transform: uppercase;
-}
+} */
 
 h2 {
   text-align: left;
@@ -193,29 +202,25 @@ i {
 li {
   list-style-type: none;
 }
-form {
-  width: 20rem;
-}
-.formLables {
-  color: hsl(19, 56%, 40%);
-  font-size: 1.5rem;
+
+.login-section {
+  border: solid;
+  width: 100%;
 }
 
-.textInput {
-  display: inline-block;
+.form--label {
+  color: hsl(19, 56%, 40%);
+  font-size: 1.5rem;
+  margin: 0 auto;
+  display: block;
+  width: 70%;
+}
+
+.form--input {
   width: 100%;
-  height: 2.5rem;
-  padding: 0.7rem;
+  height: 2rem;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 1.5rem;
-  font-family: 'Hammersmith One', sans-serif;
-  color: hsl(19, 56%, 40%);
-}
-
-.textInput:focus {
-  outline: none;
-  border: 2px solid hsl(19, 56%, 80%);
 }
 
 #correl {
