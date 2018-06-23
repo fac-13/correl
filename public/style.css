@@ -1,6 +1,5 @@
 html {
   width: 100%;
-  font-size: 18px;
 }
 
 body {
@@ -38,9 +37,8 @@ p {
 }
 
 .button-links,
-button {
+.button {
   font-family: 'Hammersmith One', sans-serif;
-  margin: 5px;
   background-color: white;
   font-size: 1.2rem;
   padding: 0.5rem 0.5rem;
@@ -49,6 +47,18 @@ button {
   cursor: pointer;
   box-shadow: 0px 3px 3px rgba(255, 119, 0, 0.685);
   color: hsl(19, 56%, 40%);
+}
+
+.register--button {
+  position: relative;
+  bottom: 2rem;
+  left: 3rem;
+}
+
+.login--button {
+  position: relative;
+  bottom: 2rem;
+  left: 2rem;
 }
 
 /* input fields on scale setup page - want these to show up next to number button */
@@ -210,7 +220,7 @@ li {
 
 .form--label {
   color: hsl(19, 56%, 40%);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin: 0 auto;
   display: block;
   width: 70%;
@@ -266,7 +276,7 @@ li {
 }
 
 /* help button */
-.help {
+.button--help {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -276,6 +286,11 @@ li {
   color: hsl(19, 98%, 48%);
   transition: 2s;
   font-size: 4rem;
+}
+
+.button--help:hover {
+  color: hsl(19, 98%, 80%);
+  transform: scale(1.3);
 }
 
 .error__desc {
@@ -361,11 +376,6 @@ li {
   padding: 0.4rem 0.6rem;
 }
 
-.help:hover {
-  color: hsl(19, 98%, 80%);
-  transform: scale(1.3);
-}
-
 .home-image {
   width: 50%;
 }
@@ -385,7 +395,7 @@ li {
   main {
     width: 100%;
   }
-  .help {
+  .button--help {
     width: 60px;
     height: 60px;
     bottom: 25px;
@@ -417,7 +427,7 @@ li {
   main {
     width: 90%;
   }
-  .help {
+  .button--help {
     width: 100px;
     height: 100px;
     bottom: 25px;

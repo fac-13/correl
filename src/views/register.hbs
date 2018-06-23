@@ -1,19 +1,18 @@
-<h1>Register</h1>
 <section class="signup">
-
+  <h1 class="title">Register</h1>
   <form action="/register" method="POST" class="signup__form" novalidate>
-    <label for="username" class="formLables">Username:
-      <input class="textInput" id="username" type="text" autocomplete='off' name="username" required/>
+    <label for="username" class="form--label">Username:
+      <input class="form--input" id="username" type="text" autocomplete='off' name="username" required/>
     </label>
-    <label for="password" class="formLables">Password:
-      <input class="textInput" id="password" type="password" autocomplete='off' name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+    <label for="password" class="form--label">Password:
+      <input class="form--input" id="password" type="password" autocomplete='off' name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label>
-    <label for="confirmPassword" class="formLables">Confirm password:
-      <input class="textInput" id="confirmPassword" type="password" autocomplete='off' name="confirmPassword" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+    <label for="confirmPassword" class="form--label">Confirm password:
+      <input class="form--input" id="confirmPassword" type="password" autocomplete='off' name="confirmPassword" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label>
     <p class="error" aria-live="polite"></p>
-    <button id="register-button">Submit</button>
+    <button id="register-button" class="button register--button">Submit</button>
   </form>
 </section>
