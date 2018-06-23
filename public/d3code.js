@@ -85,8 +85,6 @@ var renderGraph = function(err, response) {
   if (err) {
     console.log(err);
   } else {
-    var dateTime = formatTime(testData.factors[0].date_entered);
-
     // Change date_entered into d3's required time format
     testData.symptoms.forEach(function(obj) {
       obj.date_entered = formatTime(obj.date_entered);
@@ -171,14 +169,6 @@ var renderGraph = function(err, response) {
     var colorsSymPalette = d3.scaleOrdinal(d3.schemeCategory10);
     var colorsFactPalette = d3.scaleOrdinal(d3.schemeSet3);
 
-    // Calculate path length of lines
-    // From https://stackoverflow.com/questions/30355241/get-the-length-of-a-svg-line-rect-polygon-and-circle-tags/30376660
-    // var getPathLength = function(el) {
-    //   var pathCoords = el.get(0);
-    //   var pathLength = pathCoords.getTotalLength();
-    //   return pathLength;
-    // };
-
     var totalLength = chart_width * 3;
 
     // Add lines for each of the symptoms to the graph
@@ -214,7 +204,7 @@ var renderGraph = function(err, response) {
 
     // Animate line drawing for symptom
     symptoms
-      .attr('stroke-dasharray', totalLength + ' ' + totalLength)
+      .attr('stroke-dasharray', totalLength)
       .attr('stroke-dashoffset', totalLength)
       .transition()
       .duration(9000)
@@ -365,35 +355,5 @@ function toggleLines(d, legendKey, type) {
     d3.select(legendKey).style('opacity', 1);
 
     d3.select(lineForKey).style('display', 'block');
-  }
-}
-
-// make it responsive
-
-function responsivefy(svg) {
-  // get container + svg aspect ratio
-  var container = d3.select(svg.node().parentNode),
-    width = parseInt(svg.style('width')),
-    height = parseInt(svg.style('height')),
-    aspect = width / height;
-
-  // add viewBox and preserveAspectRatio properties,
-  // and call resize so that svg resizes on inital page load
-  svg
-    .attr('viewBox', '0 0 ' + width + ' ' + height)
-    .attr('perserveAspectRatio', 'xMinYMid')
-    .call(resize);
-
-  // to register multiple listeners for same event type,
-  // you need to add namespace, i.e., 'click.foo'
-  // necessary if you call invoke this function for multiple svgs
-  // api docs: https://github.com/mbostock/d3/wiki/Selections#on
-  d3.select(window).on('resize.' + container.attr('id'), resize);
-
-  // get width of container and resize svg to fit it
-  function resize() {
-    var targetWidth = parseInt(container.style('width'));
-    svg.attr('width', targetWidth);
-    svg.attr('height', Math.round(targetWidth / aspect));
   }
 }
