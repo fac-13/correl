@@ -1,6 +1,6 @@
 <section class='login--section'>
   <h1 class="title">Log In</h1>
-  <form action="/login" method="POST" class="signup__form" novalidate>
+  <form action="/login" method="POST" class="signup__form form" novalidate>
     <label for="login" class="form--label">Login:
       <input class="form--input" id="login" type="text" name="username" autocomplete='off' required/>
     </label>
@@ -8,9 +8,9 @@
       <input class="form--input" id="logPassword" type="password" name="password" autocomplete='off' required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
       />
     </label> {{#if notmatch}}
-    <p class="errMessage">incorrect details, please try again</p>
+    <p class="error">Incorrect details. Please try again</p>
     {{/if}}
-    <p class="error" aria-live="polite"></p>
+    <p class="error--aria" aria-live="polite"></p>
     <button class="button login--button">Submit</button>
   </form>
 </section>
