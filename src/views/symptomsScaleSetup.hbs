@@ -3,7 +3,7 @@
   <form class="form" action="/symptoms/scaleSetup" method="POST" id="setUpScale">
     {{#times 10}}
     <div class="sympSetup--container">
-      <button id="symptom-{{this}}" class=" button scale-buttons" type="button">{{this}}</button>
+      <button id="symptom-{{this}}" class=" button scale-buttons scale-buttons-js" type="button">{{this}}</button>
       <input type="text" class="inline-input hidden" autocomplete='off' name="{{this}}">
     </div>
     <br> {{/times}}

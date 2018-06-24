@@ -9,54 +9,19 @@ body {
   position: relative;
 }
 
-.padding-top2rem {
-  padding: 2rem 0 0;
-}
-
-.title {
-  text-align: center;
-  font-weight: lighter;
-  margin-bottom: 3rem;
-  margin-top: 2rem;
-  color: hsl(19, 56%, 40%);
-  text-transform: uppercase;
-}
-
-.subheading {
-  color: hsl(19, 56%, 70%);
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 3rem;
-}
-
-.error {
-  color: red;
-  border: 2px solid red;
-  padding: 1rem;
-  margin: 0 auto 4rem auto;
-  width: 70%;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.form {
+.main {
+  background-color: hsl(28, 100%, 97%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-}
-
-.list--item {
-  list-style-type: none;
-  position: relative;
-  left: -1.5rem;
   margin: auto;
-  width: 86%;
+  padding-top: 2rem;
+  min-height: 100vh;
 }
 
-a,
-p {
-  text-decoration: none;
-  color: hsl(19, 56%, 40%);
-}
-
+/* STYLES NOT SPECIFIC TO SET PAGES */
 .button-links,
 .button {
   font-family: 'Hammersmith One', sans-serif;
@@ -70,126 +35,12 @@ p {
   color: hsl(19, 56%, 40%);
 }
 
-.register--button {
-  position: relative;
-  bottom: 2rem;
-  left: 15%;
-}
-
-.login--button {
-  position: relative;
-  bottom: 2rem;
-  left: 15%;
-}
-
-/* input fields on scale setup page - want these to show up next to number button */
-.inline-input {
-  display: inline-block;
-  height: 2.2rem;
-  width: calc(100% - 3rem);
-}
-
-main {
-  /* background-color:hsl(28, 30%, 97%); */
-  background-color: hsl(28, 100%, 97%);
-  /* border-left: solid 9px hsl(28, 30%, 94%);
-  border-right: solid 9px hsl(28, 30%, 94%); */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  padding-top: 2rem;
-  min-height: 100vh;
-}
-
-.hidden {
-  display: none;
-}
-
-/* PARTIALS */
-/* TOP NAV */
-#top-nav {
-  background-color: white;
-  text-transform: uppercase;
-  width: 100%;
-  position: fixed;
-  height: 4rem;
-  z-index: 100;
-}
-
-.top-nav-list {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  right: 0.2rem;
-}
-
-.top-nav-list li {
-  text-transform: uppercase;
-  list-style-type: none;
-  /* margin: 0rem 1.8rem; */
-  /* font-size: 1.2rem; */
-  margin: 0rem 0.5rem;
-  font-size: 0.9rem;
-  color: hsl(19, 56%, 70%);
-}
-
-/* ul {
-  padding-top: 1.2rem;
-  margin-bottom: 4rem;
-  padding-left: 0;
-} */
-
-.down-arrow {
-  background-image: url('/assets/angle-down.svg');
-  min-height: 1.5rem;
-  width: 1.5rem;
-  background-repeat: no-repeat;
-}
-
-.up {
-  transform: rotateX(180deg);
-}
-
-.addDataUl {
-  width: 95%;
-}
-
-.commentBox {
-  width: 100%;
-  min-height: 2rem;
-  font-size: 0.8rem;
-  padding: 0.8rem;
-  text-align: left;
-  background: hsl(28, 30%, 94%);
-}
-/* i {
-  position: absolute;
-  right: 15px;
-} */
-
 .fa {
   color: rgba(250, 117, 0, 0.993);
 }
 
-.fa-exclamation-triangle {
-  display: block;
+.form {
   width: 100%;
-  padding-top: 2rem;
-  padding-left: 0.8rem;
-  position: relative;
-  text-align: center;
-}
-
-/* li {
-  list-style-type: none;
-} */
-
-.login--section {
-  width: 100%;
-  max-width: 650px;
 }
 
 .form--label {
@@ -207,14 +58,319 @@ main {
   margin-bottom: 2rem;
 }
 
+.hidden {
+  display: none;
+}
+
+.list--item {
+  list-style-type: none;
+  position: relative;
+  left: -1.5rem;
+  margin: auto;
+  width: 86%;
+}
+
+@media only screen and (min-width: 375px) {
+  .list--item {
+    width: 66%;
+  }
+}
+
+.padding-top2rem {
+  padding: 2rem 0 0;
+}
+
+.subheading {
+  color: hsl(19, 56%, 70%);
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  color: hsl(19, 56%, 40%);
+  text-transform: uppercase;
+}
+
+a,
+p {
+  text-decoration: none;
+  color: hsl(19, 56%, 40%);
+}
+
+/* PARTIALS */
+
+/* TOP NAV */
+.top-nav {
+  background-color: white;
+  text-transform: uppercase;
+  width: 100%;
+  position: fixed;
+  height: 4rem;
+  z-index: 100;
+}
+
+.top-nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  right: 0.2rem;
+  font-size: 0.9rem;
+  color: hsl(19, 56%, 70%);
+}
+
+.top-nav-list li {
+  list-style-type: none;
+  margin: 0rem 0.5rem;
+}
+
 #correl {
   position: absolute;
-  /* left: 1rem; */
   left: 0.2rem;
   letter-spacing: 0.6rem;
 }
 
-.sliders {
+/* BOTTOM NAV */
+.help--button {
+  border-radius: 50%;
+  position: fixed;
+  color: hsl(19, 98%, 48%);
+  transition: 2s;
+  width: 4rem;
+  height: 4rem;
+  bottom: 25px;
+  right: 25px;
+  font-size: 2.5rem;
+}
+
+.help--button:hover {
+  color: hsl(19, 98%, 80%);
+  transform: scale(1.3);
+}
+
+/* ERROR PAGE */
+.error {
+  color: red;
+  border: 2px solid red;
+  padding: 1rem;
+  margin: 0 auto 4rem auto;
+  width: 70%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.error__desc {
+  width: 100%;
+}
+
+.error__msg {
+  display: block;
+}
+
+.fa-exclamation-triangle {
+  display: block;
+  width: 100%;
+  padding-top: 2rem;
+  padding-left: 0.8rem;
+  position: relative;
+  text-align: center;
+}
+
+/* HOME PAGE */
+.home-image {
+  width: 50%;
+}
+
+/* LOGIN PAGE */
+
+.login--section {
+  width: 100%;
+  max-width: 650px;
+}
+
+.login--button {
+  position: relative;
+  bottom: 2rem;
+  left: 15%;
+}
+
+/* SIGN UP PAGE */
+.signup--section {
+  width: 100%;
+  max-width: 650px;
+}
+
+.signup--button {
+  position: relative;
+  bottom: 2rem;
+  left: 15%;
+}
+
+/* PROFILE PAGE */
+.profile--section {
+  width: 100%;
+}
+
+.profile--options {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  position: relative;
+  bottom: 3rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.profile--links {
+  background-color: rgb(255, 255, 255);
+  color: hsl(19, 57%, 40%);
+  box-shadow: 0px 3px 3px rgba(255, 119, 0, 0.685);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile--container-img {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.profile--text {
+  text-align: center;
+}
+
+@media only screen and (min-width: 510px) {
+  .profile--options {
+    max-width: 478px;
+    grid-gap: 25px;
+  }
+  .profile--links {
+    width: 234px;
+  }
+}
+
+/* SYMPTOMS & FACTORS HOME */
+.sympFactHome--section {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -4rem;
+  text-align: center;
+}
+
+.sympFactHome--list {
+  margin-bottom: 3rem;
+  width: 90%;
+}
+
+.sympFact--container-btns {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  max-width: 366px;
+}
+
+.delete {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* SYMPTOMS & FACTORS ADD */
+.sympFActAdd {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -8rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.form--input-placeholder::placeholder {
+  color: hsla(0, 0%, 46%, 0.774);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* SYMPTOMS & FACTORS SCALE INFO */
+.sympFactScaleInfo--section {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -8rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* SYMPTOMS & FACTORS SCALE SETUP */
+.sympFactSetup--section {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: 2rem;
+}
+
+.sympFactSetup--container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.scale-buttons {
+  margin: 2px;
+  width: 2rem;
+}
+
+/* input fields on scale setup page - want these to show up next to number button */
+.inline-input {
+  display: inline-block;
+  height: 2.2rem;
+  width: calc(100% - 3rem);
+}
+
+/* ADD DATA PAGE  */
+.addData--section {
+  width: 100%;
+  max-width: 650px;
+}
+
+.addData--ul {
+  width: 95%;
+}
+
+.addData--expand-btn {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+}
+
+.addData--down-arrow {
+  background-image: url('/assets/angle-down.svg');
+  min-height: 1.5rem;
+  width: 1.5rem;
+  background-repeat: no-repeat;
+}
+
+.up-js {
+  transform: rotateX(180deg);
+}
+
+.scale--input {
   width: 13rem;
   height: 1rem;
   outline: none;
@@ -229,7 +385,7 @@ main {
   border: 2px solid lightsalmon;
 }
 
-.sliders::-webkit-slider-thumb {
+.scale--input::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 2rem;
   height: 2rem;
@@ -245,35 +401,27 @@ main {
   padding: 0.3rem;
   margin: 0.6rem;
   margin-left: 1.5rem;
-
   text-align: center;
   color: hsl(19, 56%, 40%);
 }
 
-/* help button */
-.button--help {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 75px;
-  right: 75px;
-  color: hsl(19, 98%, 48%);
-  transition: 2s;
-  font-size: 4rem;
+.commentBox {
+  min-height: 2rem;
+  font-size: 0.8rem;
+  padding: 0.8rem;
+  text-align: left;
+  background: hsl(28, 30%, 94%);
 }
 
-.button--help:hover {
-  color: hsl(19, 98%, 80%);
-  transform: scale(1.3);
-}
-
-.error__desc {
+/* SEE DATA PAGE */
+.seeData--section {
   width: 100%;
+  max-width: 650px;
+  text-align: center;
 }
 
-.error__msg {
-  display: block;
+#graph {
+  width: 100%;
 }
 
 /* MODAL */
@@ -349,166 +497,4 @@ main {
   top: 0;
   position: absolute;
   padding: 0.4rem 0.6rem;
-}
-
-.home-image {
-  width: 50%;
-}
-
-.scale-buttons {
-  margin: 2px;
-  width: 2rem;
-}
-
-/*Styling for seeData*/
-#graph {
-  width: 100%;
-  border: solid 1px black;
-}
-
-/*SIGN UP PAGE*/
-.signup--section {
-  width: 100%;
-  max-width: 650px;
-}
-
-/*PROFILE PAGE*/
-.profile--section {
-  width: 100%;
-}
-
-.profile--options {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  position: relative;
-  bottom: 3rem;
-  padding: 1rem;
-  margin: 0 auto;
-}
-
-.profile--links {
-  background-color: rgb(255, 255, 255);
-  color: hsl(19, 57%, 40%);
-  box-shadow: 0px 3px 3px rgba(255, 119, 0, 0.685);
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile--container-img {
-  height: 60%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 40px;
-}
-
-.profile--text {
-  text-align: center;
-}
-
-.button--help {
-  width: 4rem;
-  height: 4rem;
-  bottom: 25px;
-  right: 25px;
-  font-size: 2.5rem;
-}
-
-@media only screen and (min-width: 510px) {
-  .profile--options {
-    max-width: 478px;
-    grid-gap: 25px;
-  }
-  .profile--links {
-    width: 234px;
-  }
-}
-
-/* SYMPTOMS & FACTORS HOME */
-.sympFactHome--section {
-  width: 100%;
-  max-width: 650px;
-  position: relative;
-  top: -4rem;
-  text-align: center;
-}
-
-.sympFactHome--list {
-  margin-bottom: 3rem;
-  width: 90%;
-}
-
-.sympFact--container-btns {
-  display: flex;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  max-width: 366px;
-}
-
-.delete {
-  padding: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-@media only screen and (min-width: 375px) {
-  .list--item {
-    width: 66%;
-  }
-}
-
-/* SYMPTOMS & FACTORS ADD */
-.sympFActAdd {
-  width: 100%;
-  max-width: 650px;
-  position: relative;
-  top: -8rem;
-  padding: 0 1.5rem;
-  box-sizing: border-box;
-}
-
-.form--input-placeholder::placeholder {
-  color: hsla(0, 0%, 46%, 0.774);
-  font-size: 1rem;
-  font-style: italic;
-}
-
-/* SYMPTOMS SCALE INFO */
-.sympFactScaleInfo--section {
-  width: 100%;
-  max-width: 650px;
-  position: relative;
-  top: -8rem;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
-
-/* SYMPTOMS SCALE SETUP*/
-.sympFactSetup--section {
-  width: 100%;
-  max-width: 650px;
-  position: relative;
-  top: 2rem;
-}
-
-.sympFactSetup--container {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.expand {
-  padding: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  position: relative;
 }

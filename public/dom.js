@@ -58,9 +58,9 @@ scales.forEach(scale => {
   });
 });
 
-var scaleButtons = document.querySelectorAll('.scale-buttons');
+var scaleButtons = document.querySelectorAll('.scale-buttons-js');
 
-var expandButtons = document.querySelectorAll('.expand');
+var expandButtons = document.querySelectorAll('.addData--expand-btn-js');
 
 expandButtons.forEach(function(button) {
   button.addEventListener('click', function(e) {
@@ -69,12 +69,12 @@ expandButtons.forEach(function(button) {
       var symptom = 'container-' + e.target.id.split('-')[1];
       var container = document.querySelector('#' + symptom);
       container.classList.toggle('hidden');
-      arrow.classList.toggle('up');
+      arrow.classList.toggle('up-js');
     } else {
       var factor = 'container-' + e.target.id.split('-')[1];
       container = document.querySelector('#' + factor);
       container.classList.toggle('hidden');
-      arrow.classList.toggle('up');
+      arrow.classList.toggle('up-js');
     }
   });
 });
