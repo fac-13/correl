@@ -1,13 +1,18 @@
-<h1>scale setup</h1>
+<section class="sympSetup--section">
+  <h1 class="title">scale setup</h1>
 
-<form action="/symptoms/scaleSetup" method="POST" id="setUpScale">
-  {{#times 10}}
-  <div>
-    <button id="symptom-{{this}}" class="scale-buttons" type="button">{{this}}</button>
-    <input type="text" class="inline-input hidden" autocomplete='off' name="{{this}}">
-  </div>
-  <br> {{/times}}
-  <a href="/symptoms/scaleInfo" class="button-links">Go Back</a>
+  <form class="form" action="/symptoms/scaleSetup" method="POST" id="setUpScale">
+    {{#times 10}}
+    <div class="sympSetup--container">
+      <button id="symptom-{{this}}" class=" button scale-buttons" type="button">{{this}}</button>
+      <input type="text" class="inline-input hidden" autocomplete='off' name="{{this}}">
+    </div>
+    <br> {{/times}}
 
-  <button class="add" type="submit">Save &amp; Finish</button>
-</form>
+    <div class="symp--container-btns">
+      <a href="/symptoms/scaleInfo" class="button-links">Go Back</a>
+      <button class="button" type="submit">Save &amp; Finish</button>
+    </div>
+
+  </form>
+</section>
