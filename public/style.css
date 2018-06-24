@@ -12,10 +12,17 @@ body {
 .title {
   text-align: center;
   font-weight: lighter;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   margin-top: 2rem;
   color: hsl(19, 56%, 40%);
   text-transform: uppercase;
+}
+
+.subheading {
+  color: hsl(19, 56%, 70%);
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
 }
 
 .error {
@@ -30,6 +37,14 @@ body {
 
 .form {
   width: 100%;
+}
+
+.list--item {
+  list-style-type: none;
+  position: relative;
+  left: -1.5rem;
+  margin: auto;
+  width: 86%;
 }
 
 a,
@@ -91,20 +106,6 @@ main {
   min-height: 100vh;
 }
 
-/* h1 {
-  text-align: center;
-  font-weight: lighter;
-  margin-bottom: 5rem;
-  margin-top: 2rem;
-  color: hsl(19, 56%, 40%);
-  text-transform: uppercase;
-} */
-
-h2 {
-  text-align: left;
-  color: hsl(19, 56%, 70%);
-}
-
 .hidden {
   display: none;
 }
@@ -137,27 +138,11 @@ h2 {
   color: hsl(19, 56%, 70%);
 }
 
-ul {
+/* ul {
   padding-top: 1.2rem;
   margin-bottom: 4rem;
   padding-left: 0;
-}
-
-.expand,
-.factDelete,
-.sympDelete {
-  padding: 0.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  position: relative;
-}
-
-.factDelete,
-.sympDelete {
-  width: 18rem;
-}
+} */
 
 .down-arrow {
   background-image: url('/assets/angle-down.svg');
@@ -182,10 +167,10 @@ ul {
   text-align: left;
   background: hsl(28, 30%, 94%);
 }
-i {
+/* i {
   position: absolute;
   right: 15px;
-}
+} */
 
 .fa {
   color: rgba(250, 117, 0, 0.993);
@@ -200,9 +185,9 @@ i {
   text-align: center;
 }
 
-li {
+/* li {
   list-style-type: none;
-}
+} */
 
 .login--section {
   width: 100%;
@@ -383,23 +368,6 @@ li {
   border: solid 1px black;
 }
 
-/* @media only screen and (max-width: 480px) {
-  .button--help {
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  main {
-    width: 90%;
-  }
-  
-} */
-
 /*SIGN UP PAGE*/
 .signup--section {
   width: 100%;
@@ -462,4 +430,53 @@ li {
   .profile--links {
     width: 234px;
   }
+}
+
+/* SYMPTOMS HOME */
+.sympHome--section {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -4rem;
+  text-align: center;
+}
+
+.sympHome--list {
+  margin-bottom: 3rem;
+  width: 90%;
+}
+
+.sympHome--container-btns {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  max-width: 366px;
+}
+
+.delete {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 375px) {
+  .list--item {
+    width: 66%;
+  }
+}
+
+.expand,
+.factDelete {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+}
+
+.factDelete {
+  width: 18rem;
 }
