@@ -467,6 +467,22 @@ main {
   }
 }
 
+/* SYMPTOMS ADD */
+.sympAdd {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -8rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.form--input-placeholder::placeholder {
+  color: hsla(0, 0%, 46%, 0.774);
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .expand,
 .factDelete {
   padding: 0.5rem;

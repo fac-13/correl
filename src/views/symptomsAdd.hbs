@@ -1,10 +1,12 @@
-<h1>What symptom would you like to track?</h1>
+<section class="sympAdd">
+  <h1 class="title">What symptom would you like to track?</h1>
 
-<form action="/symptoms/add" method="POST">
-  <input class="textInput" aria-label="Symptom to track" type="text" autocomplete='off' name="symptom" class="inline-input" placeholder="Enter symptom"
-    required>
-  <a href="/profile" class="button-links">Go Back</a>
+  <form class="form" action="/symptoms/add" method="POST">
+    <input class="form--input form--input-placeholder" aria-label="Symptom to track" type="text" autocomplete='off' name="symptom"
+      class="inline-input" placeholder="Enter symptom" required>
+    <a href="/profile" class="button-links">Go Back</a>
 
-  <button type="submit" name="button" class="add">Add</button>
-  <br>
-</form>
+    <button type="submit" name="button" class="button">Add</button>
+    <br>
+  </form>
+</section>
