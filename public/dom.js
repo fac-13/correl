@@ -151,8 +151,8 @@ function findVisibleInstruction() {
 }
 
 // CODE FOR MODAL
-var modal = document.querySelector('#modal');
-var modalOverlay = document.querySelector('#overlay');
+var modal = document.querySelector('.modal-js');
+var modalOverlay = document.querySelector('.overlay-js');
 var showModal = document.querySelector('#help');
 var hideModal = document.querySelector('#close-modal');
 var focusedElementBeforeModal;
