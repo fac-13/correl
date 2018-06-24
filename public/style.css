@@ -9,6 +9,10 @@ body {
   position: relative;
 }
 
+.padding-top2rem {
+  padding: 2rem 0 0;
+}
+
 .title {
   text-align: center;
   font-weight: lighter;
@@ -446,7 +450,7 @@ main {
   width: 90%;
 }
 
-.sympHome--container-btns {
+.symp--container-btns {
   display: flex;
   margin: 0 auto;
   justify-content: space-evenly;
@@ -481,6 +485,16 @@ main {
   color: hsla(0, 0%, 46%, 0.774);
   font-size: 1rem;
   font-style: italic;
+}
+
+/* SYMPTOMS SCALE INFO */
+.sympScaleInfo--section {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  top: -8rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .expand,
