@@ -89,7 +89,7 @@ scaleButtons.forEach(function(button) {
 //delete buttons
 
 var sympButtons = document.querySelectorAll('.sympHome--delete-js');
-var factButtons = document.querySelectorAll('.factDelete');
+var factButtons = document.querySelectorAll('.factHome--delete-js');
 
 sympButtons.forEach(function(button) {
   button.addEventListener('click', function(e) {

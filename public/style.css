@@ -430,8 +430,8 @@ main {
   }
 }
 
-/* SYMPTOMS HOME */
-.sympHome--section {
+/* SYMPTOMS & FACTORS HOME */
+.sympFactHome--section {
   width: 100%;
   max-width: 650px;
   position: relative;
@@ -439,12 +439,12 @@ main {
   text-align: center;
 }
 
-.sympHome--list {
+.sympFactHome--list {
   margin-bottom: 3rem;
   width: 90%;
 }
 
-.symp--container-btns {
+.sympFact--container-btns {
   display: flex;
   margin: 0 auto;
   justify-content: space-evenly;
@@ -465,8 +465,8 @@ main {
   }
 }
 
-/* SYMPTOMS ADD */
-.sympAdd {
+/* SYMPTOMS & FACTORS ADD */
+.sympFActAdd {
   width: 100%;
   max-width: 650px;
   position: relative;
@@ -482,7 +482,7 @@ main {
 }
 
 /* SYMPTOMS SCALE INFO */
-.sympScaleInfo--section {
+.sympFactScaleInfo--section {
   width: 100%;
   max-width: 650px;
   position: relative;
@@ -492,29 +492,23 @@ main {
 }
 
 /* SYMPTOMS SCALE SETUP*/
-
-.sympSetup--section {
+.sympFactSetup--section {
   width: 100%;
   max-width: 650px;
   position: relative;
   top: 2rem;
 }
 
-.sympSetup--container {
+.sympFactSetup--container {
   width: 70%;
   margin: 0 auto;
 }
 
-.expand,
-.factDelete {
+.expand {
   padding: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   text-align: left;
   position: relative;
-}
-
-.factDelete {
-  width: 18rem;
 }

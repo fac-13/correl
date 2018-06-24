@@ -1,14 +1,15 @@
-<h1>Factor Scale Setup</h1>
-
-<form action="/factors/scaleSetup" method="POST" id="setUpScale">
-  {{#times 10}}
-  <div>
-    <button id="factor-{{this}}" class="scale-buttons" type="button">{{this}}</button>
-    <input name="{{this}}" type="text" class="inline-input hidden">
-  </div>
-  <br> {{/times}}
-  <a href="scaleInfo" class="button-links">Back</a>
-
-  <button type="submit" id="add">Save &amp; Finish</button>
-
-</form>
+<section class="sympFactSetup--section">
+  <h1 class="title">Factor Scale Setup</h1>
+  <form class="form" action="/factors/scaleSetup" method="POST" id="setUpScale">
+    {{#times 10}}
+    <div class="sympFactSetup--container">
+      <button id="factor-{{this}}" class="button scale-buttons" type="button">{{this}}</button>
+      <input type="text" class="inline-input hidden" autocomplete="off" name="{{this}}">
+    </div>
+    <br> {{/times}}
+    <div class="sympFact--container-btns">
+      <a href="scaleInfo" class="button-links">Go Back</a>
+      <button class="button" type="submit" id="add">Save &amp; Finish</button>
+    </div>
+  </form>
+</section>

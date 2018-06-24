@@ -1,6 +1,5 @@
-<section class="sympSetup--section">
+<section class="sympFactSetup--section">
   <h1 class="title">scale setup</h1>
-
   <form class="form" action="/symptoms/scaleSetup" method="POST" id="setUpScale">
     {{#times 10}}
     <div class="sympSetup--container">
@@ -8,11 +7,9 @@
       <input type="text" class="inline-input hidden" autocomplete='off' name="{{this}}">
     </div>
     <br> {{/times}}
-
-    <div class="symp--container-btns">
+    <div class="sympFact--container-btns">
       <a href="/symptoms/scaleInfo" class="button-links">Go Back</a>
       <button class="button" type="submit">Save &amp; Finish</button>
     </div>
-
   </form>
 </section>

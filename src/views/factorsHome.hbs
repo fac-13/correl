@@ -1,17 +1,19 @@
-<h1>Factor Home</h1>
+<section class="sympFactHome--section">
+  <h1 class="title">Factor Home</h1>
 
-<h2>Factors You're Tracking</h2>
-<ul>
-  {{#each factorsList}}
-  <li class="factors-list">
-    <button class="factDelete" id="delete-{{this.factor}}">
-      {{this.factor}}
-      <i class="fa fa-trash faFact" id='bin-{{this.factor}}'></i>
-    </button>
-  </li>
-  {{/each}}
-</ul>
-<span>
-  <a href="/factors/add" class="button-links">Add New Factor</a>
-  <a href="/profile" class="button-links">Go Back</a>
-</span>
+  <h2 class="subheading">Factors You're Tracking</h2>
+  <ul class="sympFactHome--list">
+    {{#each factorsList}}
+    <li class="list--item">
+      <button class="delete button factHome--delete-js" id="delete-{{this.factor}}">
+        {{this.factor}}
+        <i class="fa fa-trash" id='bin-{{this.factor}}'></i>
+      </button>
+    </li>
+    {{/each}}
+  </ul>
+  <span class="sympFact--container-btns">
+    <a href="/factors/add" class="button-links">Add New Factor</a>
+    <a href="/profile" class="button-links">Go Back</a>
+  </span>
+</section>

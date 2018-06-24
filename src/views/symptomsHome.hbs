@@ -1,21 +1,18 @@
-<section class="sympHome--section">
+<section class="sympFactHome--section">
   <h1 class="title">Symptoms Home</h1>
 
   <h2 class="subheading">Symptoms You're Tracking</h2>
-  <ul class="sympHome--list">
+  <ul class="sympFactHome--list">
     {{#each symptomsList}}
     <li class="list--item">
-
       <button class="delete button sympHome--delete-js" id="delete-{{this.symptom}}">
         {{this.symptom}}
         <i class="fa fa-trash" id='bin-{{this.symptom}}'></i>
-
       </button>
     </li>
     {{/each}}
   </ul>
-
-  <span class="symp--container-btns">
+  <span class="sympFact--container-btns">
     <a href="/profile" class="button-links">Go Back</a>
     <a href="add" class="button-links">Add New Symptom</a>
   </span>
