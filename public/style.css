@@ -321,6 +321,8 @@ p {
   max-width: 650px;
   position: relative;
   top: 2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .sympFactSetup--container {
