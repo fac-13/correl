@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   width: 100%;
 }
@@ -119,7 +123,7 @@ p {
   justify-content: flex-end;
   align-items: center;
   right: 0.2rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: hsl(19, 56%, 70%);
 }
 
@@ -159,7 +163,6 @@ p {
   padding: 1rem;
   margin: 0 auto 4rem auto;
   width: 70%;
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -296,7 +299,6 @@ p {
   position: relative;
   top: -8rem;
   padding: 0 1.5rem;
-  box-sizing: border-box;
 }
 
 .form--input-placeholder::placeholder {
@@ -312,7 +314,6 @@ p {
   position: relative;
   top: -8rem;
   padding: 0 1rem;
-  box-sizing: border-box;
 }
 
 /* SYMPTOMS & FACTORS SCALE SETUP */
@@ -322,7 +323,6 @@ p {
   position: relative;
   top: 2rem;
   padding: 0 1rem;
-  box-sizing: border-box;
 }
 
 .sympFactSetup--container {
