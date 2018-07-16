@@ -255,11 +255,11 @@ p {
 
 @media only screen and (min-width: 510px) {
   .profile--options {
-    max-width: 478px;
+    max-width: 450px;
     grid-gap: 25px;
   }
   .profile--links {
-    width: 234px;
+    width: 12rem;
   }
 }
 
