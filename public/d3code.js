@@ -133,8 +133,8 @@ var renderGraph = function(err, response) {
     var svg = d3
       .select('#graph')
       .append('svg')
-      .attr('width', '100%')
-      .attr('height', '100%')
+      // .attr('width', '100%')
+      // .attr('height', '100%')
       .attr('viewBox', '60 0 600 700');
 
     // create axes
@@ -250,7 +250,7 @@ var renderGraph = function(err, response) {
 
     // Animate line drawing for factor
     factors
-      .attr('stroke-dasharray', totalLength + ' ' + totalLength)
+      .attr('stroke-dasharray', totalLength)
       .attr('stroke-dashoffset', totalLength)
       .transition()
       .duration(9000)
